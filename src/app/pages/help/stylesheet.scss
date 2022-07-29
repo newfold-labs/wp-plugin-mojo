@@ -1,0 +1,24 @@
+.card-help {
+    text-align: center;
+
+    .components-card-header,
+    .components-card-footer {
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    /* <= WP 5.8 */
+    .components-card__header,
+    .components-card__footer {
+        justify-content: center;
+    }
+
+    &:last-of-type {
+        @media screen and (min-width: 800px) {
+            grid-column: span 2;
+        }
+        @media screen and (min-width: 1020px) {
+            grid-column: span 3;
+        }
+    }
+}
