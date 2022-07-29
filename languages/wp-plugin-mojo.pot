@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Web.com 0.9.2\n"
-"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-web/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-mojo/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
-"X-Domain: wp-plugin-web\n"
+"X-Domain: wp-plugin-mojo\n"
 
 #. Plugin Name of the plugin
 #. Author of the plugin

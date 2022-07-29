@@ -2,19 +2,19 @@
 /**
  * All data retrieval and saving happens from this file.
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
- * \Web\Data
+ * \MOJO\Data
  * This class does not have a constructor to get instantiated, just static methods.
  */
 final class Data {
 
 	/**
-	 * Data loaded onto window.WPPW
+	 * Data loaded onto window.WPPM
 	 *
 	 * @return array
 	 */
@@ -22,12 +22,12 @@ final class Data {
 		global $wp_version;
 
 		$runtime = array(
-			'url'       => WEB_BUILD_URL,
-			'version'   => WEB_PLUGIN_VERSION,
+			'url'       => MOJO_BUILD_URL,
+			'version'   => MOJO_PLUGIN_VERSION,
 			'resturl'   => \get_home_url() . '/index.php?rest_route=',
 			'wpversion' => $wp_version,
 			'admin'     => \admin_url(),
-			'assets'    => WEB_PLUGIN_URL . 'assets/',
+			'assets'    => MOJO_PLUGIN_URL . 'assets/',
 		);
 
 		return $runtime;

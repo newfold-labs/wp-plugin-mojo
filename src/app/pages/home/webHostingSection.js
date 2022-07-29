@@ -11,121 +11,121 @@ import {
 
 const WebHostingSection = () => {
 	return (
-		<section className="wppw-section wppw-section-home-hosting">
+		<section className="wppm-section wppm-section-home-hosting">
 			<img
 				src={ graphicUrl }
 				className="section-graphic"
-				alt={ __( 'Hosting illustration', 'wp-plugin-web' ) }
+				alt={ __( 'Hosting illustration', 'wp-plugin-mojo' ) }
 			/>
-			<Card size="large" className="wppw-section-card">
+			<Card size="large" className="wppm-section-card">
 				<CardHeader>
 					<Heading level="3">
-						{ __( 'Web Hosting', 'wp-plugin-web' ) }
+						{ __( 'Web Hosting', 'wp-plugin-mojo' ) }
 					</Heading>
 					<p>
 						{ __(
-							'Access & manage your Web.com account.',
-							'wp-plugin-web'
+							'Access & manage your MOJO account.',
+							'wp-plugin-mojo'
 						) }
 					</p>
 				</CardHeader>
 				<CardFooter>
-					<div className="wppw-cardlist-content">
+					<div className="wppm-cardlist-content">
 						<Heading level="4">
 							<Dashicon icon="desktop" />{ ' ' }
-							{ __( 'Manage Hosting', 'wp-plugin-web' ) }
+							{ __( 'Manage Hosting', 'wp-plugin-mojo' ) }
 						</Heading>
 						<p>
 							{ __(
 								'Manage site backups, performance options and billing.',
-								'wp-plugin-web'
+								'wp-plugin-mojo'
 							) }
 						</p>
 					</div>
 					<Button
 						variant="primary"
 						href={
-							`https://www.web.com/my-account/home?` +
+							`https://www.mojomarketplace.com/my-account/home?` +
 							`&utm_campaign=` +
 							`&utm_content=home_hosting_sites_link` +
 							`&utm_term=manage_sites` +
 							`&utm_medium=brand_plugin` +
-							`&utm_source=wp-admin/admin.php?page=web#/home`
+							`&utm_source=wp-admin/admin.php?page=mojo#/home`
 						}
 						target="_blank"
 						icon="desktop"
 					>
-						{ __( 'Manage Sites', 'wp-plugin-web' ) }
+						{ __( 'Manage Sites', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
 				<CardFooter>
-					<div className="wppw-cardlist-content">
+					<div className="wppm-cardlist-content">
 						<Heading level="4">
 							<Dashicon icon="email" />{ ' ' }
-							{ __( 'Email', 'wp-plugin-web' ) }
+							{ __( 'Email', 'wp-plugin-mojo' ) }
 						</Heading>
 						<p>
 							{ __(
 								'Create new email addresses and manage your inbox.',
-								'wp-plugin-web'
+								'wp-plugin-mojo'
 							) }
 						</p>
 					</div>
 					<Button
 						variant="primary"
 						href={
-							`https://www.web.com/manage-it/email-overview.jsp?` +
+							`https://www.mojomarketplace.com/manage-it/email-overview.jsp?` +
 							`&utm_campaign=` +
 							`&utm_content=home_hosting_email_link` +
 							`&utm_term=manage_email` +
 							`&utm_medium=brand_plugin` +
-							`&utm_source=wp-admin/admin.php?page=web#/home`
+							`&utm_source=wp-admin/admin.php?page=mojo#/home`
 						}
 						target="_blank"
 						icon="email"
 					>
-						{ __( 'Manage Email', 'wp-plugin-web' ) }
+						{ __( 'Manage Email', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
 				<CardFooter>
-					<div className="wppw-cardlist-content">
+					<div className="wppm-cardlist-content">
 						<Heading level="4">
 							<Dashicon icon="admin-site" />{ ' ' }
-							{ __( 'Domains', 'wp-plugin-web' ) }
+							{ __( 'Domains', 'wp-plugin-mojo' ) }
 						</Heading>
 						<p>
 							{ __(
 								'Find fresh domains, point them at sites and get found online.',
-								'wp-plugin-web'
+								'wp-plugin-mojo'
 							) }
 						</p>
 					</div>
 					<Button
 						variant="secondary"
 						href={
-							`https://www.web.com/domains?` +
+							`https://www.mojomarketplace.com/domains?` +
 							`&utm_campaign=` +
 							`&utm_content=home_hosting_domain_link` +
 							`&utm_term=find_domain` +
 							`&utm_medium=brand_plugin` +
-							`&utm_source=wp-admin/admin.php?page=web#/home`
+							`&utm_source=wp-admin/admin.php?page=mojo#/home`
 						}
 						target="_blank"
 						icon="admin-site"
 					>
-						{ __( 'Find a Domain', 'wp-plugin-web' ) }
+						{ __( 'Find a Domain', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
 				<CardFooter>
-					<div className="wppw-cardlist-content">
+					<div className="wppm-cardlist-content">
 						<Heading level="4">
 							<Dashicon icon="sos" />{ ' ' }
-							{ __( 'Help', 'wp-plugin-web' ) }
+							{ __( 'Help', 'wp-plugin-mojo' ) }
 						</Heading>
 						<p>
 							{ __(
 								'Find how-to articles in our Knowledge Base and speak with our award-winning support team.',
-								'wp-plugin-web'
+								'wp-plugin-mojo'
 							) }
 						</p>
 					</div>
@@ -135,7 +135,7 @@ const WebHostingSection = () => {
 						icon="sos"
 						className="callout-link-help"
 					>
-						{ __( 'Get Help', 'wp-plugin-web' ) }
+						{ __( 'Get Help', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
 			</Card>

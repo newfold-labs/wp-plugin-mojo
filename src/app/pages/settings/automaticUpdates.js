@@ -1,7 +1,7 @@
 import AppStore from '../../data/store';
 import { Heading, ErrorCard } from '../../components';
 import {
-	webSettingsApiFetch,
+	mojoSettingsApiFetch,
 	dispatchUpdateSnackbar,
 } from '../../util/helpers';
 import {
@@ -38,43 +38,43 @@ const AutomaticUpdates = () => {
 
 	const getAllNoticeText = () => {
 		return autoUpdatesAll
-			? __( 'Everything will auto-update.', 'wp-plugin-web' )
-			: __( 'Custom auto-update settings.', 'wp-plugin-web' );
+			? __( 'Everything will auto-update.', 'wp-plugin-mojo' )
+			: __( 'Custom auto-update settings.', 'wp-plugin-mojo' );
 	};
 	const getAllHelpText = () => {
 		return autoUpdatesAll
-			? __( "We're on top of all your updates.", 'wp-plugin-web' )
-			: __( 'Turn on for the safest, best experience.', 'wp-plugin-web' );
+			? __( "We're on top of all your updates.", 'wp-plugin-mojo' )
+			: __( 'Turn on for the safest, best experience.', 'wp-plugin-mojo' );
 	};
 	const getCoreNoticeText = () => {
 		return autoUpdatesMajorCore
-			? __( 'WordPress Core will auto-update.', 'wp-plugin-web' )
-			: __( 'WordPress Core will not auto-update.', 'wp-plugin-web' );
+			? __( 'WordPress Core will auto-update.', 'wp-plugin-mojo' )
+			: __( 'WordPress Core will not auto-update.', 'wp-plugin-mojo' );
 	};
 	const getCoreHelpText = () => {
 		return autoUpdatesMajorCore
-			? __( 'WordPress will automatically update.', 'wp-plugin-web' )
-			: __( 'WordPress must be manually updated.', 'wp-plugin-web' );
+			? __( 'WordPress will automatically update.', 'wp-plugin-mojo' )
+			: __( 'WordPress must be manually updated.', 'wp-plugin-mojo' );
 	};
 	const getPluginsNoticeText = () => {
 		return autoUpdatesPlugins
-			? __( 'Plugins will auto-update.', 'wp-plugin-web' )
-			: __( 'Plugins will not auto-update.', 'wp-plugin-web' );
+			? __( 'Plugins will auto-update.', 'wp-plugin-mojo' )
+			: __( 'Plugins will not auto-update.', 'wp-plugin-mojo' );
 	};
 	const getPluginsHelpText = () => {
 		return autoUpdatesPlugins
-			? __( 'All plugins will automatically update.', 'wp-plugin-web' )
-			: __( 'Each plugin must be manually updated.', 'wp-plugin-web' );
+			? __( 'All plugins will automatically update.', 'wp-plugin-mojo' )
+			: __( 'Each plugin must be manually updated.', 'wp-plugin-mojo' );
 	};
 	const getThemesNoticeText = () => {
 		return autoUpdatesThemes
-			? __( 'Themes will auto-update.', 'wp-plugin-web' )
-			: __( 'Theme will not auto-update.', 'wp-plugin-web' );
+			? __( 'Themes will auto-update.', 'wp-plugin-mojo' )
+			: __( 'Theme will not auto-update.', 'wp-plugin-mojo' );
 	};
 	const getThemesHelpText = () => {
 		return autoUpdatesThemes
-			? __( 'All themes will automatically update.', 'wp-plugin-web' )
-			: __( 'Each theme must be manually updated.', 'wp-plugin-web' );
+			? __( 'All themes will automatically update.', 'wp-plugin-mojo' )
+			: __( 'Each theme must be manually updated.', 'wp-plugin-mojo' );
 	};
 
 	useEffect( () => {
@@ -97,7 +97,7 @@ const AutomaticUpdates = () => {
 	}, [ autoUpdatesAll ] );
 
 	useUpdateEffect( () => {
-		webSettingsApiFetch(
+		mojoSettingsApiFetch(
 			{ autoUpdatesMajorCore },
 			setError,
 			( response ) => {
@@ -113,7 +113,7 @@ const AutomaticUpdates = () => {
 	}, [ autoUpdatesMajorCore ] );
 
 	useUpdateEffect( () => {
-		webSettingsApiFetch( { autoUpdatesPlugins }, setError, ( response ) => {
+		mojoSettingsApiFetch( { autoUpdatesPlugins }, setError, ( response ) => {
 			setStore( {
 				...store,
 				autoUpdatesPlugins,
@@ -125,7 +125,7 @@ const AutomaticUpdates = () => {
 	}, [ autoUpdatesPlugins ] );
 
 	useUpdateEffect( () => {
-		webSettingsApiFetch( { autoUpdatesThemes }, setError, ( response ) => {
+		mojoSettingsApiFetch( { autoUpdatesThemes }, setError, ( response ) => {
 			setStore( {
 				...store,
 				autoUpdatesThemes,
@@ -148,19 +148,19 @@ const AutomaticUpdates = () => {
 		>
 			<CardHeader>
 				<Heading level="3">
-					{ __( 'Automatic Updates', 'wp-plugin-web' ) }
+					{ __( 'Automatic Updates', 'wp-plugin-mojo' ) }
 				</Heading>
 			</CardHeader>
 			<CardBody>
 				{ __(
 					'We strongly recommend letting us manage updates to automatically receive critical security patches, bug fixes and new features as they become available.',
-					'wp-plugin-web'
+					'wp-plugin-mojo'
 				) }
 			</CardBody>
 			<CardDivider />
 			<CardBody className="autoupdate-all-setting">
 				<ToggleControl
-					label={ __( 'Managed', 'wp-plugin-web' ) }
+					label={ __( 'Managed', 'wp-plugin-mojo' ) }
 					className="autoupdate-all-toggle"
 					checked={ autoUpdatesAll }
 					help={ getAllHelpText() }
@@ -178,7 +178,7 @@ const AutomaticUpdates = () => {
 						}` }
 					>
 						<ToggleControl
-							label={ __( 'WordPress Core', 'wp-plugin-web' ) }
+							label={ __( 'WordPress Core', 'wp-plugin-mojo' ) }
 							className="autoupdate-core-toggle"
 							checked={ autoUpdatesMajorCore }
 							disabled={ autoUpdatesAll }
@@ -195,7 +195,7 @@ const AutomaticUpdates = () => {
 						}` }
 					>
 						<ToggleControl
-							label={ __( 'Plugins', 'wp-plugin-web' ) }
+							label={ __( 'Plugins', 'wp-plugin-mojo' ) }
 							className="autoupdate-plugin-toggle"
 							checked={ autoUpdatesPlugins }
 							disabled={ autoUpdatesAll }
@@ -212,7 +212,7 @@ const AutomaticUpdates = () => {
 						}` }
 					>
 						<ToggleControl
-							label={ __( 'Themes', 'wp-plugin-web' ) }
+							label={ __( 'Themes', 'wp-plugin-mojo' ) }
 							className="autoupdate-theme-toggle"
 							checked={ autoUpdatesThemes }
 							disabled={ autoUpdatesAll }

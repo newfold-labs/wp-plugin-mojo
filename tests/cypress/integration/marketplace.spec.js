@@ -10,7 +10,7 @@ describe('Marketplace Page', function () {
 		}, {
 			fixture: 'products.json'
 		}).as('marketplace');
-		cy.visit('/wp-admin/admin.php?page=web#/marketplace');
+		cy.visit('/wp-admin/admin.php?page=mojo#/marketplace');
 		cy.injectAxe();
 	});
 
@@ -20,7 +20,7 @@ describe('Marketplace Page', function () {
 
 	it('Is Accessible', () => {
 		cy.wait(1000);
-		cy.checkA11y('.wppw-app-body');
+		cy.checkA11y('.wppm-app-body');
 	});
 
 	it('Product grid has 6 items', () => {
@@ -35,7 +35,7 @@ describe('Marketplace Page', function () {
 			.scrollIntoView()
 			.should('be.visible')
 			.should('have.attr', 'href')
-			.and('include', 'https://www.web.com/websites/website-design-services');
+			.and('include', 'https://www.mojomarketplace.com/websites/website-design-services');
 
 		cy.get('@card').first().within(() => {
 			cy.get('.components-card__header')

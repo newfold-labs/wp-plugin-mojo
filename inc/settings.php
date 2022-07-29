@@ -3,10 +3,10 @@
  * Functionality related to Settings
  * see RestApi/SettingsController.php for implementation
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * Filter wp revisions according to plugin setting

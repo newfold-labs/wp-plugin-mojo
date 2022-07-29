@@ -2,10 +2,10 @@
 /**
  * This file sets up custom api controllers for the plugin.
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * Instantiate controllers and register routes.
@@ -13,8 +13,8 @@ namespace Web;
 function init_rest_api() {
 
 	$controllers = array(
-		'Web\\RestApi\\CachingController',
-		'Web\\RestApi\\SettingsController',
+		'MOJO\\RestApi\\CachingController',
+		'MOJO\\RestApi\\SettingsController',
 	);
 
 	foreach ( $controllers as $controller ) {

@@ -2,10 +2,10 @@
 /**
  * This file customizes Jetpack modules and blocks.
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * Customize the default Jetpack modules that should be enabled.

@@ -4,10 +4,10 @@
  *
  * By default, all auto-updates are enabled (including major releases).
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * Convert string boolean values to actual booleans.
@@ -112,8 +112,8 @@ function plugin_auto_update_setting_html( $html ) {
 		'<span class="label">Auto-updates enabled</span>',
 		sprintf(
 		/* translators: %s Settings > General page URL. */
-			__( 'Auto-updates enabled on the <a href="%s">Web.com > Settings</a> page.', 'wp-plugin-web' ),
-			admin_url( 'admin.php?page=web#/settings' )
+			__( 'Auto-updates enabled on the <a href="%s">MOJO > Settings</a> page.', 'wp-plugin-mojo' ),
+			admin_url( 'admin.php?page=mojo#/settings' )
 		),
 		$html
 	);
@@ -140,8 +140,8 @@ function theme_auto_update_setting_html( $html ) {
 
 	return sprintf(
 	/* translators: %s Settings > General page URL. */
-		__( 'Auto-updates enabled on the <a href="%s">Web.com > Settings</a> page.', 'wp-plugin-web' ),
-		admin_url( 'admin.php?page=web#/settings' )
+		__( 'Auto-updates enabled on the <a href="%s">MOJO > Settings</a> page.', 'wp-plugin-mojo' ),
+		admin_url( 'admin.php?page=mojo#/settings' )
 	);
 }
 
@@ -163,12 +163,12 @@ function theme_auto_update_setting_template( $template ) {
 	}
 
 	$template_string = '<# } else if ( data.autoupdate.forced ) { #>
-					' . __( 'Auto-updates enabled', 'wp-plugin-web' );
+					' . __( 'Auto-updates enabled', 'wp-plugin-mojo' );
 	$replacement     = '<# } else if ( data.autoupdate.forced ) { #>';
 	$replacement    .= sprintf(
 	/* translators: %s Settings > General page URL. */
-		__( 'Auto-updates enabled on the <a href="%s">Web.com > Settings</a> page.', 'wp-plugin-web' ),
-		admin_url( 'admin.php?page=web#/settings' )
+		__( 'Auto-updates enabled on the <a href="%s">MOJO > Settings</a> page.', 'wp-plugin-mojo' ),
+		admin_url( 'admin.php?page=mojo#/settings' )
 	);
 
 	return str_replace( $template_string, $replacement, $template );

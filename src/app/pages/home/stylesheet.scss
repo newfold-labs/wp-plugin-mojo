@@ -1,4 +1,4 @@
-.wppw-section {
+.wppm-section {
     margin: 0 0 2rem;
     position: relative;
 
@@ -34,9 +34,9 @@
     }
 
 
-    &.wppw-section-coming-soon {
+    &.wppm-section-coming-soon {
 
-        .wppw-section-graphic {
+        .wppm-section-graphic {
             top: -3rem;
             right: -6rem; 
         }
@@ -73,7 +73,7 @@
     }
 }
 
-.wppw-section-card {
+.wppm-section-card {
     position: relative;
     z-index: 1;
 
@@ -84,7 +84,7 @@
     .components-card__footer {
         flex-direction: column;
         
-        .wppw-cardlist-content {
+        .wppm-cardlist-content {
             width: 100%;
             .components-heading {
                 display: flex;
@@ -110,7 +110,7 @@
         @media screen and (min-width: 700px) {
             flex-direction: row;
 
-            .wppw-cardlist-content {
+            .wppm-cardlist-content {
                 max-width: 60%;
             }
 

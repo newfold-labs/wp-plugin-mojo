@@ -3,7 +3,7 @@
 describe('Coming Soon', function () {
 
 	before(() => {
-		cy.visit('/wp-admin/admin.php?page=web#/settings');
+		cy.visit('/wp-admin/admin.php?page=mojo#/settings');
 		cy.injectAxe();
 		
 	});
@@ -30,9 +30,9 @@ describe('Coming Soon', function () {
 	});
 
 	it('Has Coming Soon Section on Home', () => {
-		cy.visit('/wp-admin/admin.php?page=web#/home');
+		cy.visit('/wp-admin/admin.php?page=mojo#/home');
 		cy
-			.get('.wppw-section-coming-soon')
+			.get('.wppm-section-coming-soon')
 			.scrollIntoView()
 			.contains('h3', 'Coming Soon')
 			.should('be.visible');
@@ -42,30 +42,30 @@ describe('Coming Soon', function () {
 	it('Has Coming Soon in Admin Toolbar', () => {
 		cy.reload();
 		cy
-			.get('#wp-toolbar #wp-admin-bar-web-coming_soon')
+			.get('#wp-toolbar #wp-admin-bar-mojo-coming_soon')
 			.contains('div', 'Coming Soon Active')
 			.should('be.visible');
 	});
 
 	it('Home Coming Soon Section Launches', () => {
-		cy.get('.wppw-section-coming-soon button.is-primary').click();
+		cy.get('.wppm-section-coming-soon button.is-primary').click();
 		cy.wait(500);
 		cy
-			.get('#wp-toolbar #wp-admin-bar-web-coming_soon')
+			.get('#wp-toolbar #wp-admin-bar-mojo-coming_soon')
 			.contains('div', 'Coming Soon Active')
 			.should('not.be.visible');
 
 		cy
-			.get('.wppw-section-coming-soon')
+			.get('.wppm-section-coming-soon')
 			.scrollIntoView()
 			.contains('h3', 'Site Launched')
 			.should('be.visible');
 
-		cy.get('.wppw-section-coming-soon button.is-secondary').click();
+		cy.get('.wppm-section-coming-soon button.is-secondary').click();
 
 		
 		cy
-			.get('.wppw-section-coming-soon')
+			.get('.wppm-section-coming-soon')
 			.scrollIntoView()
 			.contains('h3', 'Coming Soon')
 			.should('be.visible');
@@ -90,21 +90,21 @@ describe('Coming Soon', function () {
 
 	it('Launching launches site', () => {
 		cy.login(Cypress.env('wpUsername'), Cypress.env('wpPassword'));
-		cy.visit('/wp-admin/admin.php?page=web#/settings');
+		cy.visit('/wp-admin/admin.php?page=mojo#/settings');
 		cy.get('.coming-soon-toggle input[type="checkbox"]').should('be.checked');
 
-		cy.visit('/wp-admin/admin.php?page=web#/home');
+		cy.visit('/wp-admin/admin.php?page=mojo#/home');
 		cy
-			.get('.wppw-section-coming-soon')
+			.get('.wppm-section-coming-soon')
 			.scrollIntoView()
 			.contains('h3', 'Coming Soon')
 			.should('be.visible');
 
-		cy.get('.wppw-section-coming-soon button.is-primary').click();
-		cy.get('.wppw-section-coming-soon button.is-link').click(); //dismiss
+		cy.get('.wppm-section-coming-soon button.is-primary').click();
+		cy.get('.wppm-section-coming-soon button.is-link').click(); //dismiss
 
 		cy
-			.get('.wppw-section-coming-soon')
+			.get('.wppm-section-coming-soon')
 			.should('not.exist');
 
 		cy.get('#wp-admin-bar-logout a').click({ force: true });

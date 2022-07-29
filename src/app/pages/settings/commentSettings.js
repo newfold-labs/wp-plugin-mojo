@@ -1,7 +1,7 @@
 import AppStore from '../../data/store';
 import { Heading, ErrorCard } from '../../components';
 import {
-	webSettingsApiFetch,
+	mojoSettingsApiFetch,
 	dispatchUpdateSnackbar,
 } from '../../util/helpers';
 import { _n } from '@wordpress/i18n';
@@ -31,21 +31,21 @@ const CommentSettings = () => {
 
 	const disableCommentsHelpText = () => {
 		return disableCommentsOldPosts
-			? __( 'Comments on old posts are disabled.', 'wp-plugin-web' )
-			: __( 'Comments are allowed on old posts.', 'wp-plugin-web' );
+			? __( 'Comments on old posts are disabled.', 'wp-plugin-mojo' )
+			: __( 'Comments are allowed on old posts.', 'wp-plugin-mojo' );
 	};
 	const disableCommentsNoticeText = () => {
 		return disableCommentsOldPosts
-			? __( 'Old post comments disabled.', 'wp-plugin-web' )
-			: __( 'Old post comments enabled.', 'wp-plugin-web' );
+			? __( 'Old post comments disabled.', 'wp-plugin-mojo' )
+			: __( 'Old post comments enabled.', 'wp-plugin-mojo' );
 	};
 	const closeCommentsLabelText = () => {
 		// `Close comments after ${closeCommentsDays} day(s)`
 		return (
 			<span>
-				{ __( 'Close comments after ', 'wp-plugin-web' ) }
+				{ __( 'Close comments after ', 'wp-plugin-mojo' ) }
 				<strong>{ closeCommentsDays }</strong>
-				{ _n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-web' ) }
+				{ _n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-mojo' ) }
 			</span>
 		);
 	};
@@ -55,31 +55,31 @@ const CommentSettings = () => {
 			<span>
 				{ __(
 					'Comments on posts are disabled after ',
-					'wp-plugin-web'
+					'wp-plugin-mojo'
 				) }
 				<strong>{ closeCommentsDays }</strong>
-				{ _n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-web' ) }
+				{ _n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-mojo' ) }
 			</span>
 		);
 	};
 	const closeCommentsNoticeText = () => {
 		return (
-			__( 'Disabled comments on posts older than ', 'wp-plugin-web' ) +
+			__( 'Disabled comments on posts older than ', 'wp-plugin-mojo' ) +
 			closeCommentsDays +
-			_n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-web' )
+			_n( ' day.', ' days.', closeCommentsDays, 'wp-plugin-mojo' )
 		);
 	};
 	const commentsPerPageLabelText = () => {
 		// `Display ${commentsPerPage} comment(s) per page`
 		return (
 			<span>
-				{ __( 'Display ', 'wp-plugin-web' ) }
+				{ __( 'Display ', 'wp-plugin-mojo' ) }
 				<strong>{ commentsPerPage }</strong>
 				{ _n(
 					' comment per page.',
 					' comments per page.',
 					commentsPerPage,
-					'wp-plugin-web'
+					'wp-plugin-mojo'
 				) }
 			</span>
 		);
@@ -88,22 +88,22 @@ const CommentSettings = () => {
 		//`Posts will display ${commentsPerPage} comments at a time.`
 		return (
 			<span>
-				{ __( 'Posts will display ', 'wp-plugin-web' ) }
+				{ __( 'Posts will display ', 'wp-plugin-mojo' ) }
 				<strong>{ commentsPerPage }</strong>
 				{ _n(
 					' comment at a time.',
 					' comments at a time.',
 					commentsPerPage,
-					'wp-plugin-web'
+					'wp-plugin-mojo'
 				) }
 			</span>
 		);
 	};
 	const commentsPerPageNoticeText = () => {
-		return __( 'Comments per page setting saved.', 'wp-plugin-web' );
+		return __( 'Comments per page setting saved.', 'wp-plugin-mojo' );
 	};
 	useUpdateEffect( () => {
-		webSettingsApiFetch(
+		mojoSettingsApiFetch(
 			{
 				disableCommentsOldPosts: disableCommentsOldPosts
 					? 'true'
@@ -121,7 +121,7 @@ const CommentSettings = () => {
 	}, [ disableCommentsOldPosts ] );
 
 	useUpdateEffect( () => {
-		webSettingsApiFetch( { closeCommentsDays }, setError, ( response ) => {
+		mojoSettingsApiFetch( { closeCommentsDays }, setError, ( response ) => {
 			setStore( {
 				...store,
 				closeCommentsDays,
@@ -131,7 +131,7 @@ const CommentSettings = () => {
 	}, [ closeCommentsDays ] );
 
 	useUpdateEffect( () => {
-		webSettingsApiFetch( { commentsPerPage }, setError, ( response ) => {
+		mojoSettingsApiFetch( { commentsPerPage }, setError, ( response ) => {
 			setStore( {
 				...store,
 				commentsPerPage,
@@ -147,13 +147,13 @@ const CommentSettings = () => {
 		<Card className="card-comment-settings">
 			<CardHeader>
 				<Heading level="3">
-					{ __( 'Comments', 'wp-plugin-web' ) }
+					{ __( 'Comments', 'wp-plugin-mojo' ) }
 				</Heading>
 			</CardHeader>
 			<CardBody>
 				{ __(
 					'Make blog post comments disabled on older posts and control how many to display.',
-					'wp-plugin-web'
+					'wp-plugin-mojo'
 				) }
 			</CardBody>
 			<CardBody className="disable-comments-setting">
@@ -162,7 +162,7 @@ const CommentSettings = () => {
 					className="disable-comments-toggle"
 					label={ __(
 						'Disable comments for older posts',
-						'wp-plugin-web'
+						'wp-plugin-mojo'
 					) }
 					help={ disableCommentsHelpText() }
 					onChange={ () => {

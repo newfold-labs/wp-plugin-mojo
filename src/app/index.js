@@ -44,7 +44,7 @@ const Notices = () => {
 
 const handlePageLoad = () => {
 	const location = useLocation();
-	const routeContents = document.querySelector( '.wppw-app-body-inner' );
+	const routeContents = document.querySelector( '.wppm-app-body-inner' );
 	useEffect( () => {
 		setActiveSubnav( location.pathname );
 		window.scrollTo( 0, 0 );
@@ -63,11 +63,11 @@ const AppBody = ( props ) => {
 
 	return (
 		<main
-			id="wppw-app-rendered"
+			id="wppm-app-rendered"
 			className={ classnames(
-				'wpadmin-brand-web',
-				`wppw-wp-${ WPPW.wpversion }`,
-				`wppw-page-${ kebabCase( location.pathname ) }`,
+				'wpadmin-brand-mojo',
+				`wppm-wp-${ WPPM.wpversion }`,
+				`wppm-page-${ kebabCase( location.pathname ) }`,
 				props.className
 			) }
 		>
@@ -75,15 +75,15 @@ const AppBody = ( props ) => {
 			<NewfoldNotifications
 				apiFetch={apiFetch}
 				classnames={classnames} 
-				context='web-plugin'
+				context='mojo-plugin'
 				filter={filter}
 				page={hashedPath}
-				resturl={window.WPPW.resturl}
+				resturl={window.WPPM.resturl}
 				useEffect={useEffect}
 				useState={useState}
 			/>
-			<div className="wppw-app-body">
-				<div className="wppw-app-body-inner">
+			<div className="wppm-app-body">
+				<div className="wppm-app-body-inner">
 					<ErrorBoundary FallbackComponent={ <ErrorCard /> }>
 						{ hasError && <ErrorCard error={ hasError } /> }
 						{ ( true === booted && <AppRoutes /> ) ||
@@ -92,7 +92,7 @@ const AppBody = ( props ) => {
 				</div>
 			</div>
 
-			<div className="wppw-app-snackbar">
+			<div className="wppm-app-snackbar">
 				<Notices />
 			</div>
 		</main>

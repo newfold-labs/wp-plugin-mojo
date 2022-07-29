@@ -1,10 +1,10 @@
 {
-    "name": "Web.com WordPress Plugin",
-    "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
-    "url": "https://web.com",
+    "name": "MOJO WordPress Plugin",
+    "description": "WordPress plugin that integrates a WordPress site with Hosting.",
+    "url": "https://mojo.com",
     "package": {
         "vendor": "newfold",
-        "name": "wp-plugin-web"
+        "name": "wp-plugin-mojo"
     },
     "license": {
         "slug": "GPL-2.0-or-later",
@@ -16,14 +16,14 @@
         "email": "evanrm@gmail.com",
         "url": "https://evanmullins.com"
     },
-    "text_domain": "wp-plugin-web",
-    "namespace": "Web",
+    "text_domain": "wp-plugin-mojo",
+    "namespace": "Mojo",
     "prefixes": {
-        "long": "WPPluginWeb",
-        "short": "wppw",
-        "function": "wppw_",
-        "constant": "WPPW_",
-        "meta": "wppw_",
-        "slug": "wppw-"
+        "long": "WPPluginMojo",
+        "short": "wppm",
+        "function": "wppm_",
+        "constant": "WPPM_",
+        "meta": "wppm_",
+        "slug": "wppm-"
     }
 }

@@ -3,14 +3,14 @@
 describe('Help Page', function () {
 
 	before(() => {
-		cy.visit('/wp-admin/admin.php?page=web#/help');
+		cy.visit('/wp-admin/admin.php?page=mojo#/help');
 		cy.injectAxe();
 		
 	});
 
 	it('Is Accessible', () => {
 		cy.wait(500);
-		cy.checkA11y('.wppw-app-body');
+		cy.checkA11y('.wppm-app-body');
 	});
 
 	it('Phone Card Exists', () => {

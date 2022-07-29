@@ -1,7 +1,7 @@
 import { Heading, ErrorCard } from '../../components';
 import AppStore from '../../data/store';
 import {
-	webPurgeCacheApiFetch,
+	mojoPurgeCacheApiFetch,
 	dispatchUpdateSnackbar,
 } from '../../util/helpers';
 import {
@@ -18,11 +18,11 @@ const ClearCache = () => {
 	const [ isError, setError ] = useState( false );
 
 	const getCacheClearNoticeText = () => {
-		return __( 'Cache cleared', 'wp-plugin-web' );
+		return __( 'Cache cleared', 'wp-plugin-mojo' );
 	};
 
 	const clearCache = () => {
-		webPurgeCacheApiFetch( {}, setError, ( response ) => {
+		mojoPurgeCacheApiFetch( {}, setError, ( response ) => {
 			dispatchUpdateSnackbar( getCacheClearNoticeText() );
 		} );
 	};
@@ -38,20 +38,20 @@ const ClearCache = () => {
 		>
 			<CardHeader>
 				<Heading level="3">
-					{ __( 'Clear Cache', 'wp-plugin-web' ) }
+					{ __( 'Clear Cache', 'wp-plugin-mojo' ) }
 				</Heading>
 			</CardHeader>
 			<CardBody>
 				<strong>
 					{ __(
 						'We automatically clear your cache',
-						'wp-plugin-web'
+						'wp-plugin-mojo'
 					) }
 				</strong>
 				{ ' ' +
 					__(
 						"as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.",
-						'wp-plugin-web'
+						'wp-plugin-mojo'
 					) }
 			</CardBody>
 			<CardFooter>
@@ -62,7 +62,7 @@ const ClearCache = () => {
 					} }
 					disabled={ ! store.cacheLevel }
 				>
-					{ __( 'Clear All Cache Now', 'wp-plugin-web' ) }
+					{ __( 'Clear All Cache Now', 'wp-plugin-mojo' ) }
 				</Button>
 			</CardFooter>
 		</Card>

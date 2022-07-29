@@ -2,18 +2,18 @@
 /**
  * Base functions
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * Check if plugin install date exists.
  *
  * @return bool
  */
-function web_has_plugin_install_date() {
-	return ! empty( get_option( 'web_plugin_install_date', '' ) );
+function mojo_has_plugin_install_date() {
+	return ! empty( get_option( 'mojo_plugin_install_date', '' ) );
 }
 
 /**
@@ -21,8 +21,8 @@ function web_has_plugin_install_date() {
  *
  * @return string
  */
-function web_get_plugin_install_date() {
-	return (string) get_option( 'web_plugin_install_date', gmdate( 'U' ) );
+function mojo_get_plugin_install_date() {
+	return (string) get_option( 'mojo_plugin_install_date', gmdate( 'U' ) );
 }
 
 /**
@@ -30,8 +30,8 @@ function web_get_plugin_install_date() {
  *
  * @param string $value Date in Unix timestamp format.
  */
-function web_set_plugin_install_date( $value ) {
-	update_option( 'web_plugin_install_date', $value, true );
+function mojo_set_plugin_install_date( $value ) {
+	update_option( 'mojo_plugin_install_date', $value, true );
 }
 
 
@@ -40,14 +40,14 @@ function web_set_plugin_install_date( $value ) {
  *
  * @return int
  */
-function web_get_days_since_plugin_install_date() {
-	return absint( ( gmdate( 'U' ) - web_get_plugin_install_date() ) / DAY_IN_SECONDS );
+function mojo_get_days_since_plugin_install_date() {
+	return absint( ( gmdate( 'U' ) - mojo_get_plugin_install_date() ) / DAY_IN_SECONDS );
 }
 
 /**
  * Basic setup
  */
-function web_setup() {
+function mojo_setup() {
 	if ( ( '' === get_option( 'mm_master_aff' ) || false === get_option( 'mm_master_aff' ) ) && defined( 'MMAFF' ) ) {
 		update_option( 'mm_master_aff', MMAFF );
 	}
@@ -65,16 +65,16 @@ function web_setup() {
 		$events['hourly'][ $event['ea'] ] = $event;
 		update_option( 'mm_cron', $events );
 	}
-	if ( ! web_has_plugin_install_date() ) {
+	if ( ! mojo_has_plugin_install_date() ) {
 		$date = false;
 		if ( ! empty( $install_date ) ) {
 			$date = \DateTime::createFromFormat( 'M d, Y', $install_date );
 		}
-		web_set_plugin_install_date( $date ? $date->format( 'U' ) : gmdate( 'U' ) );
+		mojo_set_plugin_install_date( $date ? $date->format( 'U' ) : gmdate( 'U' ) );
 	}
 }
 
-add_action( 'admin_init', __NAMESPACE__ . '\\web_setup' );
+add_action( 'admin_init', __NAMESPACE__ . '\\mojo_setup' );
 
 
 /**
@@ -83,7 +83,7 @@ add_action( 'admin_init', __NAMESPACE__ . '\\web_setup' );
  * @param string $install_date value from hook
  * @return int
  */
-function web_install_date_filter( $install_date ) {
-	return web_get_plugin_install_date();
+function mojo_install_date_filter( $install_date ) {
+	return mojo_get_plugin_install_date();
 }
-add_filter( 'nfd_install_date_filter', __NAMESPACE__ . '\\web_install_date_filter' );
+add_filter( 'nfd_install_date_filter', __NAMESPACE__ . '\\mojo_install_date_filter' );

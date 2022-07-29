@@ -28,7 +28,7 @@ export const AppRoutes = () => {
 				element={
 					<main style={ { padding: '1rem' } }>
 						<p>
-							{ __( "There's nothing here!", 'wp-plugin-web' ) }
+							{ __( "There's nothing here!", 'wp-plugin-mojo' ) }
 						</p>
 					</main>
 				}
@@ -49,31 +49,31 @@ const utilityRoutePaths = [ '/performance', '/settings', '/help' ];
 export const routes = [
 	{
 		name: '/home',
-		title: __( 'Home', 'wp-plugin-web' ),
+		title: __( 'Home', 'wp-plugin-mojo' ),
 		Component: Home,
 		Icon: grid,
 	},
 	{
 		name: '/marketplace',
-		title: __( 'Marketplace', 'wp-plugin-web' ),
+		title: __( 'Marketplace', 'wp-plugin-mojo' ),
 		Component: Marketplace,
 		Icon: store,
 	},
 	{
 		name: '/performance',
-		title: __( 'Performance', 'wp-plugin-web' ),
+		title: __( 'Performance', 'wp-plugin-mojo' ),
 		Component: Performance,
 		Dashicon: 'performance',
 	},
 	{
 		name: '/settings',
-		title: __( 'Settings', 'wp-plugin-web' ),
+		title: __( 'Settings', 'wp-plugin-mojo' ),
 		Component: Settings,
 		Icon: settings,
 	},
 	{
 		name: '/help',
-		title: __( 'Help', 'wp-plugin-web' ),
+		title: __( 'Help', 'wp-plugin-mojo' ),
 		Component: Help,
 		Icon: help,
 	},

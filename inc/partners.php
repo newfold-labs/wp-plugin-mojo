@@ -2,10 +2,10 @@
 /**
  * This file adds filters for partler links.
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * WPForms upgrade affiliate link.

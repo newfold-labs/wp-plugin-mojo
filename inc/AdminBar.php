@@ -2,10 +2,10 @@
 /**
  * Register AdminBar help button.
  *
- * @package WPPluginWeb
+ * @package WPPluginMojo
  */
 
-namespace Web;
+namespace Mojo;
 
 /**
  * \Web\AdminBar
@@ -31,11 +31,11 @@ class AdminBar {
 		global $wp_admin_bar;
 		$wp_admin_bar->add_menu(
 			array(
-				'id'    => 'web-support',
-				'title' => __( 'Need help?', 'wp-plugin-web' ),
-				'href'  => admin_url( 'admin.php?page=web#/help' ),
+				'id'    => 'mojo-support',
+				'title' => __( 'Need help?', 'wp-plugin-mojo' ),
+				'href'  => admin_url( 'admin.php?page=mojo#/help' ),
 				'meta'  => array(
-					'title' => esc_attr__( 'We\'re here for you!', 'wp-plugin-web' ),
+					'title' => esc_attr__( 'We\'re here for you!', 'wp-plugin-mojo' ),
 				),
 			)
 		);

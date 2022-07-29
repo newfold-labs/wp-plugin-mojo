@@ -1,4 +1,4 @@
-.wppw-header {
+.wppm-header {
     align-content: center;
     background: var(--dc-theme-white);
     display:flex;
@@ -15,7 +15,7 @@
     }
 }
 
-.wppw-logo-wrap {
+.wppm-logo-wrap {
     margin-left: 12px;
     a.components-button {
         padding: 2rem 12px;
@@ -26,23 +26,23 @@
     }
 }
 
-.wppw-nav-utility {
+.wppm-nav-utility {
     align-content: center;
     display: flex;
 }
-.wppw-nav-utility-link {
+.wppm-nav-utility-link {
     display: block;
     margin: 6px 16px 0 0;
 }
 
-.wppw-nav {
+.wppm-nav {
     padding: 1.33rem;
     will-change: background-color;
     transition: background-color 0.33s ease;
     background-color: var(--mdc-theme-primary--dark1);
 }
 
-.wppw-nav-large {
+.wppm-nav-large {
     display: flex;
     list-style: none;
     max-width: 1320px;
@@ -57,7 +57,7 @@
             margin-left: 1rem;
         }
     }
-    .wppw-nav-large__link {
+    .wppm-nav-large__link {
         display: inline;
         color: var(--dc-theme-white) !important;
         cursor: pointer;
@@ -97,27 +97,27 @@
 }
 
 
-.wppw-page {
-    // home and default blue applied in .wppw-nav
+.wppm-page {
+    // home and default blue applied in .wppm-nav
     &-marketplace-plugins,
     &-marketplace-themes,
     &-marketplace-services {
-        .wppw-nav {
+        .wppm-nav {
             background-color: var(--mdc-theme-secondary);
         }
     }
     &-performance {
-        .wppw-nav {
+        .wppm-nav {
             background-color: var(--dc-theme-qua);
         }
     }
     &-settings {
-        .wppw-nav {
+        .wppm-nav {
             background-color: #EE4C2D;
         }
     }
     &-help {
-        .wppw-nav {
+        .wppm-nav {
             background-color: var(--dc-theme-black);
         }
     }
@@ -126,8 +126,8 @@
     &-marketplace-themes,
     &-marketplace-services,
     &-performance {
-        .wppw-nav-large {
-            .wppw-nav-large__link {
+        .wppm-nav-large {
+            .wppm-nav-large__link {
                 color: var(--dc-theme-black) !important;
                 &:after {
                     background-color: var(--dc-theme-black) !important;
@@ -137,7 +137,7 @@
     }
 }
 
-.wppw-nav-utility {
+.wppm-nav-utility {
 
     a {
         text-decoration: none;
