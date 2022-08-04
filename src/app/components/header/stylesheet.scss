@@ -1,6 +1,9 @@
 .wppm-header {
     align-content: center;
-    background: var(--dc-theme-white);
+    background-color: var(--dc-theme-white);
+    background-image: url('../../../../assets/images/header-bg-default.jpg');
+    background-position: center;
+    background-size: cover;
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -23,6 +26,10 @@
         &:focus:not(:disabled) {
             box-shadow: inset -2px -2px 0px 4px var(--mdc-theme-primary--dark1);
         }
+    }
+
+    .logo-mark svg {
+        height: 50px;
     }
 }
 

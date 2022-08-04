@@ -1,6 +1,6 @@
 {
     "name": "newfold-labs/wp-plugin-mojo",
-    "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
+    "description": "WordPress plugin that integrates a WordPress site with Hosting.",
     "type": "wordpress-plugin",
     "license": [
         "GPL-2.0-or-later"

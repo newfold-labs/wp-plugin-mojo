@@ -42,9 +42,6 @@ const ComingSoonSection = () => {
 					'wp-plugin-mojo'
 			  );
 	};
-	const getComingSoonGraphicClass = () => {
-		return comingSoon ? 'section-graphic' : 'section-graphic reverse';
-	};
 	const getComingSoonButton = () => {
 		return comingSoon ? (
 			<Button
