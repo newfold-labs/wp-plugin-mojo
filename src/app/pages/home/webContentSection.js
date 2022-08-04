@@ -1,4 +1,3 @@
-import graphicUrl from '../../images/section-web-content.png';
 import { Heading } from '../../components';
 import {
 	Button,
@@ -12,11 +11,6 @@ import {
 const WebContentSection = () => {
 	return (
 		<section className="wppm-section wppm-section-home-content">
-			<img
-				src={ graphicUrl }
-				className="section-graphic"
-				alt={ __( 'Website illustration', 'wp-plugin-mojo' ) }
-			/>
 			<Card size="large" className="wppm-section-card">
 				<CardHeader>
 					<Heading level="3">

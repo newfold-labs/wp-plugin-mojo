@@ -47,6 +47,14 @@ $mojo_module_container->set(
 	)
 );
 
+// Set marketplace brand from mm_brand and hg_region values in container
+if ( get_option( 'mm_brand', false ) ) {
+	$mojo_module_container->set(
+		'marketplace_brand',
+		strtolower( get_option( 'mm_brand', false ) )
+	);
+}
+
 // Set coming soon values
 $mojo_module_container->set(
 	'comingsoon',
@@ -56,12 +64,12 @@ $mojo_module_container->set(
 		'template_h2'         => __( 'A New WordPress Site', 'wp-plugin-mojo' ),
 		'template_footer_t'   => sprintf(
 			/* translators: %1$s is replaced with opening link tag taking you to mojomarketplace.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.mojomarketplace.com, %6$s is replaced with closing link tag */
-			esc_html__( 'A %1$sMOJO%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sMOJO%6$s.', 'wp-plugin-mojo' ) . '&nbsp;',
+			esc_html__( 'Is this your website? Log in to %3$sWordPress%4$s or %5$sMOJO%6$s.', 'wp-plugin-mojo' ) . '&nbsp;',
 			'<a href="' . esc_url( 'https://www.mojomarketplace.com/websites/wordpress' ) . '" target="_blank" rel="noopener noreferrer nofollow">',
 			'</a>',
 			'<a href="' . esc_url( wp_login_url() ) . '">',
 			'</a>',
-			'<a href="' . esc_url( 'https://www.mojomarketplace.com/my-account/account-center/login' ) . '" target="_blank" rel="noopener noreferrer nofollow">',
+			'<a href="' . esc_url( 'https://www.mojomarketplace.com/login' ) . '" target="_blank" rel="noopener noreferrer nofollow">',
 			'</a>'
 		),
 		'template_page_title' => sprintf(

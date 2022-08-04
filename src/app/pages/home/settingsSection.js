@@ -1,4 +1,3 @@
-import graphicUrl from '../../images/section-settings-and-perf.png';
 import { Heading } from '../../components';
 import {
 	Button,
@@ -13,11 +12,6 @@ import { Icon, settings, store } from '@wordpress/icons';
 const SettingsSection = () => {
 	return (
 		<section className="wppm-section wppm-section-home-settings">
-			<img
-				src={ graphicUrl }
-				className="section-graphic"
-				alt={ __( 'Settings illustration', 'wp-plugin-mojo' ) }
-			/>
 			<Card size="large" className="wppm-section-card">
 				<CardHeader>
 					<Heading level="3">

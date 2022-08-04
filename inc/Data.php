@@ -28,6 +28,7 @@ final class Data {
 			'wpversion' => $wp_version,
 			'admin'     => \admin_url(),
 			'assets'    => MOJO_PLUGIN_URL . 'assets/',
+			'brand'     => strtolower( get_option( 'mm_brand', false) ),
 		);
 
 		return $runtime;

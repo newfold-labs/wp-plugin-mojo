@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       MOJO Plugin
- * Plugin URI:        https://mojo.com
+ * Plugin URI:        https://mojomarketplace.com
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
  * Version:           2.0.0
  * Requires at least: 4.7
