@@ -1,5 +1,4 @@
 import './stylesheet.scss';
-import graphicUrl from '../../../../assets/svg/large-star.svg';
 import AutomaticUpdates from './automaticUpdates';
 import ComingSoon from './comingSoon';
 import CommentSettings from './commentSettings';
@@ -12,20 +11,6 @@ const Settings = () => {
 	return (
 		<div className="wppm-Settings grid col2 has-page-graphic">
 			<AutomaticUpdates />
-			{ isWideViewport && (
-				<div>
-					<img
-						src={ graphicUrl }
-						style={ {
-							float: 'right',
-							width: '80%',
-							height: 'auto',
-							transform: 'rotate3d(0, 0, 1, 90deg)',
-						} }
-						alt={ __( 'Star illustration', 'wp-plugin-mojo' ) }
-					/>
-				</div>
-			) }
 			<ComingSoon />
 			<ContentSettings />
 			<CommentSettings />

@@ -1,6 +1,6 @@
 import './stylesheet.scss';
 import ComingSoonSection from './comingSoonSection';
-import WebContentSection from './mojoContentSection';
+import WebContentSection from './webContentSection';
 import WebHostingSection from './webHostingSection';
 import SettingsSection from './settingsSection';
 import { useEffect } from 'react';

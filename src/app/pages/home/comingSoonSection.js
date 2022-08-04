@@ -1,4 +1,3 @@
-import graphicUrl from '../../../../assets/svg/small-blue-star.svg';
 import { Heading, ErrorCard } from '../../components';
 import AppStore from '../../data/store';
 import {
@@ -112,12 +111,6 @@ const ComingSoonSection = () => {
 	}
 	return (
 		<section className="wppm-section wppm-section-coming-soon">
-			<img
-				src={ graphicUrl }
-				className={ getComingSoonGraphicClass() }
-				style={ { top: 0, width: '280px', height: 'auto' } }
-				alt={ __( 'Launch site', 'wp-plugin-mojo' ) }
-			/>
 			<Card size="large" className="wppm-section-card">
 				<CardHeader>
 					<Heading level="3">{ getComingSoonHeadline() }</Heading>

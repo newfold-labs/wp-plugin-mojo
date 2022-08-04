@@ -31,7 +31,7 @@ if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
 }
 
 // Define constants
-define( 'MOJO_PLUGIN_VERSION', '1.2.0' );
+define( 'MOJO_PLUGIN_VERSION', '2.0.0' );
 define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOJO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -62,7 +62,7 @@ $nfd_plugins_check->legacy_plugins = array(
 	'Bluehost'         => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php', 
 	'MOJO Marketplace' => 'mojo-marketplace-wp-plugin/mojo-marketplace.php', // old mojo
 	'HostGator'        => 'wp-plugin-hostgator/wp-plugin-hostgator.php',
-	'Web.com'          => 'wp-plugin-mojo/wp-plugin-mojo.php',
+	'Web.com'          => 'wp-plugin-mojo/wp-plugin-web.php',
 );
 $pass_nfd_check                    = $nfd_plugins_check->check_plugin_requirements();
 

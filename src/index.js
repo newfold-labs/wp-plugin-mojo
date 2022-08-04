@@ -6,7 +6,7 @@ import domReady from '@wordpress/dom-ready';
 import { render } from '@wordpress/element';
 
 const WP_ADM_PAGE_ROOT_ELEMENT = 'wppm-app';
-const W_ASCI = `Welcome to Web.com!`;
+const W_ASCI = `Welcome to MOJO!`;
 console.log( W_ASCI );
 
 const WPPMRender = () => {
