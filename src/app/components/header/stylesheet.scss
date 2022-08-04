@@ -3,6 +3,7 @@
     background-color: var(--dc-theme-white);
     background-image: url('../../../../assets/images/header-bg-default.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     display:flex;
     align-items: center;
@@ -120,12 +121,12 @@
     }
     &-settings {
         .wppm-nav {
-            background-color: #EE4C2D;
+            background-color: var(--dc-theme-ter);
         }
     }
     &-help {
         .wppm-nav {
-            background-color: var(--dc-theme-black);
+            background-color: var(--dc-theme-qui);
         }
     }
     /* Black Links */

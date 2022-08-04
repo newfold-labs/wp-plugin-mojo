@@ -2,26 +2,6 @@
     margin: 0 0 2rem;
     position: relative;
 
-    .components-card__header {
-        background: var(--dc-theme-black);
-        flex-direction: column;
-        @media screen and (min-width: 1132px) {
-            flex-direction: row;
-        }
-        .heading {
-            color: var(--dc-theme-white);
-            font-size: 1.5rem;
-            margin-bottom: 0 !important; // wp core override
-            @media screen and (min-width: 1132px) {
-                margin-bottom: 24px !important;
-            }
-        }
-        p {
-            color: #FEC101;
-            font-weight: 700;
-            margin-left: 0;
-        }
-    }
     .components-card__footer {
         .heading {
             display: flex;
@@ -33,14 +13,6 @@
         }
     }
 
-
-    &.wppm-section-coming-soon {
-
-        .wppm-section-graphic {
-            top: -3rem;
-            right: -6rem; 
-        }
-    }
 
     &:first-of-type { // allows for better reordering and injection
         margin-top: 1rem;
