@@ -52,12 +52,13 @@ class NFD_Plugin_Upgrade {
             'name' => 'Bluehost',
             'file' => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
             'zip'  => 'https://hiive.cloud/workers/release-api/plugins/bluehost/bluehost-wordpress-plugin/download/',
+			'home' => 'admin.php?page=bluehost#/home',
         ),
         'hostgator' => array(
             'name' => 'HostGator',
             'file' => 'hostgator-wordpress-plugin/hostgator-wordpress-plugin.php',
             'zip'  => 'https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-hostgator/download/',
-
+			'home' => 'admin.php?page=hostgator#/home',
         )
 	);
 
@@ -108,7 +109,7 @@ class NFD_Plugin_Upgrade {
 		// redirect link to plugin page after install
 		$redirect_url = \get_admin_url(
 			null,
-			'plugins.php'
+			self::$nfd_plugins[$context]['home']
 		);
 
 		if ( \wp_safe_redirect( $redirect_url ) ) {
@@ -123,22 +124,19 @@ class NFD_Plugin_Upgrade {
      */
     public static function plugin_upgrade( $plugin ) {
         $file = self::$nfd_plugins[$plugin]['file'];
-        $zip = self::$nfd_plugins[$plugin]['zip'];
-
-        // self deactivate
-        // self::self_deactivate();
 
         // if not installed, install via zip
-        if ( ! self::is_plugin_installed( $file ) ) {
-            self::install_plugin( $zip );
+        if ( ! self::is_plugin_installed( $plugin ) ) {
+            self::install_plugin( $plugin );
         }
-
 
         // if not active, activate
         if ( ! \is_plugin_active( $file ) ) {
             \activate_plugin( $file );
         }
 
+        // Self deactivation is taken care of in the plugin-nfd-compat-check automatically on activation
+        // self::self_deactivate();
     }
 
     /**
@@ -147,7 +145,9 @@ class NFD_Plugin_Upgrade {
      * @param string $slug - slug/path for the plugin to check
      * @return boolean - for if plugin is installed
      */
-    public static function is_plugin_installed( $slug ) {
+    public static function is_plugin_installed( $plugin ) {
+		$slug = self::$nfd_plugins[$plugin]['file'];
+
         if ( ! function_exists( 'get_plugins' ) ) {
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
@@ -165,18 +165,19 @@ class NFD_Plugin_Upgrade {
      * @param string $plugin_zip - url to zip file to install
      * @return boolean - if install is successful
      */
-    public static function install_plugin( $plugin_zip ) {
+    public static function install_plugin( $plugin ) {
+		$zip  = self::$nfd_plugins[$plugin]['zip'];
+
         require_once ABSPATH . 'wp-admin/includes/file.php';
         require_once ABSPATH . 'wp-admin/includes/misc.php';
         require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-        // New Skin that doesn't give feedback and redirects on completion
+        // custom skin that doesn't give feedback and redirects on completion
         require_once MOJO_PLUGIN_DIR . '/inc/plugin-quiet-upgrader-skin.php';
 
-        // \wp_cache_flush();
+        \wp_cache_flush();
         $quiet_skin = new Plugin_Quiet_Upgrader_Skin();
         $upgrader   = new \Plugin_Upgrader( $quiet_skin );
-        // $upgrader   = new \Plugin_Upgrader();
-        $installed  = $upgrader->install( $plugin_zip );
+        $installed  = $upgrader->install( $zip );
 
         return $installed;
     }

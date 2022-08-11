@@ -34,7 +34,7 @@ const BrandSection = () => {
 						</Heading>
 						<p>
 							{ __(
-								'Upgrade to using the official Bluehost plugin to take advantage of integrations your Bluehost hosting account.',
+								'Upgrade to using the official Bluehost plugin and take advantage of integrations with your Bluehost hosting account.',
 								'wp-plugin-mojo'
 							) }
 						</p>
@@ -42,9 +42,9 @@ const BrandSection = () => {
 					<Button
 						variant="primary"
 						href="wp-admin/plugin-install.php?nfdplugin=bluehost"
-						icon="desktop"
+						icon="admin-plugins"
 					>
-						{ __( 'Install Bluehost Plugin', 'wp-plugin-mojo' ) }
+						{ __( 'Upgrade', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
                 }
@@ -56,25 +56,17 @@ const BrandSection = () => {
 						</Heading>
 						<p>
 							{ __(
-								'Upgrade to using the official HostGator plugin to take advantage of integrations your HostGator hosting account.',
+								'Upgrade to using the official HostGator plugin and take advantage of integrations with your HostGator hosting account.',
 								'wp-plugin-mojo'
 							) }
 						</p>
 					</div>
 					<Button
 						variant="primary"
-						href={
-							`https://www.mojomarketplace.com/login?` +
-							`&utm_campaign=` +
-							`&utm_content=home_hosting_sites_link` +
-							`&utm_term=manage_sites` +
-							`&utm_medium=brand_plugin` +
-							`&utm_source=wp-admin/admin.php?page=mojo#/home`
-						}
-						target="_blank"
-						icon="desktop"
+						href="wp-admin/plugin-install.php?nfdplugin=hostgator"
+						icon="admin-plugins"
 					>
-						{ __( 'Install HostGator Plugin', 'wp-plugin-mojo' ) }
+						{ __( 'Upgrade', 'wp-plugin-mojo' ) }
 					</Button>
 				</CardFooter>
                 }
