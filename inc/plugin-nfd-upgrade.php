@@ -5,6 +5,8 @@
  * @package Mojo Marketplace
  */
 
+namespace Mojo;
+
 /**
  * Class NFD_Plugin_Upgrade
  *
@@ -65,8 +67,8 @@ class NFD_Plugin_Upgrade {
 	 * @return \Newfold\Plugin\NFD_Plugin_Upgrade\Pages|stdClass
 	 */
 	public static function return_instance() {
-		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof \NFD_Plugin_Upgrade ) ) {
-			self::$instance = new \NFD_Plugin_Upgrade();
+		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof \Mojo\NFD_Plugin_Upgrade ) ) {
+			self::$instance = new \Mojo\NFD_Plugin_Upgrade();
 			self::$instance->primary_init();
 		}
 
@@ -123,18 +125,20 @@ class NFD_Plugin_Upgrade {
         $file = self::$nfd_plugins[$plugin]['file'];
         $zip = self::$nfd_plugins[$plugin]['zip'];
 
+        // self deactivate
+        // self::self_deactivate();
+
         // if not installed, install via zip
         if ( ! self::is_plugin_installed( $file ) ) {
             self::install_plugin( $zip );
         }
+
 
         // if not active, activate
         if ( ! \is_plugin_active( $file ) ) {
             \activate_plugin( $file );
         }
 
-        // now self deactivate
-        self::self_deactivate();
     }
 
     /**
@@ -166,12 +170,12 @@ class NFD_Plugin_Upgrade {
         require_once ABSPATH . 'wp-admin/includes/misc.php';
         require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
         // New Skin that doesn't give feedback and redirects on completion
-        // require_once 'class-plugin-quiet-upgrader-skin.php';
+        require_once MOJO_PLUGIN_DIR . '/inc/plugin-quiet-upgrader-skin.php';
 
-        \wp_cache_flush();
-        // $quiet_skin = new \Plugin_Quiet_Upgrader_Skin();
-        // $upgrader   = new \Plugin_Upgrader( $quiet_skin );
-        $upgrader   = new \Plugin_Upgrader();
+        // \wp_cache_flush();
+        $quiet_skin = new Plugin_Quiet_Upgrader_Skin();
+        $upgrader   = new \Plugin_Upgrader( $quiet_skin );
+        // $upgrader   = new \Plugin_Upgrader();
         $installed  = $upgrader->install( $plugin_zip );
 
         return $installed;
