@@ -134,6 +134,9 @@ require MOJO_PLUGIN_DIR . '/inc/RestApi/SettingsController.php';
 require MOJO_PLUGIN_DIR . '/inc/RestApi/rest-api.php';
 require MOJO_PLUGIN_DIR . '/inc/settings.php';
 require MOJO_PLUGIN_DIR . '/inc/updates.php';
+require MOJO_PLUGIN_DIR . '/inc/plugin-nfd-upgrade.php';
+
+\NFD_Plugin_Upgrade::return_instance();
 
 /* WordPress Admin Page & Features */
 if ( is_admin() ) {

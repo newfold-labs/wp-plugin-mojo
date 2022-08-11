@@ -41,15 +41,7 @@ const BrandSection = () => {
 					</div>
 					<Button
 						variant="primary"
-						href={
-							`https://www.mojomarketplace.com/login?` +
-							`&utm_campaign=` +
-							`&utm_content=home_hosting_sites_link` +
-							`&utm_term=manage_sites` +
-							`&utm_medium=brand_plugin` +
-							`&utm_source=wp-admin/admin.php?page=mojo#/home`
-						}
-						target="_blank"
+						href="wp-admin/plugin-install.php?nfdplugin=bluehost"
 						icon="desktop"
 					>
 						{ __( 'Install Bluehost Plugin', 'wp-plugin-mojo' ) }
