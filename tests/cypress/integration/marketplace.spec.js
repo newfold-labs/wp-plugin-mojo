@@ -42,7 +42,7 @@ describe('Marketplace Page', function () {
 				.contains('Web Design Services')
 				.should('be.visible');
 			cy.get('.components-card__media').should('be.visible');
-			cy.get('.components-card__header em.price').should('not.exist');
+			cy.get('.components-card__header .price').should('not.exist');
 		});
 	});
 
@@ -61,7 +61,7 @@ describe('Marketplace Page', function () {
 				.contains('Highend')
 				.should('be.visible');
 			cy.get('.components-card__media').should('be.visible');
-			cy.get('.components-card__header em.price')
+			cy.get('.components-card__header .price')
 				.contains('$59.00')
 				.should('be.visible');
 		});
