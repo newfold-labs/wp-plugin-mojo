@@ -63,8 +63,8 @@ $nfd_plugins_check->legacy_plugins       = array(
 	'Web.com'          => 'wp-plugin-mojo/wp-plugin-web.php',
 );
 $nfd_plugins_check->incompatible_plugins = array(
-	'Bluehost'         => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
-	'HostGator'        => 'wp-plugin-hostgator/wp-plugin-hostgator.php',
+	'Bluehost'  => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
+	'HostGator' => 'wp-plugin-hostgator/wp-plugin-hostgator.php',
 );
 $pass_nfd_check                          = $nfd_plugins_check->check_plugin_requirements();
 
