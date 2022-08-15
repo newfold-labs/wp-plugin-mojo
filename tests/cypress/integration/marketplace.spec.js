@@ -97,14 +97,14 @@ describe('Marketplace Page', function () {
 		
 		cy.findByRole('tab', { name: 'Services' } ).click();
 		cy.get('.marketplace-item').should('have.length', 5);
-		cy.get('#marketplace-item-1fc92f8a-bb9f-47c8-9808-aab9c82d6bf2 h3')
+		cy.get('#marketplace-item-1fc92f8a-bb9f-47c8-9808-aab9c82d6bf2 h2')
 			.scrollIntoView()
 			.should('be.visible')
 			.should('have.text', 'Web Design Services');
 		
 		cy.findByRole('tab', { name: 'SEO' } ).click();
 		cy.get('.marketplace-item').should('have.length', 3);
-		cy.get('#marketplace-item-7beee5ae-2e91-4282-9930-15ada43fc738 h3')
+		cy.get('#marketplace-item-7beee5ae-2e91-4282-9930-15ada43fc738 h2')
 			.scrollIntoView()
 			.should('be.visible')
 			.should('have.text', 'Yoast Premium');
