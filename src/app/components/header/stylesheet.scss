@@ -104,47 +104,6 @@
     }
 }
 
-
-.wppm-page {
-    // home and default blue applied in .wppm-nav
-    &-marketplace-plugins,
-    &-marketplace-themes,
-    &-marketplace-services {
-        .wppm-nav {
-            background-color: var(--mdc-theme-secondary);
-        }
-    }
-    &-performance {
-        .wppm-nav {
-            background-color: var(--dc-theme-qua);
-        }
-    }
-    &-settings {
-        .wppm-nav {
-            background-color: var(--dc-theme-ter);
-        }
-    }
-    &-help {
-        .wppm-nav {
-            background-color: var(--dc-theme-qui);
-        }
-    }
-    /* Black Links */
-    &-marketplace-plugins,
-    &-marketplace-themes,
-    &-marketplace-services,
-    &-performance {
-        .wppm-nav-large {
-            .wppm-nav-large__link {
-                color: var(--dc-theme-black) !important;
-                &:after {
-                    background-color: var(--dc-theme-black) !important;
-                }
-            }
-        }
-    }
-}
-
 .wppm-nav-utility {
 
     a {
@@ -158,10 +117,10 @@
         }
 
         &.active {
-            fill: var(--mdc-theme-primary);
+            fill: var(--dc-theme-white);
 
             span.dashicon {
-                color: var(--mdc-theme-primary);
+                color: var(--dc-theme-white);
             }
         }
         &:focus {

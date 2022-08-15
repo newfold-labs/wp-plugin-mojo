@@ -13,7 +13,7 @@ import {
 const Help = () => {
 	return (
 		<div className="wppm-help">
-			<div className="help grid col3">
+			<div className="help grid col2">
 				{ help.map( ( item ) => (
 					<Card
 						size="small"

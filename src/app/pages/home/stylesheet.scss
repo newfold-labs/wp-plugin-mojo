@@ -18,40 +18,9 @@
         margin-top: 1rem;
     }
 }
-
-.section-graphic {
-    position: absolute;
-    right: 0;
-    top: 2rem;
-    transition: all .5s ease;
-    z-index: 0;
-    display: none;
-    @media screen and (min-width: 882px) {
-        display: block;
-        max-width: 260px;
-    }
-    @media screen and (min-width: 1190px) {
-        max-width: 330px;
-    }
-    @media screen and (min-width: 1399px) {
-        max-width: 400px;
-    }
-
-    &.reverse {
-        transform: rotateY(180deg);
-        @media(prefers-reduced-motion) {
-            transform: none;
-        }
-    }
-}
-
 .wppm-section-card {
     position: relative;
     z-index: 1;
-
-    @media screen and (min-width: 882px) {
-        max-width: 66%;
-    }
 
     .components-card__footer {
         flex-direction: column;
