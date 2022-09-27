@@ -7,8 +7,8 @@
 
 namespace Mojo;
 
-use Mojo\UpgradeHandler;
 use WP_Forge\WPUpdateHandler\PluginUpdater;
+use WP_Forge\UpgradeHandler\UpgradeHandler;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\ModuleLoader\Plugin;
 use function NewfoldLabs\WP\ModuleLoader\container as setContainer;
@@ -105,19 +105,21 @@ $mojo_plugin_updater->setDataMap(
 	)
 );
 
-// Handle any upgrade routines
+// Handle any upgrade routines (only in the admin)
 if ( is_admin() ) {
 
 	// Handle plugin upgrades
-	require MOJO_PLUGIN_DIR . '/inc/UpgradeHandler.php';
 	$upgrade_handler = new UpgradeHandler(
 		MOJO_PLUGIN_DIR . '/inc/upgrades',
 		get_option( 'mojo_plugin_version', '2.0.0' ),
 		MOJO_PLUGIN_VERSION
 	);
 
+	// Returns true if the old version doesn't match the new version
 	$did_upgrade = $upgrade_handler->maybe_upgrade();
+
 	if ( $did_upgrade ) {
+		// If an upgrade occurred, update the new version in the database to prevent running the routine(s) again.
 		update_option( 'mojo_plugin_version', MOJO_PLUGIN_VERSION, true );
 	}
 }
