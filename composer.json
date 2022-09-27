@@ -61,6 +61,7 @@
         "newfold-labs/wp-module-marketplace": "^1.2",
         "newfold-labs/wp-module-notifications": "^1.0",
         "newfold-labs/wp-module-performance": "^1.0",
+        "newfold-labs/wp-module-secure-passwords": "^1.1",
         "wp-forge/wp-update-handler": "^1.0"
     }
 }
