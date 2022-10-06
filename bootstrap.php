@@ -59,7 +59,7 @@ if ( str_contains( $marketplace_brand, 'bluehost' ) ) {
 	// if not set, make it mojo
 	$marketplace_brand = 'mojo';
 }
-$mojo_container->set( 'marketplace_brand', $marketplace_brand );
+$mojo_module_container->set( 'marketplace_brand', $marketplace_brand );
 
 // Set coming soon values
 $mojo_module_container->set(
