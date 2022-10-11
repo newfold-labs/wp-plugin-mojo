@@ -1,69 +1,153 @@
-.newfold-marketplace-wrapper {
-    .components-card__media {
-        position: relative;
-        left: 2px;
-        top: 2px;
-        max-width: calc(100% - 8px);
-        border-radius: 0 !important;
-    }
-    .components-card__header {
-        position: relative;
-        
-        .price {
-            background-color: var(--dc-theme-success--light);
-            border-radius: 0.5rem;
-            color: var(--dc-theme-success--dark);
-            font-size: 1rem;
-            font-weight: 800;
-            min-width: 3rem;
-            padding: 0.25rem 0.75rem;
-            position: absolute;
-            right: 1rem;
-            text-align: center;
-            top: -2.5rem;
-        }
-    }
-}
-
-.newfold-marketplace-tabs {
+:root {
+    --nfmp-wp-primary: #2171B1;
+    --nfmp-white: #fff;
+    --nfmp-black: #000;
+    --nfmp-titles: #1d2327;
+    --nfmp-text: #3c434a;
+    --nfmp-borders: rgab(0, 0, 0, .1);
+  }
+  
+ 
+  .newfold-marketplace-tabs {
     display: flex;
-    border-width: 1px 0 0 0;
-    border-style: solid;
-    border-color: var(--mdc-theme-secondary--dark1);
-
+  
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  
     .components-tab-panel__tabs {
-        display: flex; /* <= WP 5.4 */
-        flex-direction: column; /* <= WP 5.6 */
-        min-width: 10rem;
-        margin-right: 2rem;
-        margin-top: -1px;
+      display: flex;
+      /* <= WP 5.4 */
+      flex-direction: column;
+      /* <= WP 5.6 */
+      gap: 1.7rem;
+      min-width: 175px;
+      max-width: max-content;
+      height: fit-content;
+      margin-top: .5rem;
+      margin-right: 2rem;
+      padding: .8rem .8rem .8rem 0;
+      background-color: var(--nfmp-white);
+      border-radius: 1px;
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, .1);
+  
+      @media screen and (max-width: 600px) {
+        min-width: initial;
+        flex-direction: row;
+        gap: 1.9rem;
+        overflow-y: scroll;
+        margin-top: 0;
+        margin: 0 .5rem 1rem .5rem;
+        padding: .8rem .8rem 0 .8rem;
+      }
     }
-    
+  
     .components-tab-panel__tabs-item {
-        background-color: var(--dc-theme-white);
-        border-width: 0 1px 0 0;
-        border-style: solid;
-        border-color: var(--mdc-theme-secondary--dark1);
-        font-size: 15px;
-        transition: none;
-        
-        &:focus:not(:disabled) {
-            box-shadow: none !important;
-        }
-
-        &:hover {
-            color: var(--dc-theme-grey);
-        }
-
+      background: none;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+      border: none;
+      border-radius: 1px;
+      padding: 1px 3px;
+      transition: none;
+      height: auto;
+      padding: 7px 0px 7px 20px;
+      display: inline-flex;
+  
+      &:last-child {
+        padding-right: 3px;
+      }
+  
+      &:hover {
+        color: var(--nfmp-wp-primary);
+      }
+  
+      &.current-tab {
+        color: var(--nfmp-wp-primary);
+        border-left: 2.5px solid;
+        border-color: var(--nfmp-wp-primary);
+      }
+  
+      @media screen and (max-width: 600px) {
+        padding: 7px 3px 13px 3px;
+  
         &.current-tab {
-            background-color: transparent;
-            color: var(--dc-theme-black);
-            border-width: 1px 0;
-            cursor: default;
+          border-left: none;
+          border-bottom: 2.5px solid;
         }
+      }
     }
-
-    .components-tab-panel__tab-content {
-        padding-top: 1rem;
+  
+    .marketplace-item div:first-child {
+      display: flex;
+      flex-direction: column;
+  
+      .components-card__media {
+        position: relative;
+        background-color: #DDDBDD;
+  
+        img {
+          aspect-ratio: 16 / 9;
+  
+          &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-100%);
+            background-image: linear-gradient(90deg,
+                rgba(#fff, 0) 0,
+                rgba(#fff, 0.2) 20%,
+                rgba(#fff, 0.5) 60%,
+                rgba(#fff, 0));
+            animation: marketplace-skeleton 2s infinite;
+            content: '';
+          }
+  
+          @keyframes marketplace-skeleton {
+            100% {
+              transform: translateX(100%);
+            }
+          }
+  
+        }
+      }
+  
+      .components-card__header {
+        position: relative;
+        border-bottom: none;
+        flex-wrap: wrap;
+        gap: 1rem;
+  
+        h3,
+        h2 {
+          font-size: 16px;
+          font-weight: 500;
+          color: var(--nfmp-titles);
+          min-width: min-content;
+          line-height: 1.4;
+        }
+  
+        .price {
+          margin: 0;
+          background-color: rgba(33, 113, 177, 0.13);
+          border-radius: 50px;
+          color: #04253f;
+          font-size: 16px;
+          margin-left: 0;
+          padding: 4px 12px;
+          min-width: max-content;
+        }
+      }
+  
+      .components-card__body {
+        flex-grow: 1;
+        padding-top: 4px;
+        padding-bottom: 22px;
+        line-height: 1.6;
+      }
+  
     }
-}
+  }
