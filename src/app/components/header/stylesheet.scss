@@ -1,10 +1,5 @@
 .wppm-header {
     align-content: center;
-    background-color: var(--dc-theme-white);
-    background-image: url('../../../../assets/images/header-bg-default.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -13,24 +8,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1320px;
+        max-width: 1600px;
         margin: 0 auto;
-        width: 100%;
+        width: 95%;
     }
 }
 
 .wppm-logo-wrap {
-    margin-left: 12px;
+    max-width: 70%;
     a.components-button {
         padding: 2rem 12px;
         border-radius: 0 !important;
-        &:focus:not(:disabled) {
-            box-shadow: inset -2px -2px 0px 4px var(--mdc-theme-primary--dark1);
-        }
     }
 
     .logo-mark svg {
         height: 50px;
+        max-width: 100%;
     }
 }
 
@@ -53,17 +46,16 @@
 .wppm-nav-large {
     display: flex;
     list-style: none;
-    max-width: 1320px;
+    width: 95%;
+    max-width: 1600px;
     margin: 0 auto;
+    padding: .5rem;
     gap: 2rem;
     li {
         margin-bottom: 0; // wp core override
         display: flex;
         position: relative;
         top: 3.5px;
-        &:first-of-type {
-            margin-left: 1rem;
-        }
     }
     .wppm-nav-large__link {
         display: inline;
@@ -117,10 +109,10 @@
         }
 
         &.active {
-            fill: var(--dc-theme-white);
+            fill: var(--mdc-theme-primary);
 
             span.dashicon {
-                color: var(--dc-theme-white);
+                color: var(--mdc-theme-primary);
             }
         }
         &:focus {

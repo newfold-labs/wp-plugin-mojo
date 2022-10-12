@@ -166,10 +166,10 @@ body.toplevel_page_mojo {
 .wppm-app-body {
     padding: 18px 24px 0;
     &-inner {
-        max-width: 1290px;
+        max-width: 1600px;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        width: 95%;
     }
 }
 
@@ -184,7 +184,7 @@ body.toplevel_page_mojo {
     &.col2,
     &.col3,
     &.col4 {
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 768px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
@@ -230,4 +230,8 @@ body.toplevel_page_mojo {
             opacity: .5;
         }
     }
+}
+
+.components-card {
+    border-bottom: 1px solid var(--mdc-theme-primary);
 }
