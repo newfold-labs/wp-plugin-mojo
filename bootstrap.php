@@ -47,13 +47,19 @@ $mojo_module_container->set(
 	)
 );
 
-// Set marketplace brand from mm_brand and hg_region values in container
-if ( get_option( 'mm_brand', false ) ) {
-	$mojo_module_container->set(
-		'marketplace_brand',
-		strtolower( get_option( 'mm_brand', false ) )
-	);
+// Set marketplace brand from mm_brand
+$marketplace_brand = strtolower( get_option( 'mm_brand', 'mojo' ) );
+if ( str_contains( $marketplace_brand, 'bluehost' ) ) {
+	// simplify bluehost brand for marketplace
+	$marketplace_brand = 'bluehost';
+} elseif ( str_contains( $marketplace_brand, 'hostgator' ) ) {
+	// simplify hostgator brand for marketplace
+	$marketplace_brand = 'hostgator';
+} else {
+	// if not set, make it mojo
+	$marketplace_brand = 'mojo';
 }
+$mojo_module_container->set( 'marketplace_brand', $marketplace_brand );
 
 // Set coming soon values
 $mojo_module_container->set(
