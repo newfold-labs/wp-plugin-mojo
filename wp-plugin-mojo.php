@@ -11,7 +11,7 @@
  * Plugin Name:       MOJO Plugin
  * Plugin URI:        https://mojomarketplace.com
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Requires at least: 4.7
  * Requires PHP:      5.6
  * Tested up to:      5.9
@@ -31,7 +31,7 @@ if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
 }
 
 // Define constants
-define( 'MOJO_PLUGIN_VERSION', '2.0.0' );
+define( 'MOJO_PLUGIN_VERSION', '2.0.1' );
 define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOJO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
