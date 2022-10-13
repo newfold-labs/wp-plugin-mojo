@@ -49,7 +49,7 @@ $mojo_module_container->set(
 
 // Set marketplace brand from mm_brand
 $marketplace_brand = strtolower( get_option( 'mm_brand', 'mojo' ) );
-if (  false !== strpos( $marketplace_brand, 'bluehost' ) ) {
+if ( false !== strpos( $marketplace_brand, 'bluehost' ) ) {
 	// simplify bluehost brand for marketplace
 	$marketplace_brand = 'bluehost';
 } elseif ( false !== strpos( $marketplace_brand, 'hostgator' ) ) {
