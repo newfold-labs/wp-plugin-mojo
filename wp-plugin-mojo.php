@@ -12,9 +12,9 @@
  * Plugin URI:        https://mojomarketplace.com
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
  * Version:           2.0.1
- * Requires at least: 4.7
- * Requires PHP:      5.6
- * Tested up to:      5.9
+ * Tested up to:      6.0.2
+ * Requires at least: 5.8
+ * Requires PHP:      7.0
  * Author:            Bluehost
  * Author URI:        https://bluehost.com
  * Text Domain:       wp-plugin-mojo
