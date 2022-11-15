@@ -23,26 +23,28 @@ describe('Marketplace Page', function () {
 		cy.checkA11y('.wppm-app-body');
 	});
 
-	it('Product grid has 6 items', () => {
-		cy.get('.marketplace-item').should('have.length', 6);
+	it('Product grid has 2 items', () => {
+		cy.get('.marketplace-item').should('have.length', 2);
 	});
 
 	it('First product card renders correctly', () => {
-		cy.get('#marketplace-item-1fc92f8a-bb9f-47c8-9808-aab9c82d6bf2').as('card');
+		cy.get('#marketplace-item-a1ff70f1-9670-4e25-a0e1-a068d3e43a45').as('card');
 
 		cy.get('@card')
 			.findByRole('link', {name: 'Learn More'})
 			.scrollIntoView()
 			.should('be.visible')
 			.should('have.attr', 'href')
-			.and('include', 'https://www.mojomarketplace.com/websites/website-design-services');
+			.and('include', 'https://yoast.com/wordpress/plugins/seo/');
 
 		cy.get('@card').first().within(() => {
 			cy.get('.components-card__header')
-				.contains('Web Design Services')
+				.contains('Yoast Premium')
 				.should('be.visible');
 			cy.get('.components-card__media').should('be.visible');
-			cy.get('.components-card__header .price').should('not.exist');
+			cy.get('.components-card__header .price')
+				.contains('$99.00')
+				.should('be.visible');
 		});
 	});
 
@@ -68,7 +70,7 @@ describe('Marketplace Page', function () {
 	});
 	
 	it('CTA links have target=_blank', () => {
-		cy.get('#marketplace-item-1fc92f8a-bb9f-47c8-9808-aab9c82d6bf2').as('card');
+		cy.get('#marketplace-item-a1ff70f1-9670-4e25-a0e1-a068d3e43a45').as('card');
 
 		cy.get('@card')
 			.findByRole('link', {name: 'Learn More'})
@@ -77,37 +79,43 @@ describe('Marketplace Page', function () {
 			.and('include', '_blank');
 	});
 
-	// Not enough products in fixture to require load more button.
-	it.skip('Load more button loads more products', () => {
-		cy.get('.marketplace-item').should('have.length', 12);
-
-		cy.contains('button', 'Load More');
-
-		cy.get('.marketplaceList button')
-			.scrollIntoView()
-			.click();
-
-		cy.wait(300);
-
-		cy.get('.marketplace-item').should('have.length', 19);
-	});
-
-	// Test passes locally but fails in github action
 	it('Category Tab Filters properly', () => {
 		
 		cy.findByRole('tab', { name: 'Services' } ).click();
-		cy.get('.marketplace-item').should('have.length', 5);
-		cy.get('#marketplace-item-1fc92f8a-bb9f-47c8-9808-aab9c82d6bf2 h2')
+		cy.get('.marketplace-item').should('have.length', 10);
+		cy.get('#marketplace-item-521e79e6-cc93-46eb-842b-472da626e683 h2')
 			.scrollIntoView()
 			.should('be.visible')
-			.should('have.text', 'Web Design Services');
+			.should('have.text', 'WP Live');
 		
 		cy.findByRole('tab', { name: 'SEO' } ).click();
-		cy.get('.marketplace-item').should('have.length', 3);
-		cy.get('#marketplace-item-7beee5ae-2e91-4282-9930-15ada43fc738 h2')
+		cy.get('.marketplace-item').should('have.length', 5);
+		cy.get('#marketplace-item-a1ff70f1-9670-4e25-a0e1-a068d3e43a45 h2')
 			.scrollIntoView()
 			.should('be.visible')
 			.should('have.text', 'Yoast Premium');
+	});
+
+	it('Category tabs update path', () => {
+		cy.findByRole('tab', {name: 'Services'}).click();
+		cy.location().should((loc) => {
+			expect(loc.hash).to.eq('#/marketplace/services')
+		});
+	});
+
+	it.skip('Load more button loads more products', () => {
+
+		cy.findByRole('tab', { name: 'Services' } ).click();
+		cy.wait(300);
+
+		cy.get('.marketplace-item').should('have.length', 12);
+		cy.contains('button', 'Load More');
+		cy.get('.marketplace-list button')
+			.scrollIntoView()
+			.click();
+		cy.wait(300);
+
+		cy.get('.marketplace-item').should('have.length', 23);
 	});
 
 	// CTB Not supported yet
