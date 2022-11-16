@@ -1,10 +1,10 @@
 <a href="https://mojo.com/" target="_blank">
-    <img src="https://raw.githubusercontent.com/newfold-labs/wp-plugin-mojo/main/assets/images/jo.svg" alt="mojo.com Logo" title="mojo.com" align="right" height="72" width="76" />
+    <img src="https://raw.githubusercontent.com/newfold-labs/wp-plugin-mojo/main/assets/images/New-Logo-Black.png" alt="mojo.com Logo" title="mojo.com" align="right" height="85" width="630" />
 </a>
 
 # Mojo WordPress Plugin
 
-[![Version Number](https://img.shields.io/github/v/release/newfold-labs/wp-plugin-mojo?color=21a0ed&labelColor=333333)](https://github.com/newfold/wp-plugin-mojo/releases)
+[![Version Number](https://img.shields.io/github/v/release/newfold-labs/wp-plugin-mojo?color=21a0ed&labelColor=333333)](https://github.com/newfold-labs/wp-plugin-mojo/releases)
 [![Lint PHP](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/lint-php.yml/badge.svg?branch=main)](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/lint-php.yml)
 [![Lint YML](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/lint-yml.yml/badge.svg)](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/lint-yml.yml)
 [![WP Internationalization](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/wp-i18n.yml/badge.svg)](https://github.com/newfold-labs/wp-plugin-mojo/actions/workflows/wp-i18n.yml)
