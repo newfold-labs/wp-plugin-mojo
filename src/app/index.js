@@ -73,14 +73,18 @@ const AppBody = ( props ) => {
 		>
 			<Header />
 			<NewfoldNotifications
-				apiFetch={apiFetch}
-				classnames={classnames} 
-				context='mojo-plugin'
-				filter={filter}
-				page={hashedPath}
-				resturl={window.WPPM.resturl}
-				useEffect={useEffect}
-				useState={useState}
+				constants={{
+					context: 'mojo-plugin',
+					page: hashedPath,
+					resturl: window.WPPM.resturl
+				}}
+				methods={{
+					apiFetch,
+					classnames,
+					filter,
+					useState,
+					useEffect
+				}}
 			/>
 			<div className="wppm-app-body">
 				<div className="wppm-app-body-inner">
