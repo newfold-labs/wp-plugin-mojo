@@ -4,8 +4,6 @@ describe('Navigation', function () {
 
 	before(() => {
 		cy.visit('/wp-admin/admin.php?page=mojo');
-		cy.injectAxe();
-		
 	});
 
 	it('Logo Links to home', () => {
