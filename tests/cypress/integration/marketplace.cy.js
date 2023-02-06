@@ -3,7 +3,6 @@
 describe('Marketplace Page', function () {
 
 	before(() => {
-		cy.server();
 		cy.intercept({
 			method: 'GET',
 			url: /newfold-marketplace(\/|%2F)v1(\/|%2F)marketplace/
