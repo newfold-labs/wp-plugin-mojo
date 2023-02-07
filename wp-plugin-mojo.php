@@ -8,7 +8,7 @@
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       MOJO Plugin
+ * Plugin Name:       The MOJO Plugin
  * Plugin URI:        https://mojomarketplace.com
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
  * Version:           2.0.4
