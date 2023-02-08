@@ -4,18 +4,17 @@ describe('Home Page', function () {
 
 	before(() => {
 		cy.visit('/wp-admin/admin.php?page=mojo#/home');
-		cy.injectAxe();
-		
 	});
-
+	
 	it('Header Exists', () => {
 		cy
-			.get('.wppm-header').contains('h2', 'MOJO')
-			.scrollIntoView()
-			.should('be.visible');
+		.get('.wppm-header').contains('h2', 'MOJO')
+		.scrollIntoView()
+		.should('be.visible');
 	});
-
+	
 	it('Is Accessible', () => {
+		cy.injectAxe();
 		cy.wait(500);
 		cy.checkA11y('.wppm-app-body');
 	});

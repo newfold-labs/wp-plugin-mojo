@@ -4,8 +4,6 @@ describe('Coming Soon', function () {
 
 	before(() => {
 		cy.visit('/wp-admin/admin.php?page=mojo#/settings');
-		cy.injectAxe();
-		
 	});
 
 	it('Coming Soon Toggle Works', () => {
@@ -26,7 +24,6 @@ describe('Coming Soon', function () {
 		cy.get('.coming-soon-protip summary').click();
 		cy.wait(100);
 		cy.get('.coming-soon-protip').should('have.attr', 'open');
-		// cy.get('.coming-soon-protip .accordion-content p').should('be.visible');
 	});
 
 	it('Has Coming Soon Section on Home', () => {
@@ -80,7 +77,7 @@ describe('Coming Soon', function () {
 	});
 
 	it('Displays Coming Soon on Frontend', () => {
-		cy.get('#wp-admin-bar-logout a').click({ force: true });
+		cy.logout();
 		cy.visit('/');
 		cy
 			.get('body')
@@ -107,7 +104,7 @@ describe('Coming Soon', function () {
 			.get('.wppm-section-coming-soon')
 			.should('not.exist');
 
-		cy.get('#wp-admin-bar-logout a').click({ force: true });
+		cy.logout();
 		cy.visit('/');
 		cy
 			.get('body')
@@ -115,5 +112,6 @@ describe('Coming Soon', function () {
 			.should('not.exist');
 
 		cy.login(Cypress.env('wpUsername'), Cypress.env('wpPassword'));
+		cy.visit('/wp-admin/admin.php?page=mojo#/settings');
 	})
 });

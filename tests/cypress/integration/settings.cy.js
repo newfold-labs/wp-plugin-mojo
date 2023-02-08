@@ -4,11 +4,10 @@ describe('Settings Page', function () {
 
 	before(() => {
 		cy.visit('/wp-admin/admin.php?page=mojo#/settings');
-		cy.injectAxe();
-		
 	});
-
+	
 	it('Is Accessible', () => {
+		cy.injectAxe();
 		cy.wait(500);
 		cy.checkA11y('.wppm-app-body');
 	});
