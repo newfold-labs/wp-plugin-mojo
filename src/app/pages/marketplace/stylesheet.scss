@@ -1,15 +1,7 @@
-:root {
-  --nfmp-wp-primary: #2171B1;
-  --nfmp-white: #fff;
-  --nfmp-black: #000;
-  --nfmp-titles: #1d2327;
-  --nfmp-text: #3c434a;
-  --nfmp-borders: rgab(0, 0, 0, .1);
-}
-
 .grid {
   display: grid;
   gap: clamp(0.5rem, calc(1rem + 1vw), 2rem);
+  padding: 0;
 
   &.col2,
   &.col3,
@@ -28,55 +20,70 @@
 .newfold-marketplace-tabs {
   display: flex;
   flex-direction: column;
-  margin-top: .5rem;
 
   .components-tab-panel__tabs {
     display: flex;
     /* <= WP 5.4 */
     flex-direction: row;
     /* <= WP 5.6 */
-    gap: 1.5rem;
-    min-width: 175px;
+    gap: 0;
     max-width: max-content;
     height: fit-content;
-    margin: 0 .5rem 1rem .5rem;
-    padding: .8rem .8rem 0 .8rem;
-    background-color: var(--nfmp-white);
+    margin-bottom: 1.5rem;
+    background-color: var(--color-white);
     border-radius: 1px;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, .1);
-    overflow-y: scroll;
+    box-shadow: 0px 0px 0 1px var(--color-border);
 
     @media screen and (max-width: 600px) {
       min-width: initial;
-      gap: 1.9rem;
+      overflow-y: auto;
     }
   }
 
   .components-tab-panel__tabs-item {
-    background: none;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.4;
-    border: none;
-    border-radius: 1px;
-    padding: 1px 3px;
-    transition: none;
+    font-size: 14px;
+    color: var(--color-text);
+    padding: 16px 1.5rem 16px 1.5rem;
+    min-width: 130px;
+    justify-content: center;
     height: auto;
-    padding: 7px 3px 13px 3px;
-    display: inline-flex;
-
-    &:last-child {
-      padding-right: 3px;
-    }
+    border-right: 1px solid var(--color-border);
+    position: relative;
+    transition: .2s ease-in-out;
 
     &:hover {
-      color: var(--nfmp-wp-primary);
+      color: var(--color-title);
+    }
+
+    &:last-child {
+        border-right: none;
+        padding-right: 1.5rem;
+    }
+
+    &:focus:not(:disabled) {
+      box-shadow: unset;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: transparent;
+        transition: .2s ease-in-out;
     }
 
     &.current-tab {
-      color: var(--nfmp-wp-primary);
-      border-bottom: 2.5px solid;
-      border-color: var(--nfmp-wp-primary);
+      background-color: var(--color-off-white);
+      color: var(--color-title);
+      cursor: default;
+
+      &::before {
+        background-color: var(--color-primary);
+      }
     }
   }
 
@@ -117,6 +124,7 @@
     }
 
     .components-card__header {
+      background-color: var(--color-white);
       position: relative;
       border-bottom: none;
       flex-wrap: wrap;
@@ -124,22 +132,32 @@
 
       h3,
       h2 {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--nfmp-titles);
+        font-size: .95rem;
         min-width: min-content;
+        margin: 0;
         line-height: 1.4;
       }
 
+      .has-full-price {
+        .price {
+            margin-top: 8px;
+        }
+      }
+
       .price {
-        margin: 0;
-        background-color: rgba(33, 113, 177, 0.13);
-        border-radius: 50px;
-        color: #04253f;
-        font-size: 16px;
-        margin-left: 0;
-        padding: 4px 12px;
+        background-color: var(--color-primary-lighter);
+        border-radius: 999px;
+        color: var(--color-title);
+        font-size: .95rem;
+        font-weight: 800;
         min-width: max-content;
+        margin-left: 0;
+        padding: 0.25rem 0.95rem;
+      }
+
+      .full-price {
+        filter: grayscale(.5);
+        font-size: .85rem !important;
       }
     }
 
