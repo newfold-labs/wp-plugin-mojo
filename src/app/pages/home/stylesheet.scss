@@ -32,8 +32,8 @@
                 align-items: center;
                 .dashicons, svg {
                     margin-right: 8px;
-                    color: var(--mdc-theme-primary);
-                    fill: var(--mdc-theme-primary);
+                    color: var(--color-primary);
+                    fill: var(--color-primary);
                 }
             }
             @media screen and (max-width: 700px) {

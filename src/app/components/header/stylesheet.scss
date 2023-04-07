@@ -1,4 +1,5 @@
 .wppm-header {
+    background: var(--color-white);
     align-content: center;
     display:flex;
     align-items: center;
@@ -40,7 +41,7 @@
     padding: 1.33rem;
     will-change: background-color;
     transition: background-color 0.33s ease;
-    background-color: var(--mdc-theme-primary--dark1);
+    background-color: var(--color-primary-dark);
 }
 
 .wppm-nav-large {
@@ -59,7 +60,7 @@
     }
     .wppm-nav-large__link {
         display: inline;
-        color: var(--dc-theme-white) !important;
+        color: var(--color-white) !important;
         cursor: pointer;
         text-decoration: none;
         font-size: 1rem;
@@ -71,7 +72,7 @@
         white-space: nowrap;
         &:after {
             content: '';
-            background-color: var(--dc-theme-white);
+            background-color: var(--color-white);
             margin-top: 5px;
             height: 2px;
             width: 100%;
@@ -102,17 +103,17 @@
         text-decoration: none;
 
         span.dashicon {
-            color: var(--dc-theme-black);
+            color: var(--color-text);
             width: 28px;
             height: 28px;
             font-size: 28px;
         }
 
         &.active {
-            fill: var(--mdc-theme-primary);
+            fill: var(--color-primary-dark);
 
             span.dashicon {
-                color: var(--mdc-theme-primary);
+                color: var(--color-primary-dark);
             }
         }
         &:focus {
@@ -127,11 +128,11 @@ ul.nav-mobile {
     }
     a.components-button.is-secondary {
         padding: 1.5rem 1rem 1.66rem 1rem;
-        color: var(--mdc-theme-primary--dark1);
-        box-shadow: inset -2px -2px 0px 4px var(--mdc-theme-primary--dark1);
+        color: var(--color-primary-dark);
+        box-shadow: inset -2px -2px 0px 4px var(--color-primary-dark);
         &:hover,
         &:active {
-            box-shadow: inset -2px -2px 0px 4px var(--mdc-theme-primary--dark1);
+            box-shadow: inset -2px -2px 0px 4px var(--color-primary-dark);
         }
     }
 }
