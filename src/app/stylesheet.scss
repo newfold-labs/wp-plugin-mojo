@@ -1,49 +1,30 @@
 :root {
-    --mdc-theme-primary: #98c74d;
-    --mdc-theme-primary--light1: #9ad22b;
-    --mdc-theme-primary--light2: #96c644;
-    --mdc-theme-primary--dark1: #88b245;
-
-    --mdc-theme-secondary: #5f00e4;
-    --mdc-theme-secondary--light1: #a800f2;
-    // --mdc-theme-secondary--dark1: #098D5C;
-
-    --dc-theme-ter: #0c7335;
-    --dc-theme-ter--light1: #c4e687;
-    // --dc-theme-ter--dark1: #109A8F;
-
-    --dc-theme-qua: #014691;
-    --dc-theme-qua--light1: #65e7f0;
-    // --dc-theme-qua--dark1: #CB9A01;
-
-    --dc-theme-qui: #3326ce;
-    --dc-theme-qui--light1: #beb9f8;
-    // --dc-theme-qui--dark1: #A33A25;
-
-    --dc-theme-sen: #DF5361;
-    --dc-theme-sen--light1: #E77E89;
-    --dc-theme-sen--dark1: #B2424E;
-
-    --dc-theme-black: #000;
-    --dc-theme-grey: #353738;
-    --dc-theme-grey--light1: #55585A;
-    --dc-theme-grey--light2: #AAAFB3;
-    --dc-theme-grey--light3: #D4DBE0;
-    --dc-theme-grey--light4: #F5F7F8;
-    --dc-theme-white: #fff;
-
-    --mdc-theme-error: #ff182f;
-    --mdc-theme-error--light: #ffebea;
-    --mdc-theme-error--dark: #701116;
-
-    --dc-theme-warning: #f2b61b;
-    --dc-theme-warning--light: #fae2af;
-    --dc-theme-warning--dark: #be5a00;
-
-    --dc-theme-success: #23c161;
-    --dc-theme-success--light: #ebf9ed;
-    --dc-theme-success--dark: #034a1d;
-
+    // Primary
+    --color-primary: #98C74D;
+    --color-primary-dark: #88B245;
+    --color-primary-light: #CBE3A6;
+    --color-primary-lighter: #E9F3D9;
+    // Secondary
+    --color-secondary: #A800F2;
+    --color-secondary-dark: #5F00E4;
+    --color-secondary-light: #D678FF;
+    --color-secondary-lighter: #F3D8FF;
+    // UI
+    --color-title: #24272B;
+    --color-text: #1E1E1E;
+    --color-link: #2271B1;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-success: #388E3C;
+    --color-warning: #F57C00;
+    --color-error: #D32F2F;
+    // Contrast
+    --color-white: #FFFFFF;
+    --color-off-white: #F5F6FB;
+    --color-black: #000000;
+    --color-success-contrast: #DFF2E0;
+    --color-warning-contrast: #FFE3C6;
+    --color-error-contrast: #F6D3D3;
+    --color-canvas: #FDFDFD;
 }
 
 html {
@@ -54,14 +35,14 @@ html {
 }
 
 body.toplevel_page_mojo {
-    --wp-admin-theme-color: var(--mdc-theme-primary);
-    --wp-admin-theme-color-darker-10: var(--mdc-theme-primary--dark1);
-    --wp-admin-theme-color-darker-20: var(--dc-theme-black);
+    --wp-admin-theme-color: var(--color-primary);
+    --wp-admin-theme-color-darker-10: var(--color-primary-dark);
+    --wp-admin-theme-color-darker-20: var(--color-text);
     --wp-admin-border-width-focus: 2px;
-    --mojobrand-focus: inset 0 0 0 1px var(--dc-theme-white),0 0 0 var(--wp-admin-border-width-focus) var(--mdc-theme-primary);
+    --mojobrand-focus: inset 0 0 0 1px var(--color-white),0 0 0 var(--wp-admin-border-width-focus) var(--color-secondary-dark);
     
     a {
-        color: var(--mdc-theme-primary);
+        color: var(--color-link);
     }
     
     @media screen and (max-width:782px) {
@@ -70,7 +51,7 @@ body.toplevel_page_mojo {
         }
     }
     #wpwrap {
-        background-color: var(--dc-theme-white);
+        background-color: var(--color-canvas);
     }
     #wpcontent {
         padding-left: 0 !important;
@@ -105,7 +86,7 @@ body.toplevel_page_mojo {
         font-weight: 700;
     }
     .wppm-nav a {
-        color: var(--dc-theme-black);
+        color: var(--color-text);
     }
     p, div {
         font-size: 15px;
@@ -127,15 +108,15 @@ body.toplevel_page_mojo {
 
         &.is-primary,
         &[variant="primary"] {
-            background-color: var(--mdc-theme-primary);
-            color: var(--dc-theme-white);
+            background-color: var(--color-primary);
+            color: var(--color-white);
         }
 
         &.is-secondary,
         &[variant="secondary"] {
-            border-color: var(--mdc-theme-primary);
-            box-shadow: inset 0 0 0 1px var(--mdc-theme-primary);
-            color: var(--mdc-theme-primary);
+            border-color: var(--color-primary);
+            box-shadow: inset 0 0 0 1px var(--color-primary);
+            color: var(--color-primary);
         }
 
         &:last-child {
@@ -164,12 +145,17 @@ body.toplevel_page_mojo {
 }
 
 .wppm-app-body {
-    padding: 18px 24px 0;
+    padding: 3.25rem 24px 1rem;
+
     &-inner {
         max-width: 1600px;
         margin-left: auto;
         margin-right: auto;
         width: 95%;
+    }
+
+    @media screen and (max-width:782px) {
+        padding-top: 2.5rem;
     }
 }
 
@@ -223,8 +209,13 @@ body.toplevel_page_mojo {
         }
     }
 
+    .components-card__header {
+        background-color: var(--color-off-white);
+    }
+
     .components-card-body,
     .components-card__body {
+        line-height: 1.45;
 
         &.disabled {
             opacity: .5;
@@ -233,5 +224,5 @@ body.toplevel_page_mojo {
 }
 
 .components-card {
-    border-bottom: 1px solid var(--mdc-theme-primary);
+    border-bottom: 1px solid var(--color-primary);
 }
