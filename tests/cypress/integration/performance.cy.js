@@ -9,7 +9,7 @@ describe('Performance Page', function () {
 	it('Is Accessible', () => {
 		cy.injectAxe();
 		cy.wait(500);
-		cy.checkA11y('.wppm-app-body');
+		cy.a11y('.wppm-app-body');
 	});
 
 	it('Has Cache Settings', () => {
