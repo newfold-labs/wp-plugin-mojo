@@ -16,7 +16,7 @@ describe('Home Page', function () {
 	it('Is Accessible', () => {
 		cy.injectAxe();
 		cy.wait(500);
-		cy.checkA11y('.wppm-app-body');
+		cy.a11y('.wppm-app-body');
 	});
 
 	it('Web Content Section Exists', () => {
