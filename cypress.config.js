@@ -10,7 +10,7 @@ module.exports = defineConfig({
     wpPassword: 'password',
     wpVersion,
     phpVersion,
-    pluginId: 'web',
+    pluginId: 'mojo',
     appId: 'mppw',
   },
   downloadsFolder: 'tests/cypress/downloads',
