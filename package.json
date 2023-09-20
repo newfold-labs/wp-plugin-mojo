@@ -2,7 +2,7 @@
     "name": "wp-plugin-mojo",
     "description": "WordPress plugin that integrates a WordPress site with Hosting",
     "license": "GPL-2.0-or-later",
-    "version": "2.0.8",
+    "version": "2.0.9",
     "private": true,
     "author": {
         "name": "Evan Mullins",
