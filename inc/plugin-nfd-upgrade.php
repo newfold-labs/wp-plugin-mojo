@@ -203,7 +203,7 @@ class NFD_Plugin_Upgrade {
 		}
 		echo '<p>';
 		/* translators: plugin name */
-		printf( esc_html__( 'The "%s" plugin has been deactivated.', 'mojo-marketplace-wp-plugin' ), esc_html( $this->name ) );
+		printf( esc_html__( 'The "%s" plugin has been deactivated.', 'wp-plugin-mojo' ), esc_html( $this->name ) );
 		echo '</p></div>';
 	}
 
