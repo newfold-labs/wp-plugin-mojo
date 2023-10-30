@@ -10,6 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:       The MOJO Plugin
  * Plugin URI:        https://mojomarketplace.com
+ * Update URI:        https://github.com/newfold-labs/wp-plugin-mojo/
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
  * Version:           2.0.10
  * Tested up to:      6.3.2
