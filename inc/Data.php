@@ -14,21 +14,18 @@ namespace Mojo;
 final class Data {
 
 	/**
-	 * Data loaded onto window.WPPM
+	 * Data loaded onto window.NewfoldRuntime
 	 *
 	 * @return array
 	 */
 	public static function runtime() {
-		global $wp_version;
+		global $mojo_module_container;
 
 		$runtime = array(
-			'url'       => MOJO_BUILD_URL,
-			'version'   => MOJO_PLUGIN_VERSION,
-			'resturl'   => \get_home_url() . '/index.php?rest_route=',
-			'wpversion' => $wp_version,
-			'admin'     => \admin_url(),
-			'assets'    => MOJO_PLUGIN_URL . 'assets/',
-			'brand'     => strtolower( get_option( 'mm_brand', false ) ),
+			'url'     => MOJO_BUILD_URL,
+			'version' => MOJO_PLUGIN_VERSION,
+			'assets'  => MOJO_PLUGIN_URL . 'assets/',
+			'brand'   => $mojo_module_container->plugin()->brand,
 		);
 
 		return $runtime;

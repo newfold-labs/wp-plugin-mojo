@@ -12,8 +12,8 @@
  * Plugin URI:        https://mojomarketplace.com
  * Update URI:        https://github.com/newfold-labs/wp-plugin-mojo/
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
- * Version:           2.0.10
- * Tested up to:      6.3.2
+ * Version:           3.0.0
+ * Tested up to:      6.4.0
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Author:            Bluehost
@@ -32,7 +32,7 @@ if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
 }
 
 // Define constants
-define( 'MOJO_PLUGIN_VERSION', '2.0.10' );
+define( 'MOJO_PLUGIN_VERSION', '3.0.0' );
 define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOJO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

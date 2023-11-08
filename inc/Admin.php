@@ -24,10 +24,19 @@ final class Admin {
 		\add_filter( 'plugin_action_links_wp-plugin-mojo/wp-plugin-mojo.php', array( __CLASS__, 'actions' ) );
 		/* Add inline style to hide subnav link */
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
+		/* Add runtime for data store */
+		\add_filter('newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
 
-		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING ), 'mojo' ) >= 0 ) { // phpcs:ignore
+		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
 		}
+	}
+	/**
+	 * Add to runtime
+	 */
+	public static function add_to_runtime( $sdk ) {
+		include MOJO_PLUGIN_DIR . '/inc/Data.php';
+		return array_merge( $sdk, Data::runtime() );
 	}
 
 	/**
@@ -143,16 +152,9 @@ final class Admin {
 		\wp_register_script(
 			'mojo-script',
 			MOJO_BUILD_URL . '/index.js',
-			array_merge( $asset['dependencies'] ),
+			array_merge( $asset['dependencies'], [ 'nfd-runtime' ] ),
 			$asset['version'],
 			true
-		);
-
-		include MOJO_PLUGIN_DIR . '/inc/Data.php';
-		\wp_add_inline_script(
-			'mojo-script',
-			'var WPPM =' . \wp_json_encode( Data::runtime() ) . ';',
-			'before'
 		);
 
 		\wp_register_style(
