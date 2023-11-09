@@ -10,7 +10,6 @@ import AppStore, { AppStoreProvider } from './data/store';
 import { useLocation, HashRouter as Router } from 'react-router-dom';
 import { SnackbarList, Spinner } from '@wordpress/components';
 import classnames from 'classnames';
-import Header from './components/header';
 import AppRoutes from './data/routes';
 import ErrorCard from './components/errorCard';
 import { useEffect } from 'react';
@@ -78,7 +77,6 @@ const AppBody = ( props ) => {
 				'nfd-w-full nfd-p-4 min-[783px]:nfd-p-0'
 			) }
 		>
-			<Header />
 			<NewfoldNotifications
 				constants={{
 					context: 'mojo-plugin',

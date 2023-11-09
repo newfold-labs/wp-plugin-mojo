@@ -51,8 +51,7 @@ const topRoutePaths = [
 	'/home',
 	'/marketplace',
 	'/performance',
-	'/settings',
-	'/help',
+	'/settings'
 ];
 const utilityRoutePaths = ['/help'];
 

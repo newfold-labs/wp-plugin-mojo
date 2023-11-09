@@ -4,6 +4,7 @@ import { SectionContainer, SectionHeader, SectionContent } from '../../component
 // import BrandSection from './brandSection';
 import ComingSoon from '../settings/comingSoon';
 import SettingsSection from './settingsSection';
+import WebContentSection from './webContentSection';
 import WebHostingSection from './webHostingSection';
 
 import { useEffect } from 'react';

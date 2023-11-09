@@ -1,7 +1,7 @@
 import { LockClosedIcon, LockOpenIcon } from "@heroicons/react/24/outline";
 import { NewfoldRuntime } from "@newfold-labs/wp-module-runtime";
 import { Button } from "@newfold/ui-component-library";
-import { HostgatorIcon, WordPressIcon } from "../icons";
+import { MojoIcon, WordPressIcon } from "../icons";
 
 export const SiteInfoBar = () => {
     const { url, title } = NewfoldRuntime.siteDetails;
@@ -41,7 +41,7 @@ export const SiteInfoBar = () => {
                         target="_blank"
                         variant="primary" 
                         className="nfd-bg-primary-400 nfd-text-tiny nfd-w-full min-[400px]:nfd-w-auto">
-                        <HostgatorIcon />
+                        <MojoIcon />
                         { __("MOJO Account", "wp-plugin-mojo") }
                     </Button>
                     <Button 
