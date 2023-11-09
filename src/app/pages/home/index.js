@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 
 const Home = () => {
 	return (
-	<Page title="Settings" className={"wppm-app-home-page"}>
+	<Page title="Settings" className={"wppm-app-home-page wppm-home"}>
 		<SectionContainer className={'wppm-app-home-container'}>
 			<SectionHeader
 				title={__('Home', 'wp-plugin-mojo')}
