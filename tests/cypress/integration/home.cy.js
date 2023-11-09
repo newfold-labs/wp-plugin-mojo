@@ -3,41 +3,50 @@
 describe('Home Page', function () {
 
 	before(() => {
-		cy.visit('/wp-admin/admin.php?page=mojo#/home');
-	});
-	
-	it('Header Exists', () => {
-		cy
-		.get('.wppm-header').contains('h2', 'MOJO')
-		.scrollIntoView()
-		.should('be.visible');
-	});
-	
-	it('Is Accessible', () => {
+		cy.visit(`/wp-admin/admin.php?page=${Cypress.env('pluginId')}#/home`);
 		cy.injectAxe();
+	});
+
+	it('Site Info Exists', () => {
+		cy.window().then((win) => {
+			const siteTitle = win.NewfoldRuntime.site.title;
+
+			cy.get('.wppm-app-site-info').contains('h3', siteTitle)
+			.scrollIntoView()
+			.should('be.visible');
+		  })
+	});
+
+	it('Is Accessible', () => {
 		cy.wait(500);
-		cy.a11y('.wppm-app-body');
+		cy.checkA11y('.wppm-app-body');
 	});
 
-	it('Web Content Section Exists', () => {
+	it('Maintenance Mode Section Exists', () => {
 		cy
-			.get('.wppm-section-home-content').contains('h3', 'Content')
+			.get('.wppm-app-home-coming-soon').contains('h3', 'Site Status')
 			.scrollIntoView()
 			.should('be.visible');
 	});
 
-	it('Settings Section Exists', () => {
+	it('Website Content Section Exists', () => {
 		cy
-			.get('.wppm-section-home-settings').contains('h3', 'Settings')
+			.get('.wppm-app-home-content').contains('h3', 'Website Content')
 			.scrollIntoView()
 			.should('be.visible');
 	});
 
-	it('Hosting Section Exists', () => {
+	it('Settings and Performance Section Exists', () => {
 		cy
-			.get('.wppm-section-home-hosting').contains('h3', 'Hosting')
+			.get('.wppm-app-home-settings').contains('h3', 'Settings and Performance')
 			.scrollIntoView()
 			.should('be.visible');
 	});
 
+	it('Web Hosting Section Exists', () => {
+		cy
+			.get('.wppm-app-home-hosting').contains('h3', 'Web Hosting')
+			.scrollIntoView()
+			.should('be.visible');
+	});
 });
