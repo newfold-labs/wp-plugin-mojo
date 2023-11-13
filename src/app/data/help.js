@@ -6,7 +6,7 @@ const help = [
 			"Submit a support ticket. Once you open a ticket, we'll respond promptly to get it resolved.",
 			'wp-plugin-mojo'
 		),
-		icon: 'email',
+		icon: false,
 		cta: __( 'Submit a Request', 'wp-plugin-mojo' ),
 		url: 'https://mojosupport.zendesk.com/hc/en-us/requests/new?ticket_form_id=66029',
 	},
@@ -17,7 +17,7 @@ const help = [
 			'Speak to our support team over the phone at 855-464-5345.',
 			'wp-plugin-mojo'
 		),
-		icon: 'phone',
+		icon: false,
 		cta: __( 'Call Us', 'wp-plugin-mojo' ),
 		url: 'tel:855-464-5345',
 	},
@@ -28,7 +28,7 @@ const help = [
 			'Follow along and take your website to its full potential with WordPress guides and how tos, inspiration, MOJO Marketplace product updates, and more!',
 			'wp-plugin-mojo'
 		),
-		icon: 'text-page',
+		icon: false,
 		cta: __( 'Learn Stuff', 'wp-plugin-mojo' ),
 		url:
 			'https://blog.mojomarketplace.com/?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=mojo#/help',
@@ -40,7 +40,7 @@ const help = [
 			'Our WordPress experts will treat your problem like theirs and teach you how to build, grow, and maintain your websites. Starting at $29/month',
 			'wp-plugin-mojo'
 		),
-		icon: 'format-chat',
+		icon: false,
 		cta: __( 'Sign Up', 'wp-plugin-mojo' ),
 		url:
 			'https://www.mojomarketplace.com/item/wordpress-support?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=mojo#/help',

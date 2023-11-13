@@ -79,9 +79,9 @@ module.exports = defineConfig({
     supportFile: 'tests/cypress/support/index.js',
     testIsolation: false,
 		excludeSpecPattern: [
-      'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/', // until ecommerce module is added use the local coming soon test instead
-      'vendor/newfold-labs/wp-module-marketplace/tests/cypress/integration/', // until ui is updated use local marketplace tests instead
-    ],
+            'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/coming-soon.cy.js', // excluding until either adding ecommerce module or removing coming soon components in ecommerce module
+            'vendor/newfold-labs/wp-module-notifications/tests/cypress/integration/notifications.cy.js' // excluding until notifications are in use in this plugin
+        ],
   },
   retries: 1,
   experimentalMemoryManagement: true,

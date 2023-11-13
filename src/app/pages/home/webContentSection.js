@@ -1,94 +1,41 @@
-import { Heading } from '../../components';
-import {
-	Button,
-	Card,
-	CardBody,
-	CardHeader,
-	CardFooter,
-	Dashicon,
-} from '@wordpress/components';
+import ActionField from "../../components/action-field";
+import { SectionSettings } from "../../components/section";
 
 const WebContentSection = () => {
 	return (
-		<section className="wppm-section wppm-section-home-content">
-			<Card size="large" className="wppm-section-card">
-				<CardHeader>
-					<Heading level="3">
-						{ __( 'Website Content', 'wp-plugin-mojo' ) }
-					</Heading>
-					<p>
-						{ __(
-							'Create, manage & sort your story.',
-							'wp-plugin-mojo'
-						) }
-					</p>
-				</CardHeader>
-				<CardFooter>
-					<div className="wppm-cardlist-content">
-						<Heading level="4">
-							<Dashicon icon="admin-post" />{ ' ' }
-							{ __( 'Blog', 'wp-plugin-mojo' ) }
-						</Heading>
-						<p>
-							{ __(
-								'Update your site with news as your story unfolds.',
-								'wp-plugin-mojo'
-							) }
-						</p>
-					</div>
-					<Button
-						variant="primary"
-						href={ WPPM.admin + 'post-new.php' }
-						icon="admin-post"
-					>
-						{ ' ' }
-						{ __( 'New Post', 'wp-plugin-mojo' ) }{ ' ' }
-					</Button>
-				</CardFooter>
-				<CardFooter>
-					<div className="wppm-cardlist-content">
-						<Heading level="4">
-							<Dashicon icon="welcome-add-page" />{ ' ' }
-							{ __( 'Pages', 'wp-plugin-mojo' ) }
-						</Heading>
-						<p>
-							{ __(
-								"Share who you are, what you're about and how to get in touch.",
-								'wp-plugin-mojo'
-							) }
-						</p>
-					</div>
-					<Button
-						variant="primary"
-						href={ WPPM.admin + 'post-new.php?post_type=page' }
-						icon="welcome-add-page"
-					>
-						{ __( 'New Page', 'wp-plugin-mojo' ) }
-					</Button>
-				</CardFooter>
-				<CardFooter>
-					<div className="wppm-cardlist-content">
-						<Heading level="4">
-							<Dashicon icon="category" />{ ' ' }
-							{ __( 'Categories', 'wp-plugin-mojo' ) }
-						</Heading>
-						<p>
-							{ __(
-								'Sort your story so visitors can focus on their interests.',
-								'wp-plugin-mojo'
-							) }
-						</p>
-					</div>
-					<Button
-						variant="secondary"
-						href={ WPPM.admin + 'edit-tags.php?taxonomy=category' }
-						icon="category"
-					>
-						{ __( 'Manage Categories', 'wp-plugin-mojo' ) }
-					</Button>
-				</CardFooter>
-			</Card>
-		</section>
+		<SectionSettings
+			title={__('Website Content', 'wp-plugin-mojo')}
+			description={__('Create, manage & sort your story.', 'wp-plugin-mojo')}
+		>
+			<div className="nfd-flex nfd-flex-col nfd-gap-5">
+				<ActionField
+					label={__("Blog", "wp-plugin-mojo")}
+					buttonLabel={__("New Post", "wp-plugin-mojo")}
+					href={window.NewfoldRuntime.admin_url + 'post-new.php'}
+					className={"wppm-app-home-blog-action"}
+				>
+					{__('Write a new blog post.', 'wp-plugin-mojo')}
+				</ActionField>
+
+				<ActionField
+					label={__("Pages", "wp-plugin-mojo")}
+					buttonLabel={__("New Page", "wp-plugin-mojo")}
+					href={window.NewfoldRuntime.admin_url + 'post-new.php?post_type=page'}
+					className={"wppm-app-home-pages-action"}
+				>
+					{__('Add fresh pages to your website.', 'wp-plugin-mojo')}
+				</ActionField>
+
+				<ActionField
+					label={__("Categories", "wp-plugin-mojo")}
+					buttonLabel={__("Manage Categories", "wp-plugin-mojo")}
+					href={window.NewfoldRuntime.admin_url + 'edit-tags.php?taxonomy=category'}
+					className={"wppm-app-home-categories-action"}
+				>
+					{__('Organize existing content into categories.', 'wp-plugin-mojo')}
+				</ActionField>
+			</div>
+		</SectionSettings >
 	);
 };
 

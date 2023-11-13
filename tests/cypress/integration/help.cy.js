@@ -3,7 +3,7 @@
 describe('Help Page', () => {
 
 	before(() => {
-		cy.visit('/wp-admin/admin.php?page=mojo#/help');
+		cy.visit(`/wp-admin/admin.php?page=${Cypress.env('pluginId')}#/help`);
 	});
 	
 	it('Is Accessible', () => {

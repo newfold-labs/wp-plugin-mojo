@@ -1,4 +1,6 @@
 import { Heading } from '../../components';
+import { Button, Card, Title } from "@newfold/ui-component-library";
+import { NewfoldRuntime } from '@newfold-labs/wp-module-runtime';
 import {
 	Button,
 	Card,
@@ -13,7 +15,7 @@ const BrandSection = () => {
 
 	return (
         <section className="wppm-section wppm-section-home-hosting">
-            { ( window.WPPM.brand === 'bluehost' || window.WPPM.brand === 'hostgator' ) && 
+            { ( NewfoldRuntime.brand === 'bluehost' || NewfoldRuntime.brand === 'hostgator' ) && 
 			<Card size="large" className="wppm-section-card">
 				<CardHeader>
 					<Heading level="3">
@@ -26,7 +28,7 @@ const BrandSection = () => {
 						) }
 					</p>
 				</CardHeader>
-                { ( window.WPPM.brand === 'bluehost' ) && 
+                { ( NewfoldRuntime.brand === 'bluehost' ) && 
 				<CardFooter>
 					<div className="wppm-cardlist-content">
 						<Heading level="4">
@@ -48,7 +50,7 @@ const BrandSection = () => {
 					</Button>
 				</CardFooter>
                 }
-                { ( window.WPPM.brand === 'hostgator' ) && 
+                { ( NewfoldRuntime.brand === 'hostgator' ) && 
 				<CardFooter>
 					<div className="wppm-cardlist-content">
 						<Heading level="4">
