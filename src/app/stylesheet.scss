@@ -144,20 +144,20 @@ body.toplevel_page_mojo {
     box-sizing: border-box;
 }
 
-.wppm-app-body {
-    padding: 3.25rem 24px 1rem;
+// .wppm-app-body {
+//     padding: 3.25rem 24px 1rem;
 
-    &-inner {
-        max-width: 1600px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-    }
+//     &-inner {
+//         max-width: 1600px;
+//         margin-left: auto;
+//         margin-right: auto;
+//         width: 95%;
+//     }
 
-    @media screen and (max-width:782px) {
-        padding-top: 2.5rem;
-    }
-}
+//     @media screen and (max-width:782px) {
+//         padding-top: 2.5rem;
+//     }
+// }
 
 .components-snackbar__content {
     // color: var(--dc-theme-grey--light4) !important;
