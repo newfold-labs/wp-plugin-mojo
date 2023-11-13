@@ -4,10 +4,10 @@ describe('Help Page', () => {
 
 	before(() => {
 		cy.visit(`/wp-admin/admin.php?page=${Cypress.env('pluginId')}#/help`);
+		cy.injectAxe();
 	});
 	
 	it('Is Accessible', () => {
-		cy.injectAxe();
 		cy.wait(500);
 		cy.a11y('.wppm-app-body');
 	});

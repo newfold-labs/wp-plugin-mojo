@@ -4,7 +4,6 @@ describe('Home Page', function () {
 
 	before(() => {
 		cy.visit(`/wp-admin/admin.php?page=${Cypress.env('pluginId')}#/home`);
-		cy.injectAxe();
 	});
 
 	it('Site Info Exists', () => {
@@ -18,8 +17,9 @@ describe('Home Page', function () {
 	});
 
 	it('Is Accessible', () => {
+		cy.injectAxe();
 		cy.wait(500);
-		cy.checkA11y('.wppm-app-body');
+		cy.a11y('.wppm-app-body');
 	});
 
 	it('Maintenance Mode Section Exists', () => {
