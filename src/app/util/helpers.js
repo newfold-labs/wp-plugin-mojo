@@ -147,7 +147,7 @@ export const comingSoonAdminbarToggle = ( comingSoon ) => {
  * @return {string} The new URL.
  */
 export const addUtmParams = (url, params = {}) => {
-	params.utm_source = `wp-admin/admin.php?page=bluehost${window.location.hash}`;
-	params.utm_medium = 'bluehost_plugin';
+	params.utm_source = `wp-admin/admin.php?page=mojo${window.location.hash}`;
+	params.utm_medium = 'mojo_plugin';
 	return addQueryArgs(url, params);
 }
