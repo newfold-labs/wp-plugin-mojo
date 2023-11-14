@@ -138,7 +138,6 @@ require MOJO_PLUGIN_DIR . '/inc/AdminBar.php';
 require MOJO_PLUGIN_DIR . '/inc/base.php';
 require MOJO_PLUGIN_DIR . '/inc/jetpack.php';
 require MOJO_PLUGIN_DIR . '/inc/partners.php';
-require MOJO_PLUGIN_DIR . '/inc/performance.php';
 require MOJO_PLUGIN_DIR . '/inc/RestApi/CachingController.php';
 require MOJO_PLUGIN_DIR . '/inc/RestApi/SettingsController.php';
 require MOJO_PLUGIN_DIR . '/inc/RestApi/rest-api.php';
