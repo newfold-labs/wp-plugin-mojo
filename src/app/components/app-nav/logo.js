@@ -1,6 +1,6 @@
 import { Button } from '@wordpress/components';
-import { Heading } from '../../components';
-import logoUrl from '../../../../assets/images/New-Logo-Black.png';
+import { Heading } from '..';
+import { ReactComponent as Brand } from '../../../../assets/svg/Mojo-M.svg';
 import { delay } from 'lodash';
 
 const Mark = () => {
@@ -14,14 +14,12 @@ const Mark = () => {
 	};
 	return (
 		<Button
-			style={ { height: '39px' } }
-			iconSize={ 39 }
+			icon={ <Brand className="wppm-logo" /> }
+			style={ { width: '160px', height: 'auto' } }
 			onMouseUp={ defocus }
-			className="logo-mark"
+			className="logo-mark nfd-p-0"
 			href="#/home"
-		>
-			<img src={ logoUrl } width="311" height="42" />
-		</Button>
+		/>
 	);
 };
 
@@ -30,7 +28,7 @@ const Logo = () => {
 		<div className="wppm-logo-wrap">
 			<Mark />
 			<Heading level="2" className="screen-reader-text">
-				{ __( 'MOJO WordPress Plugin', 'wp-plugin-mojo' ) }
+				{ __( 'Mojo WordPress Plugin', 'wp-plugin-mojo' ) }
 			</Heading>
 		</div>
 	);
