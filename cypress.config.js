@@ -11,6 +11,7 @@ module.exports = defineConfig({
     phpVersion,
     pluginId: 'mojo',
     appId: 'wppm',
+    pluginSlug: 'wp-plugin-mojo',
   },
   downloadsFolder: 'tests/cypress/downloads',
   fixturesFolder: 'tests/cypress/fixtures',
