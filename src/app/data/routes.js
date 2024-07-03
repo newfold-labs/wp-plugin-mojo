@@ -79,7 +79,7 @@ export const routes = [
 		title: __( 'Performance', 'wp-plugin-mojo' ),
 		Component: Performance,
 		Icon: BoltIcon,
-		condition: true,
+		condition: await window.NewfoldFeatures.isEnabled( 'performance' ),
 	},
 	{
 		name: '/settings',
