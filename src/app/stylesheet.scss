@@ -226,3 +226,25 @@ body.toplevel_page_mojo {
 .components-card {
     border-bottom: 1px solid var(--color-primary);
 }
+
+.nfd-animation-blink {
+    animation: blink 2.5s ease 1s 3 normal forwards;
+}
+
+@keyframes blink {
+	0%,
+	50%,
+	100% {
+		background-color: initial;
+	}
+
+	25%,
+	75% {
+		background-color: #e9f1fd;
+	}
+}
+
+.nfd-disabled {
+    opacity: .5;
+    pointer-events: disabled;
+}

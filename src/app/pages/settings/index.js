@@ -1,37 +1,40 @@
+import { Container, Page } from "@newfold/ui-component-library";
 import AutomaticUpdates from './automaticUpdates';
 import ComingSoon from './comingSoon';
 import CommentSettings from './commentSettings';
 import ContentSettings from './contentSettings';
-import { Page } from '../../components/page';
-import { SectionContainer, SectionHeader, SectionContent } from '../../components/section';
 
 const Settings = () => {
 	return (
 		<Page title="Settings" className={"wppm-app-settings-page"}>
-			<SectionContainer className={'wppm-app-settings-container'}>
-				<SectionHeader
+			<Container className={'wppm-app-settings-container'}>
+				<Container.Header
 					title={__('Settings', 'wp-plugin-mojo')}
-					subTitle={__('This is where you can manage common settings for your website.', 'wp-plugin-mojo')}
+					description={__('This is where you can manage common settings for your website.', 'wp-plugin-mojo')}
 					className={'wppm-app-settings-header'}
 				/>
 
-				<SectionContent separator={true} className={'wppm-app-settings-coming-soon'}>
+				<Container.Block separator={true} className={
+					classNames(
+						'wppm-app-settings-coming-soon',
+						useContainerBlockIsTarget( 'coming-soon-section' ) && 'nfd-animation-blink'
+					)}>
 					<ComingSoon />
-				</SectionContent>
+				</Container.Block>
 
-				<SectionContent separator={true} className={'wppm-app-settings-update'}>
+				<Container.Block separator={true} className={'wppm-app-settings-update'}>
 					<AutomaticUpdates />
-				</SectionContent>
+				</Container.Block>
 
-				<SectionContent separator={true} className={'wppm-app-settings-content'}>
+				<Container.Block separator={true} className={'wppm-app-settings-content'}>
 					<ContentSettings />
-				</SectionContent>
+				</Container.Block>
 
-				<SectionContent className={'wppm-app-settings-comments'}>
+				<Container.Block className={'wppm-app-settings-comments'}>
 					<CommentSettings />
-				</SectionContent>
+				</Container.Block>
 
-			</SectionContainer>
+			</Container>
 		</Page>
 	);
 };

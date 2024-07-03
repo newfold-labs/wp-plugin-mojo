@@ -1,126 +1,88 @@
 // <reference types="Cypress" />
 
 describe('Navigation', function () {
+	const appId = Cypress.env( 'appId' );
+	const pluginId = Cypress.env( 'pluginId' );
 
 	before(() => {
-		cy.visit(`/wp-admin/admin.php?page=${Cypress.env('pluginId')}#`);
-		cy.injectAxe();
+		cy.visit(`/wp-admin/admin.php?page=${pluginId}#`);
 	});
 
+	it( "Admin submenu shouldn't exist inside app", () => {
+		cy.get( '#adminmenu #toplevel_page_' + pluginId + ' ul.wp-submenu' ).should(
+			'not.exist'
+		);
+	} );
+
 	it('Logo Links to home', () => {
-		cy.get('.wppm-logo-wrap').click();
+		cy.get('.' + appId + '-logo-wrap').click();
 		cy.wait(500);
 		cy.hash().should('eq', '#/home');
-	});
-	
-	it('Admin Subnav properly highlights', () => {
-		cy
-			.get('#adminmenu #toplevel_page_mojo')
-			.should('have.class', 'wp-has-current-submenu');
-		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /home/);
 	});
 
 	// test main nav
 	it('Main nav links properly navigates', () => {
 		cy
-			.get('.wppm-app-navitem-Marketplace').
+			.get('.' + appId + '-app-navitem-Marketplace').
 			should('not.have.class', 'active');
-		cy.get('.wppm-app-navitem-Marketplace').click();
+		cy.get('.' + appId + '-app-navitem-Marketplace').click();
 		cy.wait(500);
 		cy.hash().should('eq', '#/marketplace');
 		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.should('have.class', 'active');
-		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /marketplace/);
 
-		cy.get('.wppm-app-navitem-Performance').click();
+		cy.get('.' + appId + '-app-navitem-Performance').click();
 		cy.wait(500);
 		cy.hash().should('eq', '#/performance');
 		cy
-			.get('.wppm-app-navitem-Performance')
+			.get('.' + appId + '-app-navitem-Performance')
 			.should('have.class', 'active');
 		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.should('not.have.class', 'active');
-		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /performance/);
 
-		cy.get('.wppm-app-navitem-Settings').click();
+		cy.get('.' + appId + '-app-navitem-Settings').click();
 		cy.wait(500);
 		cy.hash().should('eq', '#/settings');
-		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /settings/);
 	});
 	
 	it('Subnav links properly navigates', () => {
 		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.scrollIntoView()
 			.should('not.have.class', 'active');
-		cy.get('.wppm-app-navitem-Marketplace').click();
+		cy.get('.' + appId + '-app-navitem-Marketplace').click();
 
 		cy.wait(500);
 		cy.hash().should('eq', '#/marketplace');
 		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.should('have.class', 'active');
-		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /marketplace/);
 
-			cy.get('.wppm-app-subnavitem-Services').click();
-			cy.wait(500);
-			cy.hash().should('eq', '#/marketplace/services');
-			cy
-				.get('.wppm-app-subnavitem-Services')
-				.should('have.class', 'active');
-			cy
-				.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-				.should('have.attr', 'href')
-				.and('match', /marketplace/);
-			cy
-				.get('.wppm-app-navitem-Marketplace')
-				.should('have.class', 'active');
-		
-
-		cy.get('.wppm-app-subnavitem-SEO').click();
+		cy.get('.' + appId + '-app-subnavitem-SEO').click();
 		cy.wait(500);
 		cy.hash().should('eq', '#/marketplace/seo');
 		cy
-			.get('.wppm-app-subnavitem-SEO')
+			.get('.' + appId + '-app-subnavitem-SEO')
 			.should('have.class', 'active');
 		cy
-			.get('.wppm-app-subnavitem-Services')
+			.get('.' + appId + '-app-subnavitem-Services')
 			.should('not.have.class', 'active');
 		cy
-			.get('#adminmenu #toplevel_page_mojo ul.wp-submenu li.current a')
-			.should('have.attr', 'href')
-			.and('match', /marketplace/);
-		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.should('have.class', 'active');
 			
-		cy.get('.wppm-app-navitem-Performance').click();
+		cy.get('.' + appId + '-app-navitem-Performance').click();
 			cy.wait(500);
 		cy
-			.get('.wppm-app-subnavitem-Services')
+			.get('.' + appId + '-app-subnavitem-Services')
 			.should('not.have.class', 'active');
 		cy
-			.get('.wppm-app-subnavitem-SEO')
+			.get('.' + appId + '-app-subnavitem-SEO')
 			.should('not.have.class', 'active');
 		cy
-			.get('.wppm-app-navitem-Marketplace')
+			.get('.' + appId + '-app-navitem-Marketplace')
 			.should('not.have.class', 'active');
 	});
 

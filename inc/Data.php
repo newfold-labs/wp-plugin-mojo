@@ -22,13 +22,13 @@ final class Data {
 		global $mojo_module_container;
 
 		$runtime = array(
-			'url'     => MOJO_BUILD_URL,
-			'version' => MOJO_PLUGIN_VERSION,
-			'assets'  => MOJO_PLUGIN_URL . 'assets/',
-			'brand'   => $mojo_module_container->plugin()->brand,
+			'plugin' => array(
+				'url'     => MOJO_BUILD_URL,
+				'version' => MOJO_PLUGIN_VERSION,
+				'assets'  => MOJO_PLUGIN_URL . 'assets/',
+				'brand'   => $mojo_module_container->plugin()->brand,
+			),
 		);
-
 		return $runtime;
 	}
-
 }

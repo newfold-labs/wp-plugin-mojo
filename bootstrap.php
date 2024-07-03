@@ -11,6 +11,8 @@ use WP_Forge\WPUpdateHandler\PluginUpdater;
 use WP_Forge\UpgradeHandler\UpgradeHandler;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\ModuleLoader\Plugin;
+use NewfoldLabs\WP\Module\Features\Features;
+
 use function NewfoldLabs\WP\ModuleLoader\container as setContainer;
 
 // Composer autoloader
@@ -36,7 +38,7 @@ $mojo_module_container = new Container(
 $mojo_module_container->set(
 	'plugin',
 	$mojo_module_container->service(
-		function() {
+		function () {
 			return new Plugin(
 				array(
 					'id'           => 'mojo',
@@ -154,6 +156,8 @@ if ( is_admin() ) {
 
 AdminBar::init();
 
+// Instantiate the Features singleton
+Features::getInstance();
 
 /**
  * Filter to add applicable BN code to paypal requests
@@ -192,7 +196,7 @@ if ( function_exists( 'add_filter' ) ) {
 				$replacement = ' data-partner-attribution-id="Yith_PCP"';
 				if ( stripos( $tag, 'partner-attribution-id' ) === false ) {
 					$tag = str_replace( ' src=', $replacement . ' src=', $tag );
-				} else if ( stripos( $tag, 'NEWFOLD' ) || stripos( $tag, 'YITH' ) ) {
+				} elseif ( stripos( $tag, 'NEWFOLD' ) || stripos( $tag, 'YITH' ) ) {
 					$tag = preg_replace( '/ data-partner-attribution-id="(.*?)"/', $replacement, $tag );
 				}
 			}
