@@ -3,6 +3,7 @@ import AutomaticUpdates from './automaticUpdates';
 import ComingSoon from './comingSoon';
 import CommentSettings from './commentSettings';
 import ContentSettings from './contentSettings';
+import useContainerBlockIsTarget from 'App/util/hooks/useContainerBlockTarget';
 
 const Settings = () => {
 	return (

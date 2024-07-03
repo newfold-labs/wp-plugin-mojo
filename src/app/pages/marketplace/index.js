@@ -42,11 +42,6 @@ const MarketplacePage = () => {
         NewfoldRuntime,
     };
 
-	const moduleComponents = {
-		SectionHeader,
-		SectionContent,
-	}
-
 	return (
         <Page className={"wppm-app-marketplace-page"}>
 			<Container className={'wppm-app-marketplace-container nfd-overflow-clip'}>
@@ -54,7 +49,6 @@ const MarketplacePage = () => {
 				<NewfoldMarketplace 
 					methods={moduleMethods}
 					constants={moduleConstants}
-					Components={moduleComponents}
 				/>
 
 			</Container>

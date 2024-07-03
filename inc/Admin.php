@@ -7,7 +7,6 @@
 
 namespace Mojo;
 
-use Mojo\Data;
 use function NewfoldLabs\WP\Module\Features\isEnabled;
 
 /**
@@ -42,6 +41,7 @@ final class Admin {
 	 * @return array
 	 */
 	public static function add_to_runtime( $sdk ) {
+		include MOJO_PLUGIN_DIR . '/inc/Data.php';
 		return array_merge( $sdk, Data::runtime() );
 	}
 
