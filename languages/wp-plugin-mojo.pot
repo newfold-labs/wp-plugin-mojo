@@ -2,127 +2,123 @@
 # This file is distributed under the GPL 2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The MOJO Plugin 3.0.0\n"
+"Project-Id-Version: The MOJO Plugin 3.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-mojo/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2023-01-11T20:21:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: wp-plugin-mojo\n"
 
 #. Plugin Name of the plugin
+#: wp-plugin-mojo.php
 msgid "The MOJO Plugin"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: wp-plugin-mojo.php
 msgid "https://mojomarketplace.com"
 msgstr ""
 
 #. Description of the plugin
+#: wp-plugin-mojo.php
 msgid "WordPress plugin that integrates a WordPress site with Hosting."
 msgstr ""
 
 #. Author of the plugin
+#: wp-plugin-mojo.php
 msgid "Bluehost"
 msgstr ""
 
 #. Author URI of the plugin
+#: wp-plugin-mojo.php
 msgid "https://bluehost.com"
 msgstr ""
 
-#: bootstrap.php:21
+#: bootstrap.php:23
 msgid "Please install the Mojo Plugin dependencies."
 msgstr ""
 
-#: bootstrap.php:71
+#: bootstrap.php:73
 msgid "Coming Soon!"
 msgstr ""
 
-#: bootstrap.php:72
+#: bootstrap.php:74
 msgid "A New WordPress Site"
 msgstr ""
 
 #. translators: %1$s is replaced with opening link tag taking you to mojomarketplace.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.mojomarketplace.com, %6$s is replaced with closing link tag
-#: bootstrap.php:75
+#: bootstrap.php:77
 msgid "Is this your website? Log in to %3$sWordPress%4$s or %5$sMOJO%6$s."
 msgstr ""
 
 #. translators: %s: Blog name
-#: bootstrap.php:85
+#: bootstrap.php:87
 msgid "%s &mdash; Coming Soon"
 msgstr ""
 
-#: bootstrap.php:88
+#: bootstrap.php:90
 msgid "Coming Soon Active"
 msgstr ""
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:91
+#: bootstrap.php:93
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr ""
 
-#: bootstrap.php:92
+#: bootstrap.php:94
 msgid "Preview the coming soon landing page"
 msgstr ""
 
-#: inc/Admin.php:51
-#: inc/Admin.php:183
-#: src/app/data/routes.js:61
-#: src/app/pages/home/index.js:17
+#: inc/Admin.php:57
+#: inc/Admin.php:211
+#: build/3.1.0/index.js:1
 msgid "Home"
 msgstr ""
 
-#: inc/Admin.php:52
-#: src/app/data/routes.js:67
-#: src/app/pages/home/settingsSection.js:30
-#: src/app/pages/marketplace/index.js:17
+#: inc/Admin.php:60
+#: build/3.1.0/index.js:1
 msgid "Marketplace"
 msgstr ""
 
-#: inc/Admin.php:53
-#: src/app/data/routes.js:74
-#: src/app/pages/home/settingsSection.js:21
-#: src/app/pages/home/settingsSection.js:22
-#: src/app/pages/performance/index.js:50
+#: inc/Admin.php:65
+#: build/3.1.0/index.js:1
 msgid "Performance"
 msgstr ""
 
-#: inc/Admin.php:54
-#: inc/Admin.php:184
-#: src/app/data/routes.js:80
-#: src/app/pages/home/settingsSection.js:13
-#: src/app/pages/settings/index.js:13
+#: inc/Admin.php:69
+#: inc/Admin.php:212
+#: build/3.1.0/index.js:1
 msgid "Settings"
 msgstr ""
 
-#: inc/Admin.php:55
-#: src/app/data/routes.js:86
-#: src/app/pages/help/index.js:50
+#: inc/Admin.php:72
+#: build/3.1.0/index.js:1
 msgid "Help"
 msgstr ""
 
-#: inc/Admin.php:89
-#: inc/Admin.php:90
+#: inc/Admin.php:114
+#: inc/Admin.php:115
 msgid "MOJO"
 msgstr ""
 
-#: inc/Admin.php:129
+#: inc/Admin.php:157
 msgid "Please update to a newer WordPress version."
 msgstr ""
 
-#: inc/Admin.php:130
+#: inc/Admin.php:158
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr ""
 
-#: inc/Admin.php:131
+#: inc/Admin.php:159
 msgid "Please update now"
 msgstr ""
 
-#: inc/Admin.php:197
+#: inc/Admin.php:225
 msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://mojomarketplace.com/about\">MOJO</a>."
 msgstr ""
 
@@ -185,493 +181,210 @@ msgstr ""
 msgid "Auto-updates enabled"
 msgstr ""
 
-#: src/app/components/app-nav/logo.js:31
+#: build/3.1.0/index.js:1
 msgid "Mojo WordPress Plugin"
 msgstr ""
 
-#: src/app/components/errorCard/index.js:27
+#: build/3.1.0/index.js:1
 msgid "Oh No, An Error!"
 msgstr ""
 
-#: src/app/components/errorCard/index.js:32
+#: build/3.1.0/index.js:1
 msgid "You found an error, please refresh the page and try again!"
 msgstr ""
 
-#: src/app/components/errorCard/index.js:38
+#: build/3.1.0/index.js:1
 msgid "If the error persists, please contact support."
 msgstr ""
 
-#: src/app/components/errorCard/index.js:48
+#: build/3.1.0/index.js:1
 msgid " Error code: "
 msgstr ""
 
-#: src/app/components/site-info/index.js:45
+#: build/3.1.0/index.js:1
 msgid "MOJO Account"
 msgstr ""
 
-#: src/app/components/site-info/index.js:56
-msgid "View Store"
-msgstr ""
-
-#: src/app/components/site-info/index.js:56
-msgid "View Site"
-msgstr ""
-
-#: src/app/data/help.js:4
-msgid "Support Center"
-msgstr ""
-
-#: src/app/data/help.js:5
-msgid "Submit a support ticket. Once you open a ticket, we'll respond promptly to get it resolved."
-msgstr ""
-
-#: src/app/data/help.js:10
-msgid "Submit a Request"
-msgstr ""
-
-#: src/app/data/help.js:15
-msgid "Phone"
-msgstr ""
-
-#: src/app/data/help.js:16
-msgid "Speak to our support team over the phone at 855-464-5345."
-msgstr ""
-
-#: src/app/data/help.js:21
-msgid "Call Us"
-msgstr ""
-
-#: src/app/data/help.js:26
-#: src/app/pages/home/webContentSection.js:12
-msgid "Blog"
-msgstr ""
-
-#: src/app/data/help.js:27
-msgid "Follow along and take your website to its full potential with WordPress guides and how tos, inspiration, MOJO Marketplace product updates, and more!"
-msgstr ""
-
-#: src/app/data/help.js:32
-msgid "Learn Stuff"
-msgstr ""
-
-#: src/app/data/help.js:38
-msgid "WP Live Support"
-msgstr ""
-
-#: src/app/data/help.js:39
-msgid "Our WordPress experts will treat your problem like theirs and teach you how to build, grow, and maintain your websites. Starting at $29/month"
-msgstr ""
-
-#: src/app/data/help.js:44
-msgid "Sign Up"
-msgstr ""
-
-#: src/app/data/routes.js:41
+#: build/3.1.0/index.js:1
 msgid "There's nothing here!"
 msgstr ""
 
-#: src/app/pages/help/index.js:51
-msgid "We are available 24/7 to help answer questions and solve your problems."
+#: build/3.1.0/index.js:1
+msgid "Admin"
 msgstr ""
 
-#: src/app/pages/home/brandSection.js:22
-msgid "Upgrade Available"
+#: build/3.1.0/index.js:1
+msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr ""
 
-#: src/app/pages/home/brandSection.js:25
-msgid "Get the latest features."
+#: build/3.1.0/index.js:1
+msgid "Sorry, that is not allowed."
 msgstr ""
 
-#: src/app/pages/home/brandSection.js:35
-msgid "Bluehost Plugin"
+#: build/3.1.0/index.js:1
+msgid "This feature cannot currently be modified."
 msgstr ""
 
-#: src/app/pages/home/brandSection.js:38
-msgid "Upgrade to using the official Bluehost plugin and take advantage of integrations with your Bluehost hosting account."
-msgstr ""
-
-#: src/app/pages/home/brandSection.js:49
-#: src/app/pages/home/brandSection.js:71
-msgid "Upgrade"
-msgstr ""
-
-#: src/app/pages/home/brandSection.js:57
-msgid "HostGator Plugin"
-msgstr ""
-
-#: src/app/pages/home/brandSection.js:60
-msgid "Upgrade to using the official HostGator plugin and take advantage of integrations with your HostGator hosting account."
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:7
-msgid "Settings and Performance"
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:8
-msgid "Customize & fine-tune your site."
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:12
-msgid "Manage Settings"
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:17
-msgid "Manage your site settings. You can ajdust automatic updates, comments, revisions and more."
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:26
-msgid "Manage site performance and caching settings as well as clear the site cache."
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:31
-msgid "Visit Marketplace"
-msgstr ""
-
-#: src/app/pages/home/settingsSection.js:35
-msgid "Add site services, themes or plugins from the marketplace."
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:7
-msgid "Website Content"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:8
-msgid "Create, manage & sort your story."
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:13
-msgid "New Post"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:17
-msgid "Write a new blog post."
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:21
-msgid "Pages"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:22
-msgid "New Page"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:26
-msgid "Add fresh pages to your website."
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:30
-msgid "Categories"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:31
-msgid "Manage Categories"
-msgstr ""
-
-#: src/app/pages/home/webContentSection.js:35
-msgid "Organize existing content into categories."
-msgstr ""
-
-#: src/app/pages/home/webHostingSection.js:7
-msgid "Web Hosting"
-msgstr ""
-
-#: src/app/pages/home/webHostingSection.js:8
-msgid "Access & manage your mojo account."
-msgstr ""
-
-#: src/app/pages/home/webHostingSection.js:12
-#: src/app/pages/home/webHostingSection.js:13
-msgid "Manage MOJO Account"
-msgstr ""
-
-#: src/app/pages/home/webHostingSection.js:25
-msgid "Manage MOJO account products, options and billing."
-msgstr ""
-
-#: src/app/pages/marketplace/index.js:18
-msgid "Explore our featured collection of tools and services."
-msgstr ""
-
-#: src/app/pages/marketplace/index.js:19
-msgid "Oops, there was an error loading the marketplace, please try again later."
-msgstr ""
-
-#: src/app/pages/marketplace/index.js:20
-msgid "Sorry, no marketplace items. Please, try again later."
-msgstr ""
-
-#: src/app/pages/marketplace/index.js:21
-msgid "Load More"
-msgstr ""
-
-#: src/app/pages/performance/index.js:51
-msgid "This is where you can manage cache settings for your website."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:21
-msgid "Enabled All auto-updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:22
-msgid "Disabled All auto-updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:26
-msgid "Everything will automatically update."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:27
-msgid "Custom auto-update settings."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:83
-msgid "Manage All Updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:98
-msgid "Enabled Core auto-updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:99
-msgid "Disabled Core auto-updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:103
-msgid "WordPress will automatically update."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:104
-msgid "WordPress must be manually updated."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:138
-msgid "WordPress Core"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:154
-msgid "Enabled Plugins auto-update"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:155
-msgid "Disabled Plugins auto-update"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:159
-msgid "All plugins will automatically update."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:160
-msgid "Each plugin must be manually updated."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:194
-msgid "Plugins"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:210
-msgid "Enabled Themes auto-update"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:211
-msgid "Disabled Themes auto-update"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:216
-msgid "All themes will automatically update."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:217
-msgid "Each theme must be manually updated."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:251
-msgid "Themes"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:266
-msgid "Automatic Updates"
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:267
-msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
-msgstr ""
-
-#: src/app/pages/settings/automaticUpdates.js:276
-#: src/app/pages/settings/comingSoon.js:107
-#: src/app/pages/settings/commentSettings.js:240
-#: src/app/pages/settings/contentSettings.js:173
+#: build/3.1.0/index.js:1
 msgid "Oops! Something went wrong. Please try again."
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:21
-msgid "Coming soon activated"
+#: build/3.1.0/index.js:1
+msgid "Support Center"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:22
-msgid "Coming soon deactivated"
+#: build/3.1.0/index.js:1
+msgid "Submit a support ticket. Once you open a ticket, we'll respond promptly to get it resolved."
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:27
-msgid "Coming soon page is active. Site requires login."
+#: build/3.1.0/index.js:1
+msgid "Submit a Request"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:31
-msgid "Coming soon page is not active. Site is live to visitors."
+#: build/3.1.0/index.js:1
+msgid "Phone"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:41
-msgid "Coming Soon"
+#: build/3.1.0/index.js:1
+msgid "Speak to our support team over the phone at 855-464-5345."
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:42
-msgid "Live"
+#: build/3.1.0/index.js:1
+msgid "Call Us"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:47
+#: build/3.1.0/index.js:1
+msgid "Blog"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Follow along and take your website to its full potential with WordPress guides and how tos, inspiration, MOJO Marketplace product updates, and more!"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Learn Stuff"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "WP Live Support"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Our WordPress experts will treat your problem like theirs and teach you how to build, grow, and maintain your websites. Starting at $29/month"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Sign Up"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Settings and Performance"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Customize & fine-tune your site."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Manage Settings"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Manage your site settings. You can ajdust automatic updates, comments, revisions and more."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Manage site performance and caching settings as well as clear the site cache."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Visit Marketplace"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Add site services, themes or plugins from the marketplace."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Explore our featured collection of tools and services."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Oops, there was an error loading the marketplace, please try again later."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Sorry, no marketplace items. Please, try again later."
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Load More"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "Oops! Something Went Wrong"
+msgstr ""
+
+#: build/3.1.0/index.js:1
+msgid "An error occurred while loading the content. Please try again later."
+msgstr ""
+
+#: build/3.1.0/index.js:1
 msgid "Site Status"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:83
-msgid "Still building your site? Need to make a big change?"
+#: build/3.1.0/index.js:1
+msgid "Not Live"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:88
+#: build/3.1.0/index.js:1
+msgid "Live"
+msgstr ""
+
+#: build/3.1.0/index.js:1
 msgid "Coming soon page"
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:89
-msgid "Your Hostgator Coming Soon page lets you hide your site from visitors while you make the magic happen."
+#: build/3.1.0/index.js:1
+msgid "Your Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr ""
 
-#: src/app/pages/settings/comingSoon.js:101
+#: build/3.1.0/index.js:1
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:17
-msgid "Disabled old post comments"
+#: build/3.1.0/index.js:1
+msgid "Manage All Updates"
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:18
-msgid "Enabled old post comments"
+#: build/3.1.0/index.js:1
+msgid "WordPress Core"
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:23
-msgid "Comments on old posts are disabled."
+#: build/3.1.0/index.js:1
+msgid "Plugins"
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:24
-msgid "Comments are allowed on old posts."
+#: build/3.1.0/index.js:1
+msgid "Themes"
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:58
-msgid "Disable comments for older posts"
+#: build/3.1.0/index.js:1
+msgid "Automatic Updates"
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:77
-msgid "Comments setting saved "
+#: build/3.1.0/index.js:1
+msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr ""
 
-#: src/app/pages/settings/commentSettings.js:84
-msgid "Comments on posts are disabled after "
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:86
-#: src/app/pages/settings/commentSettings.js:95
+#: build/3.1.0/index.js:1
 msgid " day."
 msgid_plural " days."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/pages/settings/commentSettings.js:93
-msgid "Close comments after "
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:160
-msgid "Comments setting saved."
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:166
-msgid "Posts will display "
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:168
+#: build/3.1.0/index.js:1
 msgid " comment at a time."
 msgid_plural " comments at a time."
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/app/pages/settings/commentSettings.js:208
-msgid "Display "
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:209
-msgid " comments per page."
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:231
-msgid "Comments"
-msgstr ""
-
-#: src/app/pages/settings/commentSettings.js:232
-msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:17
-msgid "Post revision setting saved "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:23
-msgid "Posts will save  "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:25
-msgid " revision."
-msgid_plural " revisions."
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/app/pages/settings/contentSettings.js:31
-msgid "Saving drafts and updating published content creates revisions. Make changes with confidence, knowing you can take "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:33
-msgid " step back."
-msgid_plural " steps back."
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/app/pages/settings/contentSettings.js:68
-msgid "Number of revisions posts can save "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:94
-msgid "Trash setting saved "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:100
-#: src/app/pages/settings/contentSettings.js:140
-msgid "The trash will automatically empty every "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:102
-#: src/app/pages/settings/contentSettings.js:142
-msgid " week."
-msgid_plural " weeks."
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/app/pages/settings/contentSettings.js:138
-msgid "Trash emptying frequency "
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:164
-msgid "Content Options"
-msgstr ""
-
-#: src/app/pages/settings/contentSettings.js:165
-msgid "Controls for content revisions and how often to empty the trash."
-msgstr ""
-
-#: src/app/pages/settings/index.js:14
-msgid "This is where you can manage common settings for your website."
-msgstr ""
