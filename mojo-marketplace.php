@@ -31,7 +31,7 @@ if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
     exit;
 }
 
-// Define version constant
+// Define constants
 define( 'MOJO_PLUGIN_VERSION', '3.2.0' );
 define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -66,11 +66,8 @@ $nfd_plugins_check->incompatible_plugins = array(
 	'The Web.com Plugin'       => 'wp-plugin-web/wp-plugin-web.php',
 	'The Crazy Domains Plugin' => 'wp-plugin-crazy-domains/wp-plugin-crazy-domains.php',
 );
-// Deactivate legacy plugin
-// $nfd_plugins_check->legacy_plugins = array(
-	// 'The MOJO Marketplace' => 'mojo-marketplace-wp-plugin/mojo-marketplace.php', // old mojo
-// );
-$pass_nfd_check                    = $nfd_plugins_check->check_plugin_requirements();
+
+$pass_nfd_check = $nfd_plugins_check->check_plugin_requirements();
 
 // Check PHP version before initializing to prevent errors if plugin is incompatible.
 if ( $pass_nfd_check && version_compare( PHP_VERSION, '5.3', '>=' ) ) {
