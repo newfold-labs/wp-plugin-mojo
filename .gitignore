@@ -16,7 +16,7 @@ cypress.env.json
 # Built-app files
 /.docs
 /build/*
-/wp-plugin-mojo
+/mojo-marketplace-wp-plugin
 
 # File Types
 *.log
