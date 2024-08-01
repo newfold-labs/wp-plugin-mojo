@@ -28,7 +28,7 @@ namespace Mojo;
 
 // Do not allow multiple copies of the MOJO Plugin to be active
 if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
-    exit;
+	exit;
 }
 
 // Define constants
@@ -37,7 +37,7 @@ define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOJO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 if ( ! defined( 'NFD_HIIVE_URL' ) ) {
-    define( 'NFD_HIIVE_URL', 'https://hiive.cloud/api' );
+	define( 'NFD_HIIVE_URL', 'https://hiive.cloud/api' );
 }
 
 define( 'MOJO_BUILD_DIR', MOJO_PLUGIN_DIR . 'build/' . MOJO_PLUGIN_VERSION );
