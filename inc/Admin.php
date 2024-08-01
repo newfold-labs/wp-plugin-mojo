@@ -7,6 +7,8 @@
 
 namespace Mojo;
 
+use function NewfoldLabs\WP\Module\Features\isEnabled;
+
 /**
  * \MOJO\Admin
  */
@@ -33,6 +35,10 @@ final class Admin {
 	}
 	/**
 	 * Add to runtime
+	 *
+	 * @param array $sdk - runtime properties from module
+	 *
+	 * @return array
 	 */
 	public static function add_to_runtime( $sdk ) {
 		include MOJO_PLUGIN_DIR . '/inc/Data.php';
@@ -47,12 +53,31 @@ final class Admin {
 	 * @return array
 	 */
 	public static function subpages() {
-		return array(
-			'mojo#/home'        => __( 'Home', 'wp-plugin-mojo' ),
+		$home        = array(
+			'mojo#/home' => __( 'Home', 'wp-plugin-mojo' ),
+		);
+		$marketplace = array(
 			'mojo#/marketplace' => __( 'Marketplace', 'wp-plugin-mojo' ),
-			'mojo#/performance' => __( 'Performance', 'wp-plugin-mojo' ),
-			'mojo#/settings'    => __( 'Settings', 'wp-plugin-mojo' ),
-			'mojo#/help'        => __( 'Help', 'wp-plugin-mojo' ),
+		);
+		// add performance if enabled
+		$performance = isEnabled( 'performance' )
+			? array(
+				'mojo#/performance' => __( 'Performance', 'wp-plugin-mojo' ),
+			)
+			: array();
+		$settings    = array(
+			'mojo#/settings' => __( 'Settings', 'wp-plugin-mojo' ),
+		);
+		$help        = array(
+			'mojo#/help' => __( 'Help', 'wp-plugin-mojo' ),
+		);
+		
+		return array_merge(
+			$home,
+			$marketplace,
+			$performance,
+			$settings,
+			$help
 		);
 	}
 
@@ -95,15 +120,18 @@ final class Admin {
 			0
 		);
 
-		foreach ( self::subpages() as $route => $title ) {
-			\add_submenu_page(
-				'mojo',
-				$title,
-				$title,
-				'manage_options',
-				$route,
-				array( __CLASS__, 'render' )
-			);
+		// If we're outside of App, add subpages to App menu
+		if ( false === ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) ) { // phpcs:ignore
+			foreach ( self::subpages() as $route => $title ) {
+				\add_submenu_page(
+					'mojo',
+					$title,
+					$title,
+					'manage_options',
+					$route,
+					array( __CLASS__, 'render' )
+				);
+			}
 		}
 	}
 
@@ -152,7 +180,7 @@ final class Admin {
 		\wp_register_script(
 			'mojo-script',
 			MOJO_BUILD_URL . '/index.js',
-			array_merge( $asset['dependencies'], [ 'nfd-runtime' ] ),
+			array_merge( $asset['dependencies'], array( 'newfold-features', 'nfd-runtime' ) ),
 			$asset['version'],
 			true
 		);

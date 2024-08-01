@@ -5,9 +5,8 @@ import {
 } from '../../util/helpers';
 import { useState } from '@wordpress/element';
 import { useUpdateEffect } from 'react-use';
-import { Alert, ToggleField } from "@newfold/ui-component-library";
-import { SectionSettings } from "../../components/section";
-import { useNotification } from '../../components/notifications/feed';
+import { Alert, Container, ToggleField } from "@newfold/ui-component-library";
+import { useNotification } from 'App/components/notifications';
 
 const ComingSoon = () => {
 	const { store, setStore } = useContext(AppStore);
@@ -36,15 +35,21 @@ const ComingSoon = () => {
 	
 	const getComingSoonSectionTitle = () => {
 		const getStatus = () => {
-			return (
-				comingSoon 
-				? <span className="nfd-text-[#e10001]">{__('Coming Soon', 'wp-plugin-mojo')}</span>
-				: <span className="nfd-text-[#008112]">{__('Live', 'wp-plugin-mojo')}</span>
+			return comingSoon ? (
+				<span className="nfd-text-[#e10001] coming-soon-status">
+					{ __( 'Not Live', 'wp-plugin-mojo' ) }
+				</span>
+			) : (
+				<span className="nfd-text-[#008112] coming-soon-status">
+					{ __( 'Live', 'wp-plugin-mojo' ) }
+				</span>
 			);
 		};
 
 		return (
-			<span>{__('Site Status', 'wp-plugin-mojo')}: {getStatus()}</span>
+			<span>
+				{ __('Site Status', 'wp-plugin-mojo')}: {getStatus() }
+			</span>
 		)
 	};
 
@@ -52,6 +57,18 @@ const ComingSoon = () => {
 		mojoSettingsApiFetch({ comingSoon: !comingSoon }, setError, (response) => {
 			setComingSoon(!comingSoon);
 		});
+	};
+
+	const getComingSoonSectionDescription = () => {
+		return comingSoon
+			? __(
+					'Turn off your "Coming Soon" page when you are ready to launch your website.',
+					'wp-plugin-mojo'
+			  )
+			: __(
+					'Turn on your "Coming Soon" page when you need to make major changes to your website.',
+					'wp-plugin-mojo'
+			  );
 	};
 
 	const notifySuccess = () => {
@@ -67,6 +84,10 @@ const ComingSoon = () => {
 		});
 	};
 
+	useUpdateEffect( () => {
+		setComingSoon( store.comingSoon );
+	}, [ store.comingSoon ] );
+
 	useUpdateEffect(() => {
 		setStore({
 			...store,
@@ -78,16 +99,16 @@ const ComingSoon = () => {
 	}, [comingSoon]);
 
 	return (
-		<SectionSettings
-			title={getComingSoonSectionTitle()}
-			description={__('Still building your site? Need to make a big change?', 'wp-plugin-mojo')}
+		<Container.SettingsField
+			title={ getComingSoonSectionTitle() }
+			description={ getComingSoonSectionDescription() }
 		>
 			<div className="nfd-flex nfd-flex-col nfd-gap-6">
 				<ToggleField
 					id="coming-soon-toggle"
 					label={__('Coming soon page', 'wp-plugin-mojo')}
 					description={__(
-						'Your Hostgator Coming Soon page lets you hide your site from visitors while you make the magic happen.',
+						'Your Coming Soon page lets you hide your site from visitors while you make the magic happen.',
 						'wp-plugin-mojo'
 					)}
 					checked={comingSoon}
@@ -108,7 +129,7 @@ const ComingSoon = () => {
 					</Alert>
 				}
 			</div>
-		</SectionSettings>
+		</Container.SettingsField>
 	);
 }
 
