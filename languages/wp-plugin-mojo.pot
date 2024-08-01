@@ -15,27 +15,27 @@ msgstr ""
 "X-Domain: wp-plugin-mojo\n"
 
 #. Plugin Name of the plugin
-#: wp-plugin-mojo.php
+#: mojo-marketplace.php
 msgid "The MOJO Plugin"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: wp-plugin-mojo.php
+#: mojo-marketplace.php
 msgid "https://mojomarketplace.com"
 msgstr ""
 
 #. Description of the plugin
-#: wp-plugin-mojo.php
+#: mojo-marketplace.php
 msgid "WordPress plugin that integrates a WordPress site with Hosting."
 msgstr ""
 
 #. Author of the plugin
-#: wp-plugin-mojo.php
+#: mojo-marketplace.php
 msgid "Bluehost"
 msgstr ""
 
 #. Author URI of the plugin
-#: wp-plugin-mojo.php
+#: mojo-marketplace.php
 msgid "https://bluehost.com"
 msgstr ""
 
