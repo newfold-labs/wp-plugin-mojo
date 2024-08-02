@@ -74,51 +74,51 @@ msgstr ""
 msgid "Preview the coming soon landing page"
 msgstr ""
 
-#: inc/Admin.php:57
-#: inc/Admin.php:211
+#: inc/Admin.php:58
+#: inc/Admin.php:212
 #: build/3.2.0/index.js:1
 msgid "Home"
 msgstr ""
 
-#: inc/Admin.php:60
+#: inc/Admin.php:61
 #: build/3.2.0/index.js:1
 msgid "Marketplace"
 msgstr ""
 
-#: inc/Admin.php:65
+#: inc/Admin.php:66
 #: build/3.2.0/index.js:1
 msgid "Performance"
 msgstr ""
 
-#: inc/Admin.php:69
-#: inc/Admin.php:212
+#: inc/Admin.php:70
+#: inc/Admin.php:213
 #: build/3.2.0/index.js:1
 msgid "Settings"
 msgstr ""
 
-#: inc/Admin.php:72
+#: inc/Admin.php:73
 #: build/3.2.0/index.js:1
 msgid "Help"
 msgstr ""
 
-#: inc/Admin.php:114
 #: inc/Admin.php:115
+#: inc/Admin.php:116
 msgid "MOJO"
 msgstr ""
 
-#: inc/Admin.php:157
+#: inc/Admin.php:158
 msgid "Please update to a newer WordPress version."
 msgstr ""
 
-#: inc/Admin.php:158
+#: inc/Admin.php:159
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr ""
 
-#: inc/Admin.php:159
+#: inc/Admin.php:160
 msgid "Please update now"
 msgstr ""
 
-#: inc/Admin.php:225
+#: inc/Admin.php:226
 msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://mojomarketplace.com/about\">MOJO</a>."
 msgstr ""
 
