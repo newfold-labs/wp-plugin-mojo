@@ -23,7 +23,8 @@ final class Admin {
 		/* Load Page Scripts & Styles. */
 		\add_action( 'load-toplevel_page_mojo', array( __CLASS__, 'assets' ) );
 		/* Add Links to WordPress Plugins list item. */
-		\add_filter( 'plugin_action_links_wp-plugin-mojo/wp-plugin-mojo.php', array( __CLASS__, 'actions' ) );
+		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) );
+		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) );
 		/* Add inline style to hide subnav link */
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
 		/* Add runtime for data store */
