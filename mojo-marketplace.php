@@ -15,7 +15,7 @@
  * Version:           3.2.0
  * Tested up to:      6.6.1
  * Requires at least: 5.8
- * Requires PHP:      7.0
+ * Requires PHP:      7.1
  * Author:            Bluehost
  * Author URI:        https://bluehost.com
  * Text Domain:       wp-plugin-mojo
