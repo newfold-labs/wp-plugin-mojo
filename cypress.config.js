@@ -76,7 +76,8 @@ module.exports = defineConfig({
     supportFile: 'tests/cypress/support/index.js',
     testIsolation: false,
     excludeSpecPattern: [
-        'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/coming-soon.cy.js' // excluding until either adding ecommerce module or removing coming soon components in ecommerce module
+        'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/coming-soon.cy.js', // excluding until either adding ecommerce module or removing coming soon components in ecommerce module
+        'vendor/newfold-labs/wp-module-deactivation/tests/cypress/integration/deactivation-survey.cy.js' // excluding due to the mismatched slug name
     ],
     experimentalRunAllSpecs: true,
   },
