@@ -23,12 +23,12 @@ final class Admin {
 		/* Load Page Scripts & Styles. */
 		\add_action( 'load-toplevel_page_mojo', array( __CLASS__, 'assets' ) );
 		/* Add Links to WordPress Plugins list item. */
-		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) );
-		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) );
+		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for build
+		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for local dev
 		/* Add inline style to hide subnav link */
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
 		/* Add runtime for data store */
-		\add_filter('newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
+		\add_filter( 'newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
 
 		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
@@ -72,7 +72,7 @@ final class Admin {
 		$help        = array(
 			'mojo#/help' => __( 'Help', 'wp-plugin-mojo' ),
 		);
-		
+
 		return array_merge(
 			$home,
 			$marketplace,
