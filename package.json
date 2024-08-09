@@ -75,8 +75,6 @@
         "srb": "npm run simulate-runner-build",
         "start": "NODE_ENV=develop wp-scripts start",
         "start:analyzer": "npm run start --webpack-bundle-analyzer",
-        "storybook:dev": "start-storybook -c ./storybook",
-        "storybook:build": "build-storybook -c ./storybook -o ./.docs",
         "test:e2e": "npx cypress run",
         "test:unit": "wp-scripts test-unit-js"
     }
