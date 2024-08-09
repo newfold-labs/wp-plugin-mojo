@@ -102,7 +102,7 @@ $mojo_module_container->set(
 setContainer( $mojo_module_container );
 
 // Set up the updater endpoint and map values
-$mojo_update_url     = 'https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-mojo'; // Custom API GET endpoint
+$mojo_update_url     = 'https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-mojo?slug=mojo-marketplace-wp-plugin&file=mojo-marketplace.php '; // Custom API GET endpoint
 $mojo_plugin_updater = new PluginUpdater( MOJO_PLUGIN_FILE, $mojo_update_url );
 $mojo_plugin_updater->setDataMap(
 	array(
