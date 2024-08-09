@@ -26,6 +26,9 @@
             "*": "dist"
         }
     },
+    "extra": {
+        "installer-name": "mojo-marketplace-wp-plugin"
+    },
     "repositories": {
         "newfold": {
             "type": "composer",
