@@ -103,8 +103,8 @@ msgstr ""
 
 #: inc/Admin.php:118
 #: inc/Admin.php:119
-#: inc/Admin.php:259
 #: inc/Admin.php:260
+#: inc/Admin.php:261
 msgid "MOJO"
 msgstr ""
 
