@@ -232,9 +232,10 @@ final class Admin {
 
 	/**
 	 * Old Mojo Url ids
+	 *
 	 * @return array
 	 */
-	public static function get_old_url_ids(){
+	public static function get_old_url_ids() {
 		return array(
 			'mojo-marketplace',
 			'mojo-performance',
@@ -254,7 +255,7 @@ final class Admin {
 	 */
 	public static function old_admin_pages() {
 		// Add old plugin pages (for redirecting)
-		foreach( self::get_old_url_ids() as $id ) {
+		foreach ( self::get_old_url_ids() as $id ) {
 			\add_menu_page(
 				__( 'MOJO', 'wp-plugin-mojo' ),
 				__( 'MOJO', 'wp-plugin-mojo' ),
@@ -273,10 +274,9 @@ final class Admin {
 	 */
 	public static function old_admin_redirect() {
 		global $pagenow;
-		if ( $pagenow == 'admin.php' && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
+		if ( $pagenow === 'admin.php' && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
 			wp_redirect( admin_url( 'admin.php?page=mojo' ) );
 			exit;
 		}
 	}
-
 } // END \MOJO\Admin
