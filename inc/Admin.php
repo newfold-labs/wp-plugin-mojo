@@ -29,6 +29,9 @@ final class Admin {
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
 		/* Add runtime for data store */
 		\add_filter( 'newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
+		/* Add redirect from old url */
+		\add_action( 'admin_menu', array( __CLASS__, 'old_admin_pages' ) );
+		\add_action( 'admin_init', array( __CLASS__, 'old_admin_redirect' ) );
 
 		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
@@ -226,4 +229,53 @@ final class Admin {
 		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://mojomarketplace.com/about">MOJO</a>.', 'wp-plugin-mojo' ) );
 		return $footer_text;
 	}
+
+	/**
+	 * Old Mojo Url ids
+	 * @return array
+	 */
+	public static function get_old_url_ids(){
+		return array(
+			'mojo-marketplace',
+			'mojo-performance',
+			'mojo-staging',
+			'mojo-home',
+			'mojo-hosting-panel',
+			'mojo-jetpack-connect-bounce'
+		);
+	}
+
+	/**
+	 * Keep dummy links for old admin pages
+	 * so we can redirect to the new page.
+	 *
+	 * @return void
+	 */
+	public static function old_admin_pages() {
+		// Add old plugin pages (for redirecting)
+		foreach( self::get_old_url_ids() as $id ) {
+			\add_menu_page(
+				__( 'MOJO', 'wp-plugin-mojo' ),
+				__( 'MOJO', 'wp-plugin-mojo' ),
+				'manage_options',
+				$id,
+				false
+			);
+		}
+	}
+
+	/**
+	 * Redirect old admin page to new admin page,
+	 * only applies on first nav click after update or a bookmark.
+	 *
+	 * @return void
+	 */
+	public static function old_admin_redirect() {
+		global $pagenow;
+		if ( $pagenow == 'admin.php' && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
+			wp_redirect( admin_url( 'admin.php?page=mojo' ) );
+			exit;
+		}
+	}
+
 } // END \MOJO\Admin
