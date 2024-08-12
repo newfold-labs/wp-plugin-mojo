@@ -241,7 +241,8 @@ final class Admin {
 			'mojo-staging',
 			'mojo-home',
 			'mojo-hosting-panel',
-			'mojo-jetpack-connect-bounce'
+			'mojo-jetpack-connect-bounce',
+			'mojo-marketplace-page',
 		);
 	}
 
