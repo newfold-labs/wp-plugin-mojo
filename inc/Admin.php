@@ -7,6 +7,8 @@
 
 namespace Mojo;
 
+use function NewfoldLabs\WP\Module\Features\isEnabled;
+
 /**
  * \MOJO\Admin
  */
@@ -21,11 +23,15 @@ final class Admin {
 		/* Load Page Scripts & Styles. */
 		\add_action( 'load-toplevel_page_mojo', array( __CLASS__, 'assets' ) );
 		/* Add Links to WordPress Plugins list item. */
-		\add_filter( 'plugin_action_links_wp-plugin-mojo/wp-plugin-mojo.php', array( __CLASS__, 'actions' ) );
+		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for build
+		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for local dev
 		/* Add inline style to hide subnav link */
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
 		/* Add runtime for data store */
-		\add_filter('newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
+		\add_filter( 'newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
+		/* Add redirect from old url */
+		\add_action( 'admin_menu', array( __CLASS__, 'old_admin_pages' ) );
+		\add_action( 'admin_init', array( __CLASS__, 'old_admin_redirect' ) );
 
 		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
@@ -33,6 +39,10 @@ final class Admin {
 	}
 	/**
 	 * Add to runtime
+	 *
+	 * @param array $sdk - runtime properties from module
+	 *
+	 * @return array
 	 */
 	public static function add_to_runtime( $sdk ) {
 		include MOJO_PLUGIN_DIR . '/inc/Data.php';
@@ -47,12 +57,31 @@ final class Admin {
 	 * @return array
 	 */
 	public static function subpages() {
-		return array(
-			'mojo#/home'        => __( 'Home', 'wp-plugin-mojo' ),
+		$home        = array(
+			'mojo#/home' => __( 'Home', 'wp-plugin-mojo' ),
+		);
+		$marketplace = array(
 			'mojo#/marketplace' => __( 'Marketplace', 'wp-plugin-mojo' ),
-			'mojo#/performance' => __( 'Performance', 'wp-plugin-mojo' ),
-			'mojo#/settings'    => __( 'Settings', 'wp-plugin-mojo' ),
-			'mojo#/help'        => __( 'Help', 'wp-plugin-mojo' ),
+		);
+		// add performance if enabled
+		$performance = isEnabled( 'performance' )
+			? array(
+				'mojo#/performance' => __( 'Performance', 'wp-plugin-mojo' ),
+			)
+			: array();
+		$settings    = array(
+			'mojo#/settings' => __( 'Settings', 'wp-plugin-mojo' ),
+		);
+		$help        = array(
+			'mojo#/help' => __( 'Help', 'wp-plugin-mojo' ),
+		);
+
+		return array_merge(
+			$home,
+			$marketplace,
+			$performance,
+			$settings,
+			$help
 		);
 	}
 
@@ -95,15 +124,18 @@ final class Admin {
 			0
 		);
 
-		foreach ( self::subpages() as $route => $title ) {
-			\add_submenu_page(
-				'mojo',
-				$title,
-				$title,
-				'manage_options',
-				$route,
-				array( __CLASS__, 'render' )
-			);
+		// If we're outside of App, add subpages to App menu
+		if ( false === ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) ) { // phpcs:ignore
+			foreach ( self::subpages() as $route => $title ) {
+				\add_submenu_page(
+					'mojo',
+					$title,
+					$title,
+					'manage_options',
+					$route,
+					array( __CLASS__, 'render' )
+				);
+			}
 		}
 	}
 
@@ -152,7 +184,7 @@ final class Admin {
 		\wp_register_script(
 			'mojo-script',
 			MOJO_BUILD_URL . '/index.js',
-			array_merge( $asset['dependencies'], [ 'nfd-runtime' ] ),
+			array_merge( $asset['dependencies'], array( 'newfold-features', 'nfd-runtime' ) ),
 			$asset['version'],
 			true
 		);
@@ -196,5 +228,55 @@ final class Admin {
 	public static function add_brand_to_admin_footer( $footer_text ) {
 		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://mojomarketplace.com/about">MOJO</a>.', 'wp-plugin-mojo' ) );
 		return $footer_text;
+	}
+
+	/**
+	 * Old Mojo Url ids
+	 *
+	 * @return array
+	 */
+	public static function get_old_url_ids() {
+		return array(
+			'mojo-marketplace',
+			'mojo-performance',
+			'mojo-staging',
+			'mojo-home',
+			'mojo-hosting-panel',
+			'mojo-jetpack-connect-bounce',
+			'mojo-marketplace-page',
+		);
+	}
+
+	/**
+	 * Keep dummy links for old admin pages
+	 * so we can redirect to the new page.
+	 *
+	 * @return void
+	 */
+	public static function old_admin_pages() {
+		// Add old plugin pages (for redirecting)
+		foreach ( self::get_old_url_ids() as $id ) {
+			\add_menu_page(
+				__( 'MOJO', 'wp-plugin-mojo' ),
+				__( 'MOJO', 'wp-plugin-mojo' ),
+				'manage_options',
+				$id,
+				false
+			);
+		}
+	}
+
+	/**
+	 * Redirect old admin page to new admin page,
+	 * only applies on first nav click after update or a bookmark.
+	 *
+	 * @return void
+	 */
+	public static function old_admin_redirect() {
+		global $pagenow;
+		if ( 'admin.php' === $pagenow && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
+			wp_redirect( admin_url( 'admin.php?page=mojo' ) );
+			exit;
+		}
 	}
 } // END \MOJO\Admin

@@ -25,8 +25,8 @@ jobs:
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-mojo') && (github.event.release.prerelease == false) }}
         run: |
           taggedVersion=${{ env.VERSION }}
-          pluginHeaderVersion=`grep "Version:" wp-plugin-mojo.php | grep -Eo "[0-9\.]*"`
-          pluginConstantVersion=`grep "'MOJO_PLUGIN_VERSION'," wp-plugin-mojo.php | grep -Eo "[0-9\.]*"`
+          pluginHeaderVersion=`grep "Version:" mojo-marketplace.php | grep -Eo "[0-9\.]*"`
+          pluginConstantVersion=`grep "'MOJO_PLUGIN_VERSION'," mojo-marketplace.php | grep -Eo "[0-9\.]*"`
           pluginPackageVersion=`grep '"version"' package.json | grep -Eo "[0-9\.]*"`
           echo "Tagged version: $taggedVersion"
           echo "Plugin header version: $pluginHeaderVersion"
@@ -51,12 +51,12 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
+          echo "PACKAGE=mojo-marketplace-wp-plugin" >> $GITHUB_OUTPUT
 
-      - name: Use Node.js 16.x
+      - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
 
       - name: Get Composer Cache Directory
@@ -94,7 +94,7 @@ jobs:
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-mojo') && (github.event.release.prerelease == false) }}
         run: |
           wpEnvVersion=`grep "WordPress/WordPress#tags/" .wp-env.json | grep -Eo "[0-9\.]*"`
-          pluginHeaderTestedVersion=`grep "Tested up to:" wp-plugin-mojo.php | grep -Eo "[0-9\.]*"`
+          pluginHeaderTestedVersion=`grep "Tested up to:" mojo-marketplace.php | grep -Eo "[0-9\.]*"`
           echo "wp-env version: $wpEnvVersion"
           echo "Plugin header tested version: $pluginHeaderTestedVersion"
           [[ "$wpEnvVersion" == "$pluginHeaderTestedVersion" ]] || exit 1

@@ -38,7 +38,13 @@ export const AppStoreProvider = ( { children } ) => {
 		if ( false === booted ) {
 			mojoApiFetchSettings()
 				.then( ( settings ) => {
-					setStore( { ...store, ...window.WPPM, ...settings } );
+					setStore( {
+						...store,
+						...window.WPPM,
+						...settings,
+						features: window.NewfoldFeatures.features,
+						toggleableFeatures: window.NewfoldFeatures.togglable,
+					} );
 					setBooted( true );
 				} )
 				.catch( ( error ) => {

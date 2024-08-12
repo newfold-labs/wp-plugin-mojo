@@ -1,24 +1,23 @@
-import './stylesheet.scss';
-import './tailwind.css';
+import 'App/stylesheet.scss';
+import 'App/tailwind.pcss';
 
+import { useEffect } from 'react';
+import { useLocation, HashRouter as Router } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import { kebabCase, filter } from 'lodash';
 import { Root } from "@newfold/ui-component-library";
 import { NewfoldRuntime } from '@newfold-labs/wp-module-runtime';
-import { __ } from '@wordpress/i18n';
+import { SnackbarList, Spinner } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
-import AppStore, { AppStoreProvider } from './data/store';
-import { useLocation, HashRouter as Router } from 'react-router-dom';
-import { SnackbarList, Spinner } from '@wordpress/components';
-import classnames from 'classnames';
-import AppRoutes from './data/routes';
-import ErrorCard from './components/errorCard';
-import { useEffect } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
-import { setActiveSubnav } from './util/helpers';
-import { kebabCase, filter } from 'lodash';
-import { AppNav } from './components/app-nav';
-import { SiteInfoBar } from './components/site-info';
-import { NotificationFeed } from './components/notifications/feed';
+import AppRoutes from 'App/data/routes';
+import AppStore, { AppStoreProvider } from 'App/data/store';
+import ErrorCard from 'App/components/errorCard';
+import { setActiveSubnav } from 'App/util/helpers';
+import { useHandlePageLoad } from 'App/util/hooks';
+import { AppNav } from 'App/components/app-nav';
+import { SiteInfoBar } from 'App/components/site-info';
+import { NotificationFeed } from 'App/components/notifications';
 
 // component sourced from module
 import { default as NewfoldNotifications } from '../../vendor/newfold-labs/wp-module-notifications/assets/js/components/notifications/'; 
@@ -28,9 +27,6 @@ import { useState } from '@wordpress/element';
 import { addQueryArgs } from '@wordpress/url';
 
 const Notices = () => {
-	if ( 'undefined' === typeof noticesStore ) {
-		return null;
-	}
 	const notices = useSelect(
 		( select ) =>
 			select( noticesStore )
@@ -48,29 +44,17 @@ const Notices = () => {
 	);
 };
 
-const handlePageLoad = () => {
-	const location = useLocation();
-	const routeContents = document.querySelector( '.wppm-app-body-inner' );
-	useEffect( () => {
-		setActiveSubnav( location.pathname );
-		window.scrollTo( 0, 0 );
-		if ( routeContents ) {
-			routeContents.focus( { preventScroll: true } );
-		}
-	}, [ location.pathname ] );
-};
-
 const AppBody = ( props ) => {
 	const location = useLocation();
 	const hashedPath = '#' + location.pathname;
 	const { booted, hasError } = useContext( AppStore );
 
-	handlePageLoad();
+	useHandlePageLoad();
 
 	return (
 		<main
 			id="wppm-app-rendered"
-			className={ classnames(
+			className={ classNames(
 				'wpadmin-brand-mojo',
 				`wppm-wp-${ NewfoldRuntime.wpVersion }`,
 				`wppm-page-${ kebabCase( location.pathname ) }`,
@@ -86,7 +70,6 @@ const AppBody = ( props ) => {
 				methods={{
 					apiFetch,
 					addQueryArgs,
-					classnames,
 					filter,
 					useState,
 					useEffect
@@ -104,7 +87,7 @@ const AppBody = ( props ) => {
 			</div>
 
 			<div className="wppm-app-snackbar">
-				<Notices />
+				{ 'undefined' !== typeof noticesStore && <Notices /> }
 			</div>
 		</main>
 	);

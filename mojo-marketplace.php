@@ -12,10 +12,10 @@
  * Plugin URI:        https://mojomarketplace.com
  * Update URI:        https://github.com/newfold-labs/wp-plugin-mojo/
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
- * Version:           3.0.0
- * Tested up to:      6.4.1
+ * Version:           3.2.0
+ * Tested up to:      6.6.1
  * Requires at least: 5.8
- * Requires PHP:      7.0
+ * Requires PHP:      7.1
  * Author:            Bluehost
  * Author URI:        https://bluehost.com
  * Text Domain:       wp-plugin-mojo
@@ -32,7 +32,7 @@ if ( defined( 'MOJO_PLUGIN_VERSION' ) ) {
 }
 
 // Define constants
-define( 'MOJO_PLUGIN_VERSION', '3.0.0' );
+define( 'MOJO_PLUGIN_VERSION', '3.2.0' );
 define( 'MOJO_PLUGIN_FILE', __FILE__ );
 define( 'MOJO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOJO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -50,8 +50,8 @@ if ( 'plugins.php' === $pagenow ) {
 
 	$plugin_check = new Plugin_PHP_Compat_Check( __FILE__ );
 
-	$plugin_check->min_php_version = '5.3';
-	$plugin_check->min_wp_version  = '4.7';
+	$plugin_check->min_php_version = '7.1';
+	$plugin_check->min_wp_version  = '6.0';
 
 	$plugin_check->check_plugin_requirements();
 }
@@ -61,17 +61,15 @@ require_once MOJO_PLUGIN_DIR . '/inc/plugin-nfd-compat-check.php';
 $nfd_plugins_check = new NFD_Plugin_Compat_Check( MOJO_PLUGIN_FILE );
 // Defer to Incompatible plugin, self-deactivate
 $nfd_plugins_check->incompatible_plugins = array(
-	'The Bluehost Plugin'  => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
-	'The HostGator Plugin' => 'wp-plugin-hostgator/wp-plugin-hostgator.php',
-	'The Web.com Plugin'   => 'wp-plugin-web/wp-plugin-web.php',
+	'The Bluehost Plugin'      => 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
+	'The HostGator Plugin'     => 'wp-plugin-hostgator/wp-plugin-hostgator.php',
+	'The Web.com Plugin'       => 'wp-plugin-web/wp-plugin-web.php',
+	'The Crazy Domains Plugin' => 'wp-plugin-crazy-domains/wp-plugin-crazy-domains.php',
 );
-// Deactivate legacy plugin
-$nfd_plugins_check->legacy_plugins = array(
-	'The MOJO Marketplace' => 'mojo-marketplace-wp-plugin/mojo-marketplace.php', // old mojo
-);
+
 $pass_nfd_check = $nfd_plugins_check->check_plugin_requirements();
 
 // Check PHP version before initializing to prevent errors if plugin is incompatible.
 if ( $pass_nfd_check && version_compare( PHP_VERSION, '5.3', '>=' ) ) {
-	require dirname( __FILE__ ) . '/bootstrap.php';
+	require __DIR__ . '/bootstrap.php';
 }
