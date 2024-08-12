@@ -274,7 +274,7 @@ final class Admin {
 	 */
 	public static function old_admin_redirect() {
 		global $pagenow;
-		if ( $pagenow === 'admin.php' && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
+		if ( 'admin.php' === $pagenow && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
 			wp_redirect( admin_url( 'admin.php?page=mojo' ) );
 			exit;
 		}
