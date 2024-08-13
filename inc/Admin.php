@@ -256,12 +256,14 @@ final class Admin {
 	public static function old_admin_pages() {
 		// Add old plugin pages (for redirecting)
 		foreach ( self::get_old_url_ids() as $id ) {
-			\add_menu_page(
+			\add_submenu_page(
+				'',
 				__( 'MOJO', 'wp-plugin-mojo' ),
 				__( 'MOJO', 'wp-plugin-mojo' ),
 				'manage_options',
 				$id,
-				false
+				false,
+				null
 			);
 		}
 	}
