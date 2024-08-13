@@ -2,7 +2,7 @@
     "name": "wp-plugin-mojo",
     "description": "WordPress plugin that integrates a WordPress site with Hosting",
     "license": "GPL-2.0-or-later",
-    "version": "3.2.0",
+    "version": "3.2.1",
     "private": true,
     "repository": {
         "type": "git",
@@ -37,7 +37,7 @@
         "lodash": "^4.17.21",
         "react": "^18.3.1",
         "react-error-boundary": "^4.0.13",
-        "react-router-dom": "^6.20.1",
+        "react-router-dom": "^6.26.0",
         "react-use": "^17.5.0"
     },
     "devDependencies": {
@@ -45,8 +45,8 @@
         "@testing-library/cypress": "^10.0.2",
         "@wordpress/env": "^10.2.0",
         "@wordpress/scripts": "^27.8.0",
-        "axe-core": "^4.9.1",
-        "cypress": "^13.13.0",
+        "axe-core": "^4.10.0",
+        "cypress": "^13.13.2",
         "cypress-axe": "^1.5.0",
         "tailwindcss": "^3.4.4",
         "yaml-lint": "^1.7.0"
