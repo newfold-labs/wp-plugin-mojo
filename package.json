@@ -2,7 +2,7 @@
     "name": "wp-plugin-mojo",
     "description": "WordPress plugin that integrates a WordPress site with Hosting",
     "license": "GPL-2.0-or-later",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "private": true,
     "repository": {
         "type": "git",
@@ -24,21 +24,22 @@
         "npm": ">=10"
     },
     "dependencies": {
-        "@heroicons/react": "^2.1.4",
-        "@newfold/ui-component-library": "^1.1.0",
+        "@heroicons/react": "^2.1.5",
         "@newfold-labs/wp-module-runtime": "^1.0.11",
+        "@newfold/ui-component-library": "^1.1.0",
         "@wordpress/compose": "^7.1.0",
         "@wordpress/dom-ready": "^4.1.0",
         "@wordpress/element": "^6.2.0",
         "@wordpress/i18n": "^5.2.0",
         "@wordpress/icons": "^10.2.0",
+        "ajv": "^8.17.1",
         "classnames": "^2.5.1",
         "jquery": "^3.7.1",
         "lodash": "^4.17.21",
         "react": "^18.3.1",
         "react-error-boundary": "^4.0.13",
         "react-router-dom": "^6.26.0",
-        "react-use": "^17.5.0"
+        "react-use": "^17.5.1"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.7",
@@ -48,7 +49,7 @@
         "axe-core": "^4.10.0",
         "cypress": "^13.13.2",
         "cypress-axe": "^1.5.0",
-        "tailwindcss": "^3.4.4",
+        "tailwindcss": "^3.4.9",
         "yaml-lint": "^1.7.0"
     },
     "scripts": {
