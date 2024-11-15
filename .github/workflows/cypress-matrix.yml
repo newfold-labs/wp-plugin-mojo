@@ -30,9 +30,9 @@ jobs:
           - '8.2'
           - '8.3'
         wpVersion:
-          - '6.4'
           - '6.5'
           - '6.6'
+          - '6.7'
         exclude:
           - phpVersion: '7.1'
             wpVersion: '6.6'
