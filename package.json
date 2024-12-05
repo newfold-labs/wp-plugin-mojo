@@ -2,7 +2,7 @@
     "name": "wp-plugin-mojo",
     "description": "WordPress plugin that integrates a WordPress site with Hosting",
     "license": "GPL-2.0-or-later",
-    "version": "3.2.4",
+    "version": "3.2.5",
     "private": true,
     "repository": {
         "type": "git",
