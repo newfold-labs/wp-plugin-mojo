@@ -13,7 +13,7 @@
  * Update URI:        https://github.com/newfold-labs/wp-plugin-mojo/
  * Description:       WordPress plugin that integrates a WordPress site with Hosting.
  * Version:           3.2.5
- * Tested up to:      6.7
+ * Tested up to:      6.7.1
  * Requires at least: 5.8
  * Requires PHP:      7.1
  * Author:            Bluehost
