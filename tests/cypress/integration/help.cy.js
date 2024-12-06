@@ -1,26 +1,24 @@
 // <reference types="Cypress" />
 
-describe('Help Page', () => {
-	const appId = Cypress.env( 'appId' );
-	const pluginId = Cypress.env( 'pluginId' );
+describe('Help Page', { testIsolation: true }, () => {
+	const appClass = '.' + Cypress.env( 'appId' );
 
-	before(() => {
-		cy.visit(`/wp-admin/admin.php?page=${pluginId}#/help`);
+	beforeEach(() => {
+		cy.wpLogin();
+		cy.visit( `/wp-admin/admin.php?page=${ Cypress.env( 'pluginId' ) }#/help` );
 	});
 	
 	it('Is Accessible', () => {
 		cy.injectAxe();
 		cy.wait(500);
-		cy.a11y('.' + appId + '-app-body');
+		cy.a11y( appClass + '-app-body');
 	});
 
-	it('Phone Card Exists', () => {
+	it('Each Card Exists', () => {
 		cy.get('.card-help-phone').contains('h3', 'Phone')
 			.scrollIntoView()
 			.should('be.visible');
-	});
-
-	it('Blog Card Exists', () => {
+	
 		cy.get('.card-help-blog').contains('h3', 'Blog')
 			.scrollIntoView()
 			.should('be.visible');
