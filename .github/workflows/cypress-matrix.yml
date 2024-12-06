@@ -36,6 +36,8 @@ jobs:
         exclude:
           - phpVersion: '7.1'
             wpVersion: '6.6'
+          - phpVersion: '7.1'
+            wpVersion: '6.7'
 
     steps:
 
