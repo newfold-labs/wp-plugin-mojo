@@ -30,12 +30,14 @@ jobs:
           - '8.2'
           - '8.3'
         wpVersion:
-          - '6.4'
           - '6.5'
           - '6.6'
+          - '6.7'
         exclude:
           - phpVersion: '7.1'
             wpVersion: '6.6'
+          - phpVersion: '7.1'
+            wpVersion: '6.7'
 
     steps:
 
@@ -115,7 +117,11 @@ jobs:
           echo '{"wpVersion": "${{ matrix.wpVersion }}","phpVersion": "${{ matrix.phpVersion }}"}' > cypress.env.json
 
       - name: Install WordPress
-        run: npx wp-env start --debug
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 4
+          max_attempts: 3
+          command: npx wp-env start --debug
 
       - name: Run Cypress Tests
         if: ${{ github.repository != 'newfold-labs/wp-plugin-mojo' || github.actor == 'dependabot[bot]' }}

@@ -53,6 +53,13 @@ module.exports = defineConfig({
             }
         }
 
+        // Tests requires Woo, so exclude if not supported due to WP or PHP versions
+        if ( ! supportsWoo( config.env ) ) {
+            config.excludeSpecPattern = config.excludeSpecPattern.concat( [
+                'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/coming-soon-woo.cy.js',
+            ] );
+        }
+
         on('task', {
             log(message) {
                 console.log(message)
@@ -84,3 +91,15 @@ module.exports = defineConfig({
   retries: 1,
   experimentalMemoryManagement: true,
 })
+
+// Check against plugin support at https://wordpress.org/plugins/woocommerce/
+const supportsWoo = ( env ) => {
+	const semver = require( 'semver' );
+	if (
+		semver.satisfies( env.wpSemverVersion, '>=6.5.0' ) &&
+		semver.satisfies( env.phpSemverVersion, '>=7.4.0' )
+	) {
+		return true;
+	}
+	return false;
+};
