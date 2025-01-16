@@ -21,8 +21,6 @@ jobs:
       fail-fast: false
       matrix:
         phpVersion:
-          - '7.1'
-          - '7.2'
           - '7.3'
           - '7.4'
           - '8.0'
@@ -33,11 +31,6 @@ jobs:
           - '6.5'
           - '6.6'
           - '6.7'
-        exclude:
-          - phpVersion: '7.1'
-            wpVersion: '6.6'
-          - phpVersion: '7.1'
-            wpVersion: '6.7'
 
     steps:
 
