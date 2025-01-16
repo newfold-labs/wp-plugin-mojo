@@ -1,6 +1,6 @@
 import { Heading } from '../../components';
 import { Button, Card, Title } from "@newfold/ui-component-library";
-import { NewfoldRuntime } from '@newfold-labs/wp-module-runtime';
+import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import {
 	Button,
 	Card,
