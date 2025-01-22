@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfd677ab55752d1b18dc477f5a60a775",
+    "content-hash": "2e002d70beb8372ca3077eb30be6af1e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -335,16 +335,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.6.8",
+            "version": "2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "ee5d861ed085e67fe102ffebae1cb46ed3ee0d49"
+                "reference": "368b604257780658caa4d83c3cc15f8fa2d48ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/ee5d861ed085e67fe102ffebae1cb46ed3ee0d49",
-                "reference": "ee5d861ed085e67fe102ffebae1cb46ed3ee0d49",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/368b604257780658caa4d83c3cc15f8fa2d48ffa",
+                "reference": "368b604257780658caa4d83c3cc15f8fa2d48ffa",
                 "shasum": ""
             },
             "require": {
@@ -367,6 +367,7 @@
                 "phpunit/phpcov": "^8.2.1",
                 "wpackagist-plugin/jetpack": "^14.0",
                 "wpackagist-plugin/woocommerce": ">=9",
+                "wpackagist-plugin/woocommerce-payments": "^8.7",
                 "wpackagist-theme/twentytwentyfive": "*"
             },
             "type": "library",
@@ -430,30 +431,31 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.8",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.9",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2024-12-06T21:56:08+00:00"
+            "time": "2025-01-22T18:55:15+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-deactivation.git",
-                "reference": "77fba9e7289ef3924bc349b549ce53e9f494565e"
+                "reference": "93b7aa7472460b67bcc3fac77c5f5ab9e954095a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/77fba9e7289ef3924bc349b549ce53e9f494565e",
-                "reference": "77fba9e7289ef3924bc349b549ce53e9f494565e",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/93b7aa7472460b67bcc3fac77c5f5ab9e954095a",
+                "reference": "93b7aa7472460b67bcc3fac77c5f5ab9e954095a",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-data": "^2.0.0"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2"
+                "newfold-labs/wp-php-standards": "^1.2",
+                "wp-cli/i18n-command": "^2.6"
             },
             "type": "library",
             "autoload": {
@@ -470,6 +472,23 @@
                 ],
                 "lint": [
                     "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ],
+                "i18n-pot": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-deactivation.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-deactivation/issues\",\"POT-Creation-Date\":\"2024-12-12T07:59:34+00:00\"}' --exclude=tests"
+                ],
+                "i18n-po": [
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-deactivation.pot ./languages"
+                ],
+                "i18n-mo": [
+                    "vendor/bin/wp i18n make-mo ./languages"
+                ],
+                "i18n-json": [
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                ],
+                "i18n": [
+                    "@i18n-pot",
+                    "@i18n-po",
+                    "@i18n-mo"
                 ]
             },
             "license": [
@@ -482,7 +501,7 @@
                 },
                 {
                     "name": "Evan Mullins",
-                    "email": "evanrm@gmail.com"
+                    "homepage": "https://evanmullins.com"
                 },
                 {
                     "name": "Al Ani",
@@ -491,10 +510,10 @@
             ],
             "description": "A Module for handling WordPress brand plugins and modules deactivations",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.2.3",
+                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.3.0",
                 "issues": "https://github.com/newfold-labs/wp-module-deactivation/issues"
             },
-            "time": "2024-07-10T16:05:32+00:00"
+            "time": "2024-12-16T17:21:20+00:00"
         },
         {
             "name": "newfold-labs/wp-module-features",
@@ -601,23 +620,23 @@
         },
         {
             "name": "newfold-labs/wp-module-loader",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                "reference": "bb470f8c57b0bca62548e65b210df0a13ddce767"
+                "reference": "3fd178cfe9d5a5919eadabd71ab8a7d01011062a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/bb470f8c57b0bca62548e65b210df0a13ddce767",
-                "reference": "bb470f8c57b0bca62548e65b210df0a13ddce767",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/3fd178cfe9d5a5919eadabd71ab8a7d01011062a",
+                "reference": "3fd178cfe9d5a5919eadabd71ab8a7d01011062a",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/container": "^1.2",
                 "wp-forge/collection": "^1.0",
                 "wp-forge/fluent": "^1.0",
-                "wp-forge/wp-options": "^1.0"
+                "wp-forge/wp-options": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -640,10 +659,10 @@
             ],
             "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.11",
+                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.12",
                 "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
             },
-            "time": "2024-12-11T18:25:14+00:00"
+            "time": "2024-12-11T20:17:09+00:00"
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
