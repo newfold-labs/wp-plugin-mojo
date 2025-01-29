@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Bluehost
+# Copyright (C) 2025 Bluehost
 # This file is distributed under the GPL 2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The MOJO Plugin 3.2.5\n"
+"Project-Id-Version: The MOJO Plugin 3.3.0\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-mojo/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,28 +76,30 @@ msgstr ""
 
 #: inc/Admin.php:61
 #: inc/Admin.php:215
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Home"
 msgstr ""
 
 #: inc/Admin.php:64
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Marketplace"
 msgstr ""
 
+#. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
 #: inc/Admin.php:69
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Performance"
 msgstr ""
 
 #: inc/Admin.php:73
 #: inc/Admin.php:216
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Settings"
 msgstr ""
 
 #: inc/Admin.php:76
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Help"
 msgstr ""
 
@@ -183,209 +185,214 @@ msgstr ""
 msgid "Auto-updates enabled"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Mojo WordPress Plugin"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Oh No, An Error!"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "You found an error, please refresh the page and try again!"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "If the error persists, please contact support."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid " Error code: "
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "MOJO Account"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "There's nothing here!"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Admin"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Sorry, that is not allowed."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "This feature cannot currently be modified."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Oops! Something went wrong. Please try again."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Support Center"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Submit a support ticket. Once you open a ticket, we'll respond promptly to get it resolved."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Submit a Request"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Phone"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Speak to our support team over the phone at 855-464-5345."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Call Us"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Blog"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Follow along and take your website to its full potential with WordPress guides and how tos, inspiration, MOJO Marketplace product updates, and more!"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Learn Stuff"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "WP Live Support"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Our WordPress experts will treat your problem like theirs and teach you how to build, grow, and maintain your websites. Starting at $29/month"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Sign Up"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Settings and Performance"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Customize & fine-tune your site."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Manage Settings"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Manage your site settings. You can ajdust automatic updates, comments, revisions and more."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Manage site performance and caching settings as well as clear the site cache."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Visit Marketplace"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Add site services, themes or plugins from the marketplace."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Explore our featured collection of tools and services."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Load More"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "Oops! Something Went Wrong"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:1
 msgid "An error occurred while loading the content. Please try again later."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
+msgid "This is where you can manage cache settings for your website."
+msgstr ""
+
+#: build/3.3.0/index.js:6
 msgid "Site Status"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Not Live"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Live"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Coming soon page"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Your Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Manage All Updates"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "WordPress Core"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Plugins"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Themes"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Automatic Updates"
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid " day."
 msgid_plural " days."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/3.2.5/index.js:1
+#: build/3.3.0/index.js:6
 msgid " comment at a time."
 msgid_plural " comments at a time."
 msgstr[0] ""
