@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b15f8f9c35b63d32a763a1c468274572",
+    "content-hash": "bd7d93805faee36e3b7a0afc1d0d8ef3",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -227,16 +227,16 @@
         },
         {
             "name": "newfold-labs/wp-module-coming-soon",
-            "version": "1.3.5",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                "reference": "972de310081a3ba6f41df938185424dca23236b9"
+                "reference": "1e434b702db763cfe58db0dba0bb058201cbe277"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/972de310081a3ba6f41df938185424dca23236b9",
-                "reference": "972de310081a3ba6f41df938185424dca23236b9",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/1e434b702db763cfe58db0dba0bb058201cbe277",
+                "reference": "1e434b702db763cfe58db0dba0bb058201cbe277",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,8 @@
                 "wp-forge/wp-upgrade-handler": "^1.0"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2.4"
+                "newfold-labs/wp-php-standards": "^1.2.4",
+                "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
             "autoload": {
@@ -261,6 +262,27 @@
                 ],
                 "lint": [
                     "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ],
+                "i18n-pot": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,assets,tests,src"
+                ],
+                "i18n-po": [
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
+                ],
+                "i18n-mo": [
+                    "vendor/bin/wp i18n make-mo ./languages"
+                ],
+                "i18n-php": [
+                    "vendor/bin/wp i18n make-php ./languages"
+                ],
+                "i18n-json": [
+                    "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                ],
+                "i18n": [
+                    "@i18n-pot",
+                    "@i18n-po",
+                    "@i18n-php",
+                    "@i18n-json"
                 ]
             },
             "license": [
@@ -274,10 +296,10 @@
             ],
             "description": "Coming Soon module for WordPress sites.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/1.3.5",
+                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/1.4.0",
                 "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
             },
-            "time": "2025-01-23T18:45:50+00:00"
+            "time": "2025-03-04T16:43:06+00:00"
         },
         {
             "name": "newfold-labs/wp-module-context",
@@ -335,16 +357,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.6.9",
+            "version": "2.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "368b604257780658caa4d83c3cc15f8fa2d48ffa"
+                "reference": "ddafe7e2fe8f9e71ffdd898b00f5c3f6e5d92070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/368b604257780658caa4d83c3cc15f8fa2d48ffa",
-                "reference": "368b604257780658caa4d83c3cc15f8fa2d48ffa",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/ddafe7e2fe8f9e71ffdd898b00f5c3f6e5d92070",
+                "reference": "ddafe7e2fe8f9e71ffdd898b00f5c3f6e5d92070",
                 "shasum": ""
             },
             "require": {
@@ -431,10 +453,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.9",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.10",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2025-01-22T18:55:15+00:00"
+            "time": "2025-02-06T18:33:49+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",
@@ -3536,10 +3558,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
