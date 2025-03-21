@@ -13,7 +13,6 @@ namespace Mojo;
 function init_rest_api() {
 
 	$controllers = array(
-		'MOJO\\RestApi\\CachingController',
 		'MOJO\\RestApi\\SettingsController',
 	);
 
