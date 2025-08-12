@@ -37,7 +37,7 @@ export const SiteInfoBar = () => {
                     <Button 
                         as="a"
                         id="site_info_portal_button"
-                        href='https://www.mojomarketplace.com/login'
+                        href={window.NewfoldRuntime.linkTracker.addUtmParams('https://www.mojomarketplace.com/login')}
                         target="_blank"
                         variant="primary" 
                         className="nfd-bg-primary-400 nfd-text-tiny nfd-w-full min-[400px]:nfd-w-auto">
@@ -47,7 +47,7 @@ export const SiteInfoBar = () => {
                     <Button 
                         as="a" 
                         id="site_info_site_button"
-                        href={(isEcommerce && isStore) ? `${url}/shop` : url}
+                        href={(isEcommerce && isStore) ? window.NewfoldRuntime.linkTracker.addUtmParams(`${url}/shop`) : window.NewfoldRuntime.linkTracker.addUtmParams(url)}
                         target="_blank" 
                         variant="primary" 
                         className="nfd-bg-white nfd-text-[#212936] nfd-text-tiny nfd-w-full min-[400px]:nfd-w-auto"
