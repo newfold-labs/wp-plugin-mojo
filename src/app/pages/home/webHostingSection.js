@@ -5,14 +5,14 @@ const WebHostingSection = () => {
 	return (
 		<Container.SettingsField
 			title={__('Web Hosting', 'wp-plugin-mojo')}
-			description={__('Access & manage your mojo account.', 'wp-plugin-mojo')}
+			description={__('Access & manage your Network Solutions account.', 'wp-plugin-mojo')}
 		>
 			<div className="nfd-flex nfd-flex-col nfd-gap-5">
 				<ActionField
-					label={__("Manage MOJO Account", "wp-plugin-mojo")}
-					buttonLabel={__("Manage MOJO Account", "wp-plugin-mojo")}
+					label={__("Manage Network Solutions Account", "wp-plugin-mojo")}
+					buttonLabel={__("Manage Network Solutions Account", "wp-plugin-mojo")}
 					href={
-						`https://www.mojomarketplace.com/login?` +
+						`https://www.networksolutions.com/my-account/home?` +
 						`&utm_campaign=` +
 						`&utm_content=home_hosting_sites_link` +
 						`&utm_term=manage_sites` +
@@ -22,7 +22,7 @@ const WebHostingSection = () => {
 					target="_blank"
 					className={"wppm-app-home-sites-action"}
 				>
-					{__("Manage MOJO account products, options and billing.", "wp-plugin-mojo")}
+					{__("Manage Network Solutions account products, options and billing.", "wp-plugin-mojo")}
 				</ActionField>
 			</div>
 		</Container.SettingsField>
