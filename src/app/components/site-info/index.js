@@ -1,7 +1,8 @@
 import { LockClosedIcon, LockOpenIcon } from "@heroicons/react/24/outline";
 import { NewfoldRuntime } from "@newfold/wp-module-runtime";
 import { Button } from "@newfold/ui-component-library";
-import { MojoIcon, WordPressIcon } from "../icons";
+import { WordPressIcon } from "../icons";
+import { ReactComponent as NetSolIcon } from '../../../../assets/svg/ns-icon-image.svg';
 
 export const SiteInfoBar = () => {
     const { url, title } = NewfoldRuntime.siteDetails;
@@ -41,8 +42,8 @@ export const SiteInfoBar = () => {
                         target="_blank"
                         variant="primary" 
                         className="nfd-bg-primary-400 nfd-text-tiny nfd-w-full min-[400px]:nfd-w-auto">
-                        <MojoIcon />
-                        { __("MOJO Account", "wp-plugin-mojo") }
+                        <NetSolIcon />
+                        { __("Network Solutions Account", "wp-plugin-mojo") }
                     </Button>
                     <Button 
                         as="a" 

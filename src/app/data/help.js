@@ -1,49 +1,72 @@
 const help = [
 	{
-		name: 'ticket',
-		title: __( 'Support Center', 'wp-plugin-mojo' ),
+		name: 'chat',
+		title: __( 'Chat', 'wp-plugin-web' ),
 		description: __(
-			"Submit a support ticket. Once you open a ticket, we'll respond promptly to get it resolved.",
-			'wp-plugin-mojo'
+			'Chat with our sales and support team for quick, helpful answers to questions about product features, pricing and more. Our chat agents are available 24/7.',
+			'wp-plugin-web'
 		),
 		icon: false,
-		cta: __( 'Submit a Request', 'wp-plugin-mojo' ),
-		url: 'https://mojosupport.zendesk.com/hc/en-us/requests/new?ticket_form_id=66029',
+		cta: __( 'Live Chat', 'wp-plugin-web' ),
+		url:
+			'https://www.networksolutions.com/chat#/help?utm_campaign=&utm_content=help_chat_link&utm_term=live_chat&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=web#/help',
 	},
 	{
 		name: 'phone',
-		title: __( 'Phone', 'wp-plugin-mojo' ),
+		title: __( 'Phone', 'wp-plugin-web' ),
 		description: __(
-			'Speak to our support team over the phone at 855-464-5345.',
-			'wp-plugin-mojo'
+			'Speak to our award-winning support team over the phone at 855-834-8495. Our customer service hours are 8:00am - 11:00pm ET.',
+			'wp-plugin-web'
 		),
 		icon: false,
-		cta: __( 'Call Us', 'wp-plugin-mojo' ),
-		url: 'tel:855-464-5345',
+		cta: __( 'Call Us', 'wp-plugin-web' ),
+		url: 'tel:855-834-8495',
+	},
+	{
+		name: 'twitter',
+		title: __( 'Tweet', 'wp-plugin-web' ),
+		description: __(
+			'Find our team at @netsolcares for updates on our products and support from our team.',
+			'wp-plugin-web'
+		),
+		icon: false,
+		cta: __( 'Tweet Us', 'wp-plugin-web' ),
+		url: 'https://x.com/netsolcares',
+	},
+	{
+		name: 'kb',
+		title: __( 'Knowledge Base', 'wp-plugin-web' ),
+		description: __(
+			'Our experts share their experience and well-organized guides to common questions.',
+			'wp-plugin-web'
+		),
+		icon: false,
+		cta: __( 'Find Answers', 'wp-plugin-web' ),
+		url:
+			'https://www.networksolutions.com/help#/help?utm_campaign=&utm_content=help_kb_link&utm_term=find_answers&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=web#/help',
 	},
 	{
 		name: 'blog',
-		title: __( 'Blog', 'wp-plugin-mojo' ),
+		title: __( 'Blog', 'wp-plugin-web' ),
 		description: __(
-			'Follow along and take your website to its full potential with WordPress guides and how tos, inspiration, MOJO Marketplace product updates, and more!',
-			'wp-plugin-mojo'
+			'Learn best practices, get insider tips and find the latest news about Network Solutions.',
+			'wp-plugin-web'
 		),
 		icon: false,
-		cta: __( 'Learn Stuff', 'wp-plugin-mojo' ),
+		cta: __( 'Learn Stuff', 'wp-plugin-web' ),
 		url:
-			'https://blog.mojomarketplace.com/?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=mojo#/help',
+			'https://www.networksolutions.com/blog/#/help?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=web#/help',
 	},
 	{
-		name: 'support',
-		title: __( 'WP Live Support', 'wp-plugin-mojo' ),
+		name: 'video',
+		title: __( 'Video Tutorials', 'wp-plugin-web' ),
 		description: __(
-			'Our WordPress experts will treat your problem like theirs and teach you how to build, grow, and maintain your websites. Starting at $29/month',
-			'wp-plugin-mojo'
+			'Check out our video library of step-by-step tutorials.',
+			'wp-plugin-web'
 		),
 		icon: false,
-		cta: __( 'Sign Up', 'wp-plugin-mojo' ),
-		url:
-			'https://www.mojomarketplace.com/item/wordpress-support?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=mojo#/help',
+		cta: __( 'Watch Now', 'wp-plugin-web' ),
+		url: 'https://www.youtube.com/@networksolutions',
 	},
 ];
 

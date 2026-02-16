@@ -23,8 +23,8 @@ final class Admin {
 		/* Load Page Scripts & Styles. */
 		\add_action( 'load-toplevel_page_mojo', array( __CLASS__, 'assets' ) );
 		/* Add Links to WordPress Plugins list item. */
-		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for build
-		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for local dev
+		\add_filter( 'plugin_action_links_mojo-marketplace-wp-plugin/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for build.
+		\add_filter( 'plugin_action_links_wp-plugin-mojo/mojo-marketplace.php', array( __CLASS__, 'actions' ) ); // for local dev.
 		/* Add inline style to hide subnav link */
 		\add_action( 'admin_head', array( __CLASS__, 'admin_nav_style' ) );
 		/* Add runtime for data store */
@@ -33,14 +33,14 @@ final class Admin {
 		\add_action( 'admin_menu', array( __CLASS__, 'old_admin_pages' ) );
 		\add_action( 'admin_init', array( __CLASS__, 'old_admin_redirect' ) );
 
-		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore
+		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) { // phpcs:ignore.
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
 		}
 	}
 	/**
 	 * Add to runtime
 	 *
-	 * @param array $sdk - runtime properties from module
+	 * @param array $sdk - runtime properties from module.
 	 *
 	 * @return array
 	 */
@@ -63,7 +63,7 @@ final class Admin {
 		$marketplace = array(
 			'mojo#/marketplace' => __( 'Marketplace', 'wp-plugin-mojo' ),
 		);
-		// add performance if enabled
+		// add performance if enabled.
 		$performance = isEnabled( 'performance' )
 			? array(
 				'mojo#/performance' => __( 'Performance', 'wp-plugin-mojo' ),
@@ -92,6 +92,15 @@ final class Admin {
 	public static function admin_nav_style() {
 		echo '<style>';
 		echo 'li#toplevel_page_mojo a.toplevel_page_mojo div.wp-menu-image.svg { transition: fill 0.15s; background-size: 24px auto !important; }';
+		echo 'li#toplevel_page_mojo a.toplevel_page_mojo div.wp-menu-name {
+		    padding: 8px 2px 8px 29px;
+			font-size: 12px;
+		}';
+		echo 'li#toplevel_page_mojo a.toplevel_page_mojo div.wp-menu-image img {
+			padding: 6px 8px 0px;
+			opacity: 1 !important;
+			display: block;
+		}';
 		echo 'ul#adminmenu a.toplevel_page_mojo.wp-has-current-submenu:after, ul#adminmenu>li#toplevel_page_mojo.current>a.current:after { border-right-color: #fff !important; }';
 		echo 'li#toplevel_page_mojo > ul > li.wp-first-item { display: none !important; }';
 		echo '#wp-toolbar #wp-admin-bar-mojo-coming_soon .ab-item { padding: 0; }';
@@ -104,27 +113,20 @@ final class Admin {
 	 * @return void
 	 */
 	public static function page() {
-		$icon_hash = get_transient( 'mm_icon_hash', false );
-		if ( false === $icon_hash ) {
-			$file = MOJO_PLUGIN_DIR . '/assets/svg/default-icon.svg';
-			if ( file_exists( $file ) ) {
-				$content   = file_get_contents( $file );
-				$icon_hash = 'data:image/svg+xml;base64, ' . base64_encode( $content );
-				set_transient( 'mm_icon_hash', $icon_hash, WEEK_IN_SECONDS );
-			}
-		}
+		$iconurl = MOJO_PLUGIN_URL . 'assets/svg/ns-icon-image.svg';
+		$iconurl = \add_query_arg( 'ver', MOJO_PLUGIN_URL, $iconurl );
 
 		\add_menu_page(
-			__( 'MOJO', 'wp-plugin-mojo' ),
-			__( 'MOJO', 'wp-plugin-mojo' ),
+			__( 'Network Solutions', 'wp-plugin-mojo' ),
+			__( 'Network Solutions', 'wp-plugin-mojo' ),
 			'manage_options',
 			'mojo',
 			array( __CLASS__, 'render' ),
-			$icon_hash,
+			$iconurl,
 			0
 		);
 
-		// If we're outside of App, add subpages to App menu
+		// If we're outside of App, add subpages to App menu.
 		if ( false === ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'mojo' ) >= 0 ) ) { // phpcs:ignore
 			foreach ( self::subpages() as $route => $title ) {
 				\add_submenu_page(
@@ -152,7 +154,7 @@ final class Admin {
 		if ( version_compare( $wp_version, '5.4', '>=' ) ) {
 			echo '<div id="wppm-app" class="wppm wppm_app"></div>' . PHP_EOL;
 		} else {
-			// fallback messaging for WordPress older than 5.4
+			// fallback messaging for WordPress older than 5.4.
 			echo '<div id="wppm-app" class="wppm wppm_app">' . PHP_EOL;
 			echo '<header class="wppm-header" style="min-height: 90px; padding: 1rem; margin-bottom: 1.5rem;"><div class="wppm-header-inner"><div class="wppm-logo-wrap">' . PHP_EOL;
 			echo '<img src="' . esc_url( MOJO_PLUGIN_URL . 'assets/svg/mojo-logo.svg' ) . '" alt="MOJO logo" />' . PHP_EOL;
@@ -222,11 +224,11 @@ final class Admin {
 	/**
 	 * Filter WordPress Admin Footer Text "Thank you for creating with..."
 	 *
-	 * @param string $footer_text footer text
+	 * @param string $footer_text footer text.
 	 * @return string
 	 */
 	public static function add_brand_to_admin_footer( $footer_text ) {
-		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://mojomarketplace.com/about">MOJO</a>.', 'wp-plugin-mojo' ) );
+		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://www.networksolutions.com/">Network Solutions</a>.', 'wp-plugin-mojo' ) );
 		return $footer_text;
 	}
 
@@ -251,15 +253,15 @@ final class Admin {
 	 * Keep dummy links for old admin pages
 	 * so we can redirect to the new page.
 	 *
-	 * @return void
+	 * @return void.
 	 */
 	public static function old_admin_pages() {
 		// Add old plugin pages (for redirecting)
 		foreach ( self::get_old_url_ids() as $id ) {
 			\add_submenu_page(
 				'',
-				__( 'MOJO', 'wp-plugin-mojo' ),
-				__( 'MOJO', 'wp-plugin-mojo' ),
+				__( 'Network Solutions', 'wp-plugin-mojo' ),
+				__( 'Network Solutions', 'wp-plugin-mojo' ),
 				'manage_options',
 				$id,
 				false,
@@ -272,7 +274,7 @@ final class Admin {
 	 * Redirect old admin page to new admin page,
 	 * only applies on first nav click after update or a bookmark.
 	 *
-	 * @return void
+	 * @return void.
 	 */
 	public static function old_admin_redirect() {
 		global $pagenow;
