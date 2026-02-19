@@ -105,12 +105,7 @@ jobs:
           command: npx wp-env start --debug
 
       - name: Run Cypress Tests
-        if: ${{ github.repository != 'newfold-labs/wp-plugin-mojo' || github.actor == 'dependabot[bot]' }}
         run: npm run test:e2e -- --browser chrome
-
-      - name: Run Cypress Cloud Tests
-        if: ${{ github.repository == 'newfold-labs/wp-plugin-mojo' && github.actor != 'dependabot[bot]' }}
-        run: npm run test:e2e -- --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --tag mojo
 
       - name: Store screenshots of test failures
         if: ${{ failure() }}
@@ -122,4 +117,4 @@ jobs:
       - name: Output debug.log file contents
         if: ${{ always() }}
         continue-on-error: true
-        run: npx wp-env run wordpress "cat /var/www/html/wp-content/debug.log"
+        run: npx wp-env run wordpress cat /var/www/html/wp-content/debug.log
