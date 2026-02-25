@@ -33,12 +33,11 @@ class AdminBar {
 			array(
 				'id'    => 'mojo-support',
 				'title' => __( 'Need help?', 'wp-plugin-mojo' ),
-				'href'  => admin_url( 'admin.php?page=mojo#/help' ),
+				'href'  => apply_filters( 'nfd_build_url', admin_url( 'admin.php?page=mojo#/help' ) ),
 				'meta'  => array(
 					'title' => esc_attr__( 'We\'re here for you!', 'wp-plugin-mojo' ),
 				),
 			)
 		);
 	}
-
 }

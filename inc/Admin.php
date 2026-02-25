@@ -212,8 +212,8 @@ final class Admin {
 	public static function actions( $actions ) {
 		return array_merge(
 			array(
-				'overview' => '<a href="' . \admin_url( 'admin.php?page=mojo#/home' ) . '">' . __( 'Home', 'wp-plugin-mojo' ) . '</a>',
-				'settings' => '<a href="' . \admin_url( 'admin.php?page=mojo#/settings' ) . '">' . __( 'Settings', 'wp-plugin-mojo' ) . '</a>',
+				'overview' => '<a href="' . \apply_filters( 'nfd_build_url', admin_url( 'admin.php?page=mojo#/home' ) ) . '">' . __( 'Home', 'wp-plugin-mojo' ) . '</a>',
+				'settings' => '<a href="' . \apply_filters( 'nfd_build_url', admin_url( 'admin.php?page=mojo#/settings' ) ) . '">' . __( 'Settings', 'wp-plugin-mojo' ) . '</a>',
 			),
 			$actions
 		);
@@ -226,7 +226,12 @@ final class Admin {
 	 * @return string
 	 */
 	public static function add_brand_to_admin_footer( $footer_text ) {
-		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://mojomarketplace.com/about">MOJO</a>.', 'wp-plugin-mojo' ) );
+
+		$wordpress_url = '<a href="' . apply_filters( 'nfd_build_url', 'https://wordpress.org/', array( 'source' => 'mojo_admin_footer' ) ) . '">WordPress</a>';
+		$mojo_url      = '<a href="' . apply_filters( 'nfd_build_url', 'https://mojomarketplace.com/about', array( 'source' => 'mojo_admin_footer' ) ) . '">MOJO</a>';
+
+		// translators: %1$s is the WordPress URL, %2$s is the Web.com URL.
+		$footer_text = sprintf( \__( 'Thank you for creating with %1$s and %2$s.', 'wp-plugin-mojo' ), $wordpress_url, $mojo_url );
 		return $footer_text;
 	}
 
@@ -277,7 +282,7 @@ final class Admin {
 	public static function old_admin_redirect() {
 		global $pagenow;
 		if ( 'admin.php' === $pagenow && in_array( $_GET['page'], self::get_old_url_ids() ) ) {
-			wp_redirect( admin_url( 'admin.php?page=mojo' ) );
+			wp_redirect( apply_filters( 'nfd_build_url', admin_url( 'admin.php?page=mojo' ) ) );
 			exit;
 		}
 	}

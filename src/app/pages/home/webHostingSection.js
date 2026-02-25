@@ -12,12 +12,13 @@ const WebHostingSection = () => {
 					label={__("Manage MOJO Account", "wp-plugin-mojo")}
 					buttonLabel={__("Manage MOJO Account", "wp-plugin-mojo")}
 					href={
-						`https://www.mojomarketplace.com/login?` +
-						`&utm_campaign=` +
-						`&utm_content=home_hosting_sites_link` +
-						`&utm_term=manage_sites` +
-						`&utm_medium=brand_plugin` +
-						`&utm_source=wp-admin/admin.php?page=mojo#/home`
+                        window.NewfoldRuntime.linkTracker.addUtmParams(
+                            `https://www.mojomarketplace.com/login?` +
+                            `&utm_campaign=` +
+                            `&utm_content=home_hosting_sites_link` +
+                            `&utm_term=manage_sites` +
+                            `&utm_source=wp-admin/admin.php?page=mojo#/home`
+                        )
 					}
 					target="_blank"
 					className={"wppm-app-home-sites-action"}
