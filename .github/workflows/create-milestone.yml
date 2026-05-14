@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write      # Required to create milestones via the GitHub API using GITHUB_TOKEN.
+    timeout-minutes: 15
 
     steps:
       - name: Create Milestone

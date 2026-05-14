@@ -14,6 +14,7 @@ jobs:
     name: On Delete Release
     runs-on: ubuntu-latest
     permissions: {}
+    timeout-minutes: 15
     if: ${{ github.repository == 'newfold-labs/wp-plugin-mojo' }}
     steps:
 
