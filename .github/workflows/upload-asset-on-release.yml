@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write    # Required to clone the repo and upload release assets via the GitHub API.
-      actions: write     # Required to save and restore the GitHub Actions cache.
     timeout-minutes: 45
     steps:
 

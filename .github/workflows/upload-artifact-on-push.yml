@@ -26,7 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read     # Required to clone the repo.
-      actions: write     # Required to save and restore the GitHub Actions cache and upload workflow artifacts.
     timeout-minutes: 45
     steps:
 
